@@ -5,11 +5,7 @@ author: Che1
 category: ETC
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, nemo eius quos laborum, necessitatibus culpa in commodi nam cupiditate, rerum neque nostrum quibusdam placeat voluptatibus iusto saepe! Voluptas, velit praesentium.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, nemo eius quos laborum, necessitatibus culpa in commodi nam cupiditate, rerum neque nostrum quibusdam placeat voluptatibus iusto saepe! Voluptas, velit praesentium.
-
-
-# <img width="150px" src="/img/markdown.png">
+# <img width="300px" src="/img/markdown.png">
 
 HOW TO USE MARKDOWN(KRAMDOWN)
 

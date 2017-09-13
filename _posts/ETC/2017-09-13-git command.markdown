@@ -5,29 +5,59 @@ author: Che1
 category: ETC
 ---
 
+- 현재 폴더를 git repo로 설정
+```
+git init
+``` 
 
-git init : 현재 폴더를 git repo로 설정
+- 현재 스테이지 상태 확인
+```
+git status
+gst
+```
+- 파일을 커밋 목록에 추가 (stage)
 
-git status: 현재 스테이지 상태 확인
+```
+git add [파일이름] [옵션]
 
-git add <파일이름> : 파일을 커밋 목록에 포함시킴.
+옵션:
+    -A, --all 모든 파일의 변경사항 추가
 
-git rm --cached <파일이름> : 파일을 커밋 목록에서 제외시킴
+```
 
-git commit -m '코멘트' : 코멘트를 달고 커밋함 한줄 코멘트인 경우
-git commit: 텍스트 에디터가 열리고 여러줄의 코멘트 추가 할 수 있음
+- 파일을 커밋 목록에서 제외시킴
 
-git log -p: 로그확인 변경사항 확인가능
-git log --oneline:  커밋 코멘트만 한줄씩 로그 표시
-git log --all: 모든 브랜치 로그 표시
-git log -- graph: 브랜치 그래픽 표시 
+```
+git rm --cached [파일이름]
+```
+
+- stage에 추가된 파일 목록을 커밋함.
+
+```
+git commit [옵션]
+
+옵션:
+    -m [메세지] : 커밋 메세지와 함께 커밋
+```
+- 로그확인 변경사항 확인가능
+
+```
+git log [옵션]
+
+옵션:
+    -p : 변경사항 확인
+    --oneline : 커밋 메세지만 한줄씩 표시
+    --all : 모든 브랜치 로그 표시
+    --graph : 브랜치 트리 그래프 표시
+```
+
 
 git diff: 커밋 하지 않고 변경사항 확인
 git diff --staged : add 한 파일의 변경사항 확인
 
-git remote add <remote저장소 이름> <주소> : 주소의 저장소를 원격 저장소에 추가
+git remote add `<remote` 저장소 이름> <주소> : 주소의 저장소를 원격 저장소에 추가
 git remote -v: 리모트 저장소 확인
-git remote remove <remote저장소이름> : 리모트 저장소 삭제
+git remote remove <remote 저장소이름> : 리모트 저장소 삭제
 
 git push: 현재 브랜치 내용을 저장소에 업데이트
 
