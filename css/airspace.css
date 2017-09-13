@@ -25,14 +25,13 @@ h4,
 h5,
 h6 {
   font-family: 'Roboto', sans-serif, 'Jeju Gothic', serif;
+  font-weight: bold;
 }
 h2 {
   font-size: 30px;
-  font-weight: 400;
 }
 h3 {
   font-size: 28px;
-  font-weight: 300;
 }
 p {
   font-size: 15px;
@@ -43,6 +42,10 @@ ul {
   margin: 0;
   list-style: none;
 }
+li{
+  margin: 10px 0;
+}
+
 a,
 a:active,
 a:focus,
@@ -68,13 +71,19 @@ a:active {
 header {
   background: #fff;
   padding: 20px 0;
+  border-bottom: 1px dotted #ddd;
+  box-shadow: 0px 3px 20px #888888;
 }
 header .navbar {
   margin-bottom: 0px;
   border: 0px;
 }
 header .navbar-brand {
-  padding-top: 5px;
+  padding: 0;
+  margin-top: 20px;
+}
+header .navbar-brand img{
+  width: 200px;
 }
 header .navbar-default {
   background: none;
@@ -140,9 +149,12 @@ font header .navbar-default .navbar-nav li a:hover {
 --*/
 #intro {
   padding: 100px 0;
+  margin-left: 200px;
+  padding-left: 50px;
 }
 #intro .block h2 {
   padding-top: 35px;
+  padding-bottom: 10px;
   line-height: 27px;
   margin: 0;
 }
@@ -790,6 +802,7 @@ footer a {
   color: #595959;
 }
 footer .footer-manu {
+  margin-top: 40px;
   padding-bottom: 25px;
 }
 footer .footer-manu ul {
@@ -806,4 +819,86 @@ footer .footer-manu ul li a {
 }
 footer .footer-manu ul li a:hover {
   color: #000;
+}
+/*---------------------------------------------
+					category start
+-----------------------------------------------*/
+div.category{
+  position: fixed;
+  width: 200px;
+  height: 300px;
+  background-color: white;
+  color: white;
+  float: left;
+  border: 1px dotted #ddd;
+  box-shadow: 5px 5px 20px #888888;
+}
+
+ul.category-list{
+  padding-left: 10px;
+  color: black;
+}
+/*---------------------------------------------
+					category close
+-----------------------------------------------*/
+/*---------------------------------------------
+					HTML/CSS start
+-----------------------------------------------*/
+#subpage-header {
+  padding-top: 150px;
+  padding-bottom: 107px;
+  position: relative;
+  background-attachment: fixed;
+}
+.htmlcss{
+  background: url("../img/html.jpg") no-repeat;
+  background-position: 0 -200px;
+  background-size: cover;
+}
+.python{
+  background: url("../img/python.jpg") no-repeat;
+  background-position: 0 -100px;
+  background-size: 800px;
+}
+.algorithm{
+  background: url("../img/algorithm.jpg") no-repeat;
+  background-position: 0 0px;
+  background-size: cover;
+}
+.etc{
+  background: url("../img/bg1.jpg") no-repeat;
+  background-position: 0 0px;
+  background-size: cover;
+}
+#subpage-header:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, #928dab, #1f1c2c 70%);
+  opacity: 0.7;
+}
+#subpage-header .block {
+  color: #E3E3E4;
+  margin: 0 auto;
+  /* padding-left: 90px; */
+  /* text-align: center; */
+}
+#subpage-header .block h1 {
+  /* font-weight: 100; */
+  font-size: 45px;
+  /* letter-spacing: 6px; */
+  /* padding-bottom: 15px; */
+  margin-top: 0;
+  text-transform: capitalize;
+}
+#subpage-header .block p {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 3px;
 }

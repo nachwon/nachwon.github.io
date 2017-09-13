@@ -1,0 +1,53 @@
+div.topic-box{
+    height: 300px;
+    width: 649px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    float: left;
+}
+
+div.topic-box:hover > .hover-action{
+    transform: scale(1.15);
+    transition-duration: 0.1s;
+}
+div.mask{
+    position: absolute;
+    background: linear-gradient(to left, #928dab, #1f1c2c 70%);
+    opacity: 0.5;
+}
+div.text-box{
+    width: 649px;
+    line-height: 300px;
+    font-weight: 100;
+    font-size: 45px;
+    letter-spacing: 6px;
+    text-align: center;
+    color: white;
+    position: absolute;
+}
+
+div.cat-1{
+    background-image: url(../img/html.jpg);
+    background-size: 1000px;
+}
+
+div.cat-2{
+    background-image: url(../img/python.jpg);
+    background-repeat: no-repeat;
+}
+div.cat-3{
+    background-image: url(../img/algorithm.jpg);
+    background-repeat: no-repeat;
+}
+div.cat-4{
+    background-image: url(../img/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: 700px;
+}
+
+li.li-wrapper{
+    margin: 0;
+    display: inline;
+}

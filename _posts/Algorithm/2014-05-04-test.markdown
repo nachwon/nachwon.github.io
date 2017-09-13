@@ -1,0 +1,8 @@
+---
+layout: post
+title: test1 algo
+author: Che1
+category: Algorithm
+---
+
+this is test
