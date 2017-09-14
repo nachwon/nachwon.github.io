@@ -289,16 +289,18 @@ this is next line
 
 - - -
 
-## 4. 이미지 삽입(Insert images)
+## 5. 이미지 삽입(Insert images)
 
 - 이미지를 삽입하기 위해서는 아래와 같이 입력한다.
 
 ```
-![gras](이미지 경로)
+![gras](이미지 경로){:[스타일 옵션]}
 ```
 적용 예:
 
 ```
-markdown logo: ![gras](/img/markdown.png)
+markdown logo:  
+![gras](/img/markdown.png){:width="300px"}
 ```
-markdown logo: ![gras](/img/markdown.png)
+markdown logo:   
+![gras](/img/markdown.png){:width="300px"}

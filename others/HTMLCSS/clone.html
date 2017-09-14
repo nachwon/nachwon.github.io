@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>챔피언 분석 - League of Legends</title>
+  <link rel="icon" type="image/x-icon" href="https://www.op.gg/favicon.ico?4">
+  <link rel="stylesheet" href="./clone.style.css">
+</head>
+<body>
+
+  <div class="header">
+    <div class="head-wrapper">
+      <ul class="head-list">
+        <li class="logo">
+          <a href="#">
+            <img class="logo-l"src="http://opgg-static.akamaized.net/images/logo/logo-lol.png" alt="">
+            <img class="logo-opgg"src="https://opgg-static.akamaized.net/images/logo/l_logo.png" alt="">
+          </a>
+        </li>
+        <li class="overwatch">
+          <a href="">
+            <img class="logo-overwatch"src="https://opgg-static.akamaized.net/images/logo/logo-overwatch-small.png" alt="">
+            <span class="text-overwatch">Overwatch</span>
+          </a>
+        </li>
+        <li class="bestgg">
+          <a href="">
+            <img src="https://opgg-static.akamaized.net/images/logo/logo-bestgg-small.png" alt="" class="logo-bestgg">
+            <span class="text-bestgg">BEST.GG</span>
+          </a>
+        </li>
+        <li class="input-box">
+          <form action="" method="get">
+            <input type="text" placeholder="소환사명, 챔피언..">
+            <a href="">
+              <button>
+                <img class="button-img"src="https://opgg-static.akamaized.net/images/site/btn-gnb-search@2x.png" alt="">
+              </button>
+            </a>
+          </form>
+        </li>
+        <li class="lang-select">
+          <button>
+            <span class="lang-short">KR</span>
+            <span class="country-name">
+              <select name="country" id="select-country">
+                <option value="Korean">Korean</option>
+                <option value="English">English</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Chinese">Chinese</option>
+              </select>
+            </span>
+            <span class="arrow-icon"></span>
+          </button>
+        </li>
+        <li class="login">
+          <a href="">
+            <button class="login-button">
+              로그인
+            </button>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <div class="menu">
+    <div class="menu-wrapper">
+      <ul class="menu-list">
+        <li class="home">
+          <a href="">홈</a>
+        </li>
+        <li class="champ-analysis">
+          <a href="">챔피언 분석</a>
+        </li>
+        <li class="ranking">
+          <a href="">랭킹</a>
+        </li>
+        <li class="observe">
+          <a href="">프로관전</a>
+        </li>
+        <li class="community">
+          <a href="">커뮤니티</a>
+        </li>
+        <li class="opgg-plus">
+          <a href=""><div></div></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="champ-analysis-body">
+    <div class="analysis-head">
+      <div class="title-wrapper">
+        <ul>
+          <li>
+            <div class="h1-wrapper">
+              <a href=""><h1 class="title">챔피언 분석</h1></a>
+            </div>
+          </li>
+          <li>
+            <div class="blank-space"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="sub-title">
+        <p class="sub-title-text">챔피언 분석은 플래티넘 티어 이상의 랭크 게임만을 수집합니다</p>
+        <p class="version-info"><i class="icon-group"></i>지역 : Korea - 버전 : 7.17</p>
+      </div>
+    </div>
+    <div class="analysis-body">
+      <ul>
+        <li>
+          <div class="champ-index">
+            <div class="champ-class">
+              <ul>
+                <li class="class-all"><a href="">전체</a></li>
+                <li><a href="">탑</a></li>
+                <li><a href="">정글</a></li>
+                <li><a href="">미드</a></li>
+                <li><a href="">원딜</a></li>
+                <li><a href="">서포터</a></li>
+                <li><input class="rotation-check"type="checkbox">로테이션</li>
+              </ul>
+            </div>
+            <input class="champ-searchbar" type="text" placeholder="챔피언 검색 (가렌, ㄱㄹ, ...)">
+            <div class="champ-list">
+              <div class="list-wrapper">
+                <ul class="list-line1">
+                  <li>
+                    <a href=""><div class="champ-img garen">
+                      <div class="position">탑</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">가렌</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img galio">
+                      <div class="position">탑</div>
+                      <div class="position">미드</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">갈리오</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img gangflank">
+                      <div class="position">탑</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">갱플랭크</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img gragas">
+                      <div class="position">탑</div>
+                      <div class="position">정글</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">그라가스</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img graves">
+                      <div class="position">정글</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">그레이브즈</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img gnar">
+                      <div class="position">탑</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">나르</div></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="list-wrapper">
+                <ul class="list-line2">
+                  <li>
+                    <a href=""><div class="champ-img nami">
+                      <div class="position">서포터</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">나미</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img nasus">
+                      <div class="position">탑</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">나서스</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img nautilus">
+                      <div class="position">탑</div>
+                      <div class="position">서포터</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">노틸러스</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img nocturne">
+                      <div class="position">정글</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">녹턴</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img nunu">
+                      <div class="position">정글</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">누누</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img nidalee">
+                      <div class="position">정글</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">니달리</div></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="list-wrapper">
+                <ul class="list-line3">
+                  <li>
+                    <a href=""><div class="champ-img darius">
+                      <div class="position">탑</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">다리우스</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img diana">
+                      <div class="position">미드</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">다이애나</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img draven">
+                      <div class="position">원딜</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">드레이븐</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img ryze">
+                      <div class="position">미드</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">라이즈</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img rakan">
+                      <div class="position">서포터</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">라칸</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img rammus">
+                      <div class="position">정글</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">람머스</div></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="list-wrapper">
+                <ul class="list-line4">
+                  <li>
+                    <a href=""><div class="champ-img lux">
+                      <div class="position">미드</div>
+                      <div class="position">서포터</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">럭스</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img rumble">
+                      <div class="position">탑</div>
+                      <div class="position">정글</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">럼블</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img renekton">
+                      <div class="position">탑</div>
+                      <div class="position free"></div>
+                    </div></a>
+                    <a href=""><div class="champ-name">레넥톤</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img leona">
+                      <div class="position">서폿</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">레오나</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img reksai">
+                      <div class="position">정글</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">렉사이</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img rengar">
+                      <div class="position">탑</div>
+                      <div class="position">정글</div>
+                      <div class="position free"></div>
+                    </div></a>
+                    <a href=""><div class="champ-name">렝가</div></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="list-wrapper">
+                <ul class="list-line5">
+                  <li>
+                    <a href=""><div class="champ-img lucian">
+                      <div class="position">원딜</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">루시안</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img lulu">
+                      <div class="position">서포터</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">룰루</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img leblanc">
+                      <div class="position">미드</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">르블랑</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img leesin">
+                      <div class="position">정글</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">리신</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img riven">
+                      <div class="position">탑</div>
+                      <div class="position">정글</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">리븐</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img lissandra">
+                      <div class="position">미드</div>
+                      <div class="position">탑</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">리산드라</div></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="list-wrapper">
+                <ul class="list-line6">
+                  <li>
+                    <a href=""><div class="champ-img master-yi">
+                      <div class="position">정글</div>
+                      <div class="position free"></div>
+                    </div></a>
+                    <a href=""><div class="champ-name">마스터 이</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img maokai">
+                      <div class="position">탑</div>
+                      <div class="position">정글</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">마오카이</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img malzahar">
+                      <div class="position">미드</div>
+                      <div class="position">탑</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">말자하</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img malphite">
+                      <div class="position">탑</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">말파이트</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img mordekaiser">
+                      <div class="position">탑</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">모데카이저</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img morgana">
+                      <div class="position">미드</div>
+                      <div class="position">서포터</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">모르가나</div></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="list-wrapper">
+                <ul class="list-line7">
+                  <li>
+                    <a href=""><div class="champ-img mundo">
+                      <div class="position">탑</div>
+                      <div class="position">정글</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">문도 박사</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img msfortune">
+                      <div class="position">원딜</div>
+                    </div></a>
+                    <a href=""><div class="champ-name">미스 포츈</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img bard">
+                      <!-- <div class="position">미드</div> -->
+                      <!-- <div class="position">탑</div> -->
+                      <!-- <div class="position">정글</div> -->
+                      <!-- <div class="position">원딜</div> -->
+                      <div class="position">서포터</div>
+                      <div class="position free"></div>
+                    </div></a>
+                    <a href=""><div class="champ-name">바드</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img varus">
+                      <!-- <div class="position">미드</div> -->
+                      <!-- <div class="position">탑</div> -->
+                      <!-- <div class="position">정글</div> -->
+                      <div class="position">원딜</div>
+                      <!-- <div class="position">서포터</div> -->
+                      <!-- <div class="position free"></div> -->
+                    </div></a>
+                    <a href=""><div class="champ-name">바루스</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img vi">
+                      <!-- <div class="position">미드</div>
+                      <div class="position">탑</div> -->
+                      <div class="position">정글</div>
+                      <!-- <div class="position">원딜</div>
+                      <div class="position">서포터</div>
+                      <div class="position free"></div> -->
+                    </div></a>
+                    <a href=""><div class="champ-name">바이</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img veigar">
+                      <div class="position">미드</div>
+                      <!-- <div class="position">탑</div>
+                      <div class="position">정글</div>
+                      <div class="position">원딜</div> -->
+                      <div class="position">서포터</div>
+                      <!-- <div class="position free"></div> -->
+                    </div></a>
+                    <a href=""><div class="champ-name">베이가</div></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="list-wrapper">
+                <ul class="list-line8">
+                  <li>
+                    <a href=""><div class="champ-img">
+                      <!-- <div class="position">미드</div> -->
+                      <div class="position">탑</div>
+                      <!-- <div class="position">정글</div> -->
+                      <div class="position">원딜</div>
+                      <!-- <div class="position">서포터</div> -->
+                      <div class="position free"></div>
+                    </div></a>
+                    <a href=""><div class="champ-name">베인</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img">
+                      <div class="position">미드</div>
+                      <!-- <div class="position">탑</div>
+                      <div class="position">정글</div>
+                      <div class="position">원딜</div> -->
+                      <div class="position">서포터</div>
+                      <!-- <div class="position free"></div> -->
+                    </div></a>
+                    <a href=""><div class="champ-name">벨코즈</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img">
+                      <!-- <div class="position">미드</div> -->
+                      <!-- <div class="position">탑</div> -->
+                      <!-- <div class="position">정글</div> -->
+                      <!-- <div class="position">원딜</div> -->
+                      <!-- <div class="position">서포터</div> -->
+                      <!-- <div class="position free"></div> -->
+                      <div class="dead-champ">
+                        <div class="mask"></div>
+                        <div class="dead-img"></div>
+                        <div class="dead-text">고 인</div>
+                      </div>
+                    </div></a>
+                    <a href=""><div class="champ-name">볼리베어</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img">
+                      <!-- <div class="position">미드</div> -->
+                      <!-- <div class="position">탑</div> -->
+                      <!-- <div class="position">정글</div> -->
+                      <!-- <div class="position">원딜</div> -->
+                      <div class="position">서포터</div>
+                      <!-- <div class="position free"></div> -->
+                      <!-- <div class="dead-champ">
+                        <div class="mask"></div>
+                        <div class="dead-img"></div>
+                        <div class="dead-text">고 인</div>
+                      </div> -->
+                    </div></a>
+                    <a href=""><div class="champ-name">브라움</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img">
+                      <div class="position">미드</div>
+                      <!-- <div class="position">탑</div> -->
+                      <!-- <div class="position">정글</div> -->
+                      <!-- <div class="position">원딜</div> -->
+                      <div class="position">서포터</div>
+                      <!-- <div class="position free"></div> -->
+                      <!-- <div class="dead-champ">
+                        <div class="mask"></div>
+                        <div class="dead-img"></div>
+                        <div class="dead-text">고 인</div>
+                      </div> -->
+                    </div></a>
+                    <a href=""><div class="champ-name">브랜드</div></a>
+                  </li>
+                  <li>
+                    <a href=""><div class="champ-img">
+                      <div class="position">미드</div>
+                      <div class="position">탑</div>
+                      <!-- <div class="position">정글</div> -->
+                      <!-- <div class="position">원딜</div> -->
+                      <!-- <div class="position">서포터</div> -->
+                      <!-- <div class="position free"></div> -->
+                      <!-- <div class="dead-champ">
+                        <div class="mask"></div>
+                        <div class="dead-img"></div>
+                        <div class="dead-text">고 인</div>
+                      </div> -->
+                    </div></a>
+                    <a href=""><div class="champ-name">블라디미르</div></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="champ-statistics">
+            <div class="stat-menu">
+              <ul>
+                <li><a class="button selected" href="">승률</a></li>
+                <li><a class="button" href="">픽률</a></li>
+                <li><a class="button" href="">밴률</a></li>
+                <li><a class="button" href=""><i class="icon-group"></i>요약보기</a></li>
+              </ul>
+            </div>
+            <div class="class-menu">
+              <ul>
+                <li><a href="">탑</a></li>
+                <li><a href="">정글</a></li>
+                <li><a href="">미드</a></li>
+                <li><a href="">원딜</a></li>
+                <li><a href="">서포터</a></li>
+              </ul>
+            </div>
+            <div class="winrate-list">
+              <a href=""><table class="rank-1">
+                <tr>
+                  <td class="ranking" rowspan="2">1</td>
+                  <td class="rank-img" rowspan="2"><div class="box-image"></div></td>
+                  <td class="rank-name">신지드</td>
+                  <td class="rank-winrate">54.89%</td>
+                </tr>
+                <tr>
+                  <td class="rank-position">탑</td>
+                  <td class="rank-pickrate">픽률 4.55%</td>
+                </tr>
+              </table></a>
+              <a href=""><table class="rank-2">
+                <tr>
+                  <td class="ranking" rowspan="2">2</td>
+                  <td class="rank-img" rowspan="2"><div class="box-image"></div></td>
+                  <td class="rank-name">탈론</td>
+                  <td class="rank-winrate">53.96%</td>
+                </tr>
+                <tr>
+                  <td class="rank-position">탑, 미드</td>
+                  <td class="rank-pickrate">픽률 1.29%</td>
+                </tr>
+              </table></a>
+              <a href=""><table class="rank-3">
+                <tr>
+                  <td class="ranking" rowspan="2">3</td>
+                  <td class="rank-img" rowspan="2"><div class="box-image"></div></td>
+                  <td class="rank-name">말자하</td>
+                  <td class="rank-winrate">53.89%</td>
+                </tr>
+                <tr>
+                  <td class="rank-position">탑, 미드</td>
+                  <td class="rank-pickrate">픽률 1.04%</td>
+                </tr>
+              </table></a>
+              <a href=""><table class="rank-4">
+                <tr>
+                  <td class="ranking" rowspan="2">4</td>
+                  <td class="rank-img" rowspan="2"><div class="box-image"></div></td>
+                  <td class="rank-name">판테온</td>
+                  <td class="rank-winrate">53.88%</td>
+                </tr>
+                <tr>
+                  <td class="rank-position">탑, 미드, 정글</td>
+                  <td class="rank-pickrate">픽률 4.94%</td>
+                </tr>
+              </table></a>
+              <a href=""><table class="rank-5">
+                <tr>
+                  <td class="ranking" rowspan="2">5</td>
+                  <td class="rank-img" rowspan="2"><div class="box-image"></div></td>
+                  <td class="rank-name">카서스</td>
+                  <td class="rank-winrate">53.54%</td>
+                </tr>
+                <tr>
+                  <td class="rank-position">탑, 미드</td>
+                  <td class="rank-pickrate">픽률 0.5%</td>
+                </tr>
+              </table></a>
+              <a href=""><table class="rank-6">
+                <tr>
+                  <td class="ranking" rowspan="2">6</td>
+                  <td class="rank-img" rowspan="2"><div class="box-image"></div></td>
+                  <td class="rank-name">사이온</td>
+                  <td class="rank-winrate">53.25%</td>
+                </tr>
+                <tr>
+                  <td class="rank-position">탑, 서포터</td>
+                  <td class="rank-pickrate">픽률 2.71%</td>
+                </tr>
+              </table></a>
+              <a href=""><table class="rank-7">
+                <tr>
+                  <td class="ranking" rowspan="2">7</td>
+                  <td class="rank-img" rowspan="2"><div class="box-image"></div></td>
+                  <td class="rank-name">케일</td>
+                  <td class="rank-winrate">52.88%</td>
+                </tr>
+                <tr>
+                  <td class="rank-position">탑, 미드</td>
+                  <td class="rank-pickrate">픽률 2.35%</td>
+                </tr>
+              </table></a>
+              <a href=""><table class="rank-8">
+                <tr>
+                  <td class="ranking" rowspan="2">8</td>
+                  <td class="rank-img" rowspan="2"><div class="box-image"></div></td>
+                  <td class="rank-name">하이머딩거</td>
+                  <td class="rank-winrate">52.02%</td>
+                </tr>
+                <tr>
+                  <td class="rank-position">탑</td>
+                  <td class="rank-pickrate">픽률 1.96%</td>
+                </tr>
+              </table></a>
+              <a href=""><table class="rank-9">
+                <tr>
+                  <td class="ranking" rowspan="2">9</td>
+                  <td class="rank-img" rowspan="2"><div class="box-image"></div></td>
+                  <td class="rank-name">아칼리</td>
+                  <td class="rank-winrate">52.01%</td>
+                </tr>
+                <tr>
+                  <td class="rank-position">탑, 미드</td>
+                  <td class="rank-pickrate">픽률 2.42%</td>
+                </tr>
+              </table></a>
+              <a href=""><table class="rank-10">
+                <tr>
+                  <td class="ranking" rowspan="2">10</td>
+                  <td class="rank-img" rowspan="2"><div class="box-image"></div></td>
+                  <td class="rank-name">오공</td>
+                  <td class="rank-winrate">51.77%</td>
+                </tr>
+                <tr>
+                  <td class="rank-position">탑, 정글</td>
+                  <td class="rank-pickrate">픽률 1.54%</td>
+                </tr>
+              </table></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-wrapper">
+      <div class="footer-menu">
+        <ul>
+          <a href=""><li>ABOUT OP.GG</li></a>
+          <a href=""><li>로고 히스토리</li></a>
+          <a href=""><li>개인정보처리방침</li></a>
+          <a href=""><li>도움말</li></a>
+          <a href=""><li>제휴</li></a>
+          <a href=""><li>문의/피드백</li></a>
+          <a href=""><li>채용</li></a>
+        </ul>
+      </div>
+      <div class="copyrights">© 2012-2017 OP.GG. Data based on League of legends Korea.</div>
+      <div class="footer-icons">
+        <ul>
+          <li><a href=""><img src="http://opgg-static.akamaized.net/images/site/sns/twitter_icon_black.png" alt=""></a></li>
+          <li><a href=""><img src="http://opgg-static.akamaized.net/images/site/sns/instagram_icon_black.png" alt=""></a></li>
+          <li><a href=""><img src="http://opgg-static.akamaized.net/images/site/sns/facebook_icon_black.png" alt=""></a></li>
+          <li><a href=""><img src="http://opgg-static.akamaized.net/images/site/sns/weibo_icon_black.png" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <a href=""><div class="floating-button" href="">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAA3lBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ymXGKAAAASXRSTlMAAQIFBwoPEBIUFRscHR8jKCkqLC0/Q0RGSEpNUFFXYHFzeXp9gIKFjKCjpamwvL7Aw8bIy8zN0NLT1dja3ODk5ujq7PT19/3+6Nyy9QAAAklJREFUeAGl1/1W4jwQBvAHBapi0erLK7XsKmLxAyp+SBEVAUXluf8b2ibHnqUk0LT7+3+anJlpMoGe1Wh3B9MZOZsOuu2GBWN2q//NhO9+y4YJtzenxrznIs1xyJXCY6xTDfhj3Gl6jm1ZtuM1O2P+CKpY6eST0sh3kOD4I0qfJ9ArXVG6cwtQFNw7SlclaGzdU3ipY4X6C4X7LSh2n2VN/CJWKvqygs+7yroydlLDWrWJjF5auyT3PKwgRWUod17CIpmrhzJSlR9k1hI1kuuWYaAs116oWFXUd1KBkcpE1LuKWCDyXIOhmsh5gB/HjPgw5jMS93koeqMIY0XRLSEkl5E6Mqgz4kLoiX5G7PKLy74usUT0eQ8Rex5/RviPOodIcknObQAtkqNCtuDCiGQLQF+mOtu2ZcL7gCWq5uCvTWvZJhSO6AwLDZJjZDYm2UCbZAeZdUi20SXZRGZNkl0MSHrIzCM5wFTmKzOH5BQzkjbWlkpXMZvkDIxYgNIkKb1iMfJPwXm3vc2ImjC1w3SNdkDyPW+pXJJPeZvklGSQtz2vSV7k/THeSDaUX9LMPiM7usNALY7ijGSYdgwdQqvwSvJcPQCNgo8Y2VOPXqNt35C81R36m2pPaRf28l03eCQ53Mh30ZXkwrmu2Ph3VC9382BlrMgXrA405sHqKGUerA5x5sHq+GgebDy4/v/IBZlG5qMbJpgP6/tnr0z6MHkmbB+4p9dvXPbxO+sDZehZsYxPI956G/keZQzP95BGfQ7y/Sm4+LUDrT+vKBtiP2phEAAAAABJRU5ErkJggg==" alt="">
+    </div></a>
+
+
+</body>
+</html>

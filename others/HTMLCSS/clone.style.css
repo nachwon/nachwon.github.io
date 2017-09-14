@@ -1,0 +1,1003 @@
+@charset "UTF-8";
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: url() rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+html, body {
+  margin: 0;
+  bottom: 0;
+  font-family: 나눔바른고딕, "Nanum Barun Gothic", "Noto Sans KR", "Malgun Gothic", AppleSDGothicNeo-Regular, Dotum, AppleSDGothic, "Apple SD Gothic Neo", AppleGothic;
+  background-color: #eee;
+}
+
+a, button {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+div.header {
+  height: 56px;
+  background-color: #1ea1f7;
+  box-sizing: border-box;
+  min-width: 1080px;
+}
+
+div.header div.head-wrapper {
+  height: 100%;
+  width: 1080px;
+  padding: 12px 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+div.header div.head-wrapper ul.head-list li.logo img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.header div.head-wrapper ul.head-list li.logo img.logo-l {
+  margin-right: 12px;
+}
+
+div.header div.head-wrapper ul.head-list li.logo img.logo-opgg {
+  height: 16px;
+}
+
+div.header div.head-wrapper ul.head-list li.logo:after {
+  content: "";
+  border-right: 1px solid white;
+  border-right-color: rgba(255, 255, 255, 0.4);
+  margin: 0 20px;
+}
+
+div.header div.head-wrapper ul.head-list li.overwatch img.logo-overwatch {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 9px;
+}
+
+div.header div.head-wrapper ul.head-list li.overwatch span.text-overwatch {
+  color: white;
+  font-size: 12px;
+}
+
+div.header div.head-wrapper ul.head-list li.overwatch:after {
+  content: "";
+  border-right: 1px solid white;
+  opacity: 0.4;
+  font-size: 5px;
+  vertical-align: middle;
+  margin: 0 15px;
+}
+
+div.header div.head-wrapper ul.head-list li.bestgg img.logo-bestgg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 9px;
+}
+
+div.header div.head-wrapper ul.head-list li.bestgg span.text-bestgg {
+  color: white;
+  font-size: 12px;
+}
+
+div.header div.head-wrapper ul.head-list li.input-box {
+  margin-left: 150px;
+  display: inline-block;
+}
+
+div.header div.head-wrapper ul.head-list li.input-box form {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+div.header div.head-wrapper ul.head-list li.input-box input {
+  padding-left: 15px;
+  margin: 0;
+  border: 0;
+  height: 32px;
+  width: 250px;
+  box-sizing: border-box;
+  font-size: 12px;
+  float: left;
+  border-radius: 3px 0 0 3px;
+}
+
+div.header div.head-wrapper ul.head-list li.input-box button {
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 32px;
+  background-color: white;
+  border-radius: 0 3px 3px 0;
+}
+
+div.header div.head-wrapper ul.head-list li.input-box button img.button-img {
+  height: 14px;
+  padding: 0  10px;
+}
+
+div.header div.head-wrapper ul.head-list li.lang-select {
+  margin-left: 20px;
+}
+
+div.header div.head-wrapper ul.head-list li.lang-select button {
+  background-color: #1ea1f7;
+  border: 0;
+}
+
+div.header div.head-wrapper ul.head-list li.lang-select span.lang-short {
+  color: #1ea1f7;
+  background-color: white;
+  padding: 0 5px;
+}
+
+div.header div.head-wrapper ul.head-list li.lang-select select#select-country {
+  border: 0;
+  background-color: #1ea1f7;
+  color: white;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+div.header div.head-wrapper ul.head-list li.lang-select select#select-country option {
+  background-color: white;
+  color: black;
+}
+
+div.header div.head-wrapper ul.head-list li.lang-select:after {
+  content: "";
+  border-right: 1px solid white;
+  opacity: 0.4;
+  margin: 0 15px;
+}
+
+div.header div.head-wrapper ul.head-list li.login button.login-button {
+  background-color: #1c87c3;
+  border: 0;
+  padding: 0 20px;
+  line-height: 26px;
+  color: white;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+div.menu {
+  height: 40px;
+  min-width: 1080px;
+  background-color: #1d2e51;
+}
+
+div.menu div.menu-wrapper {
+  margin: 0 auto;
+  height: 100%;
+  width: 1080px;
+}
+
+div.menu div.menu-wrapper ul.menu-list > li > a {
+  color: #73a1cb;
+  padding: 0 5px;
+  margin: 0 5px;
+  line-height: 37px;
+  display: inline-block;
+}
+
+div.menu div.menu-wrapper ul.menu-list > li > a:hover {
+  color: white;
+  border-bottom: 3px solid white;
+}
+
+div.menu div.menu-wrapper ul.menu-list li.champ-analysis a {
+  color: white;
+  border-bottom: 3px solid white;
+}
+
+div.menu div.menu-wrapper ul.menu-list li.opgg-plus a {
+  border: 0;
+}
+
+div.menu div.menu-wrapper ul.menu-list li.opgg-plus div {
+  height: 26px;
+  width: 64px;
+  background-image: url(http://opgg-static.akamaized.net/images/site/menu-plus-btn-none.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.menu div.menu-wrapper ul.menu-list li.opgg-plus div:hover {
+  background-image: url(http://opgg-static.akamaized.net/images/site/menu-plus-btn-over.png);
+}
+
+div.champ-analysis-body {
+  background-color: #eee;
+  margin-bottom: 30px;
+  margin: 0 100px;
+}
+
+div.champ-analysis-body div.analysis-head {
+  padding-top: 30px;
+  margin: 0 auto;
+  width: 970px;
+}
+
+div.champ-analysis-body div.analysis-head div.title-wrapper div.h1-wrapper {
+  display: inline-block;
+  float: left;
+  height: 49px;
+  border-bottom: 1px solid black;
+}
+
+div.champ-analysis-body div.analysis-head div.title-wrapper div.h1-wrapper h1 {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  color: #555e5e;
+  font-size: 28px;
+}
+
+div.champ-analysis-body div.analysis-head div.title-wrapper div.blank-space {
+  height: 49px;
+  width: 838px;
+  display: inline-block;
+  border-bottom: 1px solid #ccc;
+}
+
+div.champ-analysis-body div.analysis-head div.sub-title {
+  font-size: 14px;
+}
+
+div.champ-analysis-body div.analysis-head div.sub-title p.sub-title-text {
+  padding: 10px 0;
+  margin: 0;
+  color: #555e5e;
+  display: inline-block;
+}
+
+div.champ-analysis-body div.analysis-head div.sub-title p.version-info {
+  display: inline-block;
+  float: right;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  line-height: 36px;
+  color: #879292;
+  font-size: 12px;
+}
+
+div.champ-analysis-body div.analysis-head div.sub-title p.version-info i {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  background-image: url(http://opgg-static.akamaized.net/assets/site.png?1504867536);
+  background-position: -190px -4304px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.champ-analysis-body div.analysis-body {
+  margin: 0 auto;
+  width: 970px;
+  margin-top: 15px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index {
+  display: inline-block;
+  width: 565px;
+  height: 555px;
+  border: 1px solid #cdd2d2;
+  vertical-align: top;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-class {
+  height: 35px;
+  width: 565px;
+  border-bottom: 1px solid #cdd2d2;
+  background-color: #f4f4f4;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-class ul {
+  margin-left: 15px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-class ul > li.class-all {
+  border-bottom: 3px solid #1f8ecd;
+  font-weight: bold;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-class ul > li.class-all > a {
+  color: #1f8ecd;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-class ul li {
+  line-height: 36px;
+  font-size: 12px;
+  margin: 0 10px;
+  padding: 8px 0;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-class ul li:last-child {
+  float: right;
+  padding: 0;
+  margin-right: 15px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-class ul li:last-child input.rotation-check {
+  display: inline-block;
+  vertical-align: middle;
+  height: 23px;
+  width: 23px;
+  opacity: 0.5;
+  padding: 0;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-class ul li > a {
+  color: #555e5e;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-class ul li > a:hover {
+  color: #242929;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index input.champ-searchbar {
+  margin: 5px auto;
+  border-radius: 2px;
+  border: 1px solid #cdd2d2;
+  height: 36px;
+  width: 544px;
+  display: block;
+  padding-left: 10px;
+  font-size: 12px;
+  color: #555e5e;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list {
+  height: 470px;
+  overflow-y: scroll;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul {
+  margin: 5px 0;
+  display: block;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul li {
+  display: inline-block;
+  height: 107px;
+  width: 82px;
+  margin: 0 3px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul li div.champ-img {
+  height: 82px;
+  width: 82px;
+  border: 1px dashed black;
+  border-radius: 3px;
+  background-image: url(http://opgg-static.akamaized.net/assets/champion82.png?1504867541);
+  position: relative;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul li div.champ-img div.dead-champ {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul li div.champ-img div.dead-champ div.dead-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(http://opgg-static.akamaized.net/images/site/champion/deceased.png);
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul li div.champ-img div.dead-champ div.dead-text {
+  color: #bcc3c3;
+  position: absolute;
+  display: inline-block;
+  line-height: 25px;
+  font-size: 13px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul li div.champ-img div.dead-champ div.mask {
+  height: 93%;
+  width: 93%;
+  left: 50%;
+  top: 50%;
+  border-radius: 3px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: rgba(50, 50, 50, 0.7);
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul li div.champ-img div.position {
+  height: 20px;
+  line-height: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #bcc3c3;
+  display: inline-block;
+  font-size: 12px;
+  padding: 0 5px;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul li div.champ-img div.position:nth-child(2) {
+  bottom: 23px;
+  right: 2px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul li div.champ-img div.position:nth-child(3) {
+  right: 2px;
+  bottom: 44px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul li div.champ-img div.position.free {
+  background-image: url(http://opgg-static.akamaized.net/images/site/icon_rotation.png?4);
+  width: 33px;
+  height: 34px;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul li a {
+  color: #555e5e;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul li a:hover {
+  color: #1f8ecd;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul li a div.champ-name {
+  height: 25px;
+  width: 100%;
+  line-height: 25px;
+  font-size: 12px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line1 .garen {
+  background-position: 0 -11234px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line1 .galio {
+  background-position: 0 -2870px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line1 .gangflank {
+  background-position: 0 -6724px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line1 .gragas {
+  background-position: 0 -9922px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line1 .graves {
+  background-position: 0 -10414px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line1 .gnar {
+  background-position: 0 -7216px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line2 .nami {
+  background-position: 0 -6232px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line2 .nasus {
+  background-position: 0 -9594px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line2 .nautilus {
+  background-position: 0 -164px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line2 .nocturne {
+  background-position: 0 -7954px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line2 .nunu {
+  background-position: 0 -3608px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line2 .nidalee {
+  background-position: 0 -9676px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line3 .darius {
+  background-position: 0 -2624px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line3 .diana {
+  background-position: 0 -4428px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line3 .draven {
+  background-position: 0 -984px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line3 .ryze {
+  background-position: 0 -1722px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line3 .rakan {
+  background-position: 0 -4674px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line3 .rammus {
+  background-position: 0 -5330px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line4 .lux {
+  background-position: 0 -1476px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line4 .rumble {
+  background-position: 0 -9266px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line4 .renekton {
+  background-position: 0 -8118px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line4 .leona {
+  background-position: 0 0;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line4 .reksai {
+  background-position: 0 -6314px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line4 .rengar {
+  background-position: 0 -10742px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line5 .lucian {
+  background-position: 0 -492px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line5 .lulu {
+  background-position: 0 -656px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line5 .leblanc {
+  background-position: 0 -3362px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line5 .leesin {
+  background-position: 0 -9102px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line5 .riven {
+  background-position: 0 -1066px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line5 .lissandra {
+  background-position: 0 -3198px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line6 .master-yi {
+  background-position: 0 -1558px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line6 .maokai {
+  background-position: 0 -8036px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line6 .malzahar {
+  background-position: 0 -738px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line6 .malphite {
+  background-position: 0 -7790px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line6 .mordekaiser {
+  background-position: 0 -10906px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line6 .morgana {
+  background-position: 0 -4018px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line7 li:nth-child(1) div.champ-img {
+  background-position: 0 -5576px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line7 li:nth-child(2) div.champ-img {
+  background-position: 0 -3690px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line7 li:nth-child(3) div.champ-img {
+  background-position: 0 -7380px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line7 li:nth-child(4) div.champ-img {
+  background-position: 0 -82px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line7 li:nth-child(5) div.champ-img {
+  background-position: 0 -4592px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line7 li:nth-child(6) div.champ-img {
+  background-position: 0 -7052px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line8 li:nth-child(1) div.champ-img {
+  background-position: 0 -9184px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line8 li:nth-child(2) div.champ-img {
+  background-position: 0 -8282px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line8 li:nth-child(3) div.champ-img {
+  background-position: 0 -10578px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line8 li:nth-child(4) div.champ-img {
+  background-position: 0 -8528px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line8 li:nth-child(5) div.champ-img {
+  background-position: 0 -9020px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-index div.champ-list div.list-wrapper ul.list-line8 li:nth-child(6) div.champ-img {
+  background-position: 0 -3444px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics {
+  height: 556px;
+  width: 395px;
+  border-left: 1px solid #cdd2d2;
+  border-right: 1px solid #cdd2d2;
+  border-bottom: 1px solid #cdd2d2;
+  display: inline-block;
+  vertical-align: top;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .stat-menu {
+  height: 35px;
+  border-bottom: 1px solid #cdd2d2;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .stat-menu li {
+  line-height: 35px;
+  display: inline-block;
+  float: left;
+  padding: calc(35px/3) 0;
+  border-top: 1px solid #cdd2d2;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .stat-menu li:first-child {
+  padding: 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .stat-menu li:first-child a.selected {
+  color: #1f8ecd;
+  font-weight: bold;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .stat-menu li:first-child a.button {
+  line-height: 35px;
+  border-right: 1px solid #cdd2d2;
+  border-bottom: 0;
+  background-color: #f2f2f2;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .stat-menu li:nth-child(3) {
+  border-right: 1px solid #cdd2d2;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .stat-menu li:nth-child(3) a {
+  border: 0;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .stat-menu li:last-child {
+  float: right;
+  border: 1px solid #288b8b;
+  width: 80px;
+  height: 10px;
+  background-color: #36a4a4;
+  border-radius: 2px 2px 0 0;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .stat-menu li:last-child i {
+  height: 12px;
+  width: 8px;
+  margin-right: 5px;
+  background-image: url(http://opgg-static.akamaized.net/assets/site.png?1504867536);
+  background-position: -197px -2703px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .stat-menu li:last-child a {
+  border-right: 0;
+  width: 100%;
+  color: white;
+  display: inline-block;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .stat-menu a {
+  color: black;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .stat-menu a.button {
+  padding: 0;
+  line-height: calc(35px/3);
+  width: 88px;
+  border: 0;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  border-right: 1px solid #cdd2d2;
+  font-size: 12px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .class-menu {
+  display: block;
+  width: 100%;
+  float: left;
+  text-align: center;
+  background-color: #f2f2f2;
+  margin: 0 auto;
+  padding: 0;
+  border-bottom: 1px solid #cdd2d2;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .class-menu ul li {
+  display: inline-block;
+  line-height: 33px;
+  padding: 0 10px;
+  margin: 0 5px;
+  font-size: 12px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .class-menu ul li:first-child {
+  font-weight: bold;
+  border-bottom: 2px solid #1f8ecd;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .class-menu ul li:first-child a {
+  color: #1f8ecd;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .class-menu ul li a {
+  color: #555;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list {
+  height: 483px;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list a:nth-child(2n) table {
+  background-color: #e6e6e6;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list a:first-child td.rank-winrate, div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list a:first-child .ranking {
+  color: #1f8ecd;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table {
+  box-sizing: border-box;
+  height: 60px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table td.ranking {
+  font-size: 12px;
+  color: black;
+  text-align: center;
+  width: 40px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table td.rank-img {
+  padding: 0;
+  margin: 0;
+  width: 40px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table td.rank-img div.box-image {
+  background-image: url(http://opgg-static.akamaized.net/assets/champion40.png?1504867538);
+  height: 40px;
+  width: 40px;
+  margin: 0 auto;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table td.rank-name {
+  padding-left: 10px;
+  font-size: 14px;
+  color: #333;
+  vertical-align: bottom;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table td.rank-position {
+  vertical-align: top;
+  margin-top: 4px;
+  padding-left: 10px;
+  font-size: 12px;
+  color: #999;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table td.rank-winrate {
+  text-align: right;
+  font-size: 14px;
+  color: black;
+  vertical-align: bottom;
+  padding-right: 10px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table td.rank-pickrate {
+  text-align: right;
+  font-size: 12px;
+  color: #999;
+  vertical-align: top;
+  margin-top: 4px;
+  padding-right: 10px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table.rank-1 div.box-image {
+  background-position: 0 -2040px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table.rank-2 div.box-image {
+  background-position: 0 -440px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table.rank-3 div.box-image {
+  background-position: 0 -360px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table.rank-4 div.box-image {
+  background-position: 0 -5200px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table.rank-5 div.box-image {
+  background-position: 0 -2480px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table.rank-6 div.box-image {
+  background-position: 0 -880px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table.rank-7 div.box-image {
+  background-position: 0 -640px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table.rank-8 div.box-image {
+  background-position: 0 -4640px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table.rank-9 div.box-image {
+  background-position: 0 -5400px;
+}
+
+div.champ-analysis-body div.analysis-body div.champ-statistics .winrate-list table.rank-10 div.box-image {
+  background-position: 0 -4360px;
+}
+
+div.footer {
+  height: 120px;
+  width: 1080px;
+  margin: 0 auto;
+  background-color: #eee;
+}
+
+div.footer div.footer-wrapper {
+  height: 100%;
+  width: 1080px;
+  margin: 0 auto;
+  padding: calc(120px/3) 0;
+  box-sizing: border-box;
+  background-color: #eee;
+}
+
+div.footer div.footer-wrapper div.footer-menu {
+  line-height: 15px;
+  width: 100%;
+  background-color: #eee;
+  display: inline-block;
+}
+
+div.footer div.footer-wrapper div.footer-menu ul > a {
+  color: #333;
+  float: left;
+}
+
+div.footer div.footer-wrapper div.footer-menu ul > a:hover {
+  text-decoration: underline;
+}
+
+div.footer div.footer-wrapper div.footer-menu ul > a li {
+  font-size: 12px;
+  padding-right: 20px;
+}
+
+div.footer div.footer-wrapper div.copyrights {
+  vertical-align: bottom;
+  display: inline-block;
+  background-color: #eee;
+  font-size: 12px;
+  color: #333;
+  font-weight: bold;
+  font-family: '나눔바른고딕','Nanum Barun Gothic','Noto Sans KR','Malgun Gothic',AppleSDGothicNeo-Regular,Dotum,AppleSDGothic,"Apple SD Gothic Neo",AppleGothic;
+}
+
+div.footer div.footer-wrapper div.footer-icons {
+  float: right;
+}
+
+div.footer div.footer-wrapper div.footer-icons img {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 3px;
+}
+
+div.floating-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #1d2e51;
+  height: 54px;
+  width: 54px;
+  display: inline-block;
+  position: fixed;
+  border-radius: 100%;
+  bottom: 2%;
+  right: 2%;
+}
+
+div.floating-button img {
+  position: absolute;
+  height: 35px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
