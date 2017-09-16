@@ -867,6 +867,10 @@ ul.category-list{
   position: relative;
   background-attachment: fixed;
 }
+.cat-container ul{
+  margin: 0 auto;
+  width: 1298px;
+}
 .htmlcss{
   background: url("../img/html.jpg") no-repeat;
   background-position: 0 -200px;
@@ -874,7 +878,7 @@ ul.category-list{
 }
 .python{
   background: url("../img/python.jpg") no-repeat;
-  background-position: 0 -100px;
+  background-position: 0 -50px;
   background-size: 800px;
 }
 .algorithm{

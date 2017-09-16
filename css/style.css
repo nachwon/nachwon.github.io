@@ -16,9 +16,21 @@
    text-align: center;
  }
 
+ .recent-posts{
+   margin-top: 30px;
+   margin-left: auto;
+   margin-right: auto;
+   font-size: 30px;
+   width: 250px;
+   border-bottom: 1px solid #ddd;
+   font-weight: 100;
+   text-align: center;
+ }
+
 .post-area {
   padding: 40px;
-  width: 100%;
+  margin: 0 auto;
+  width: 1200px;
   min-height: 150px;
   background-color: white;
   border-bottom: 1px dotted #ddd;
