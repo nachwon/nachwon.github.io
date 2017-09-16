@@ -373,8 +373,8 @@ p{Click}+a{here}+{to continue}
 - Do not use spaces between elements and operators to make abbreviations more readable.** Space is a stop symbol where Emmet stops abbreviation parsing.**
 - Expanding abbreviation is possible **anywhere in the text.**
 ```
+- - -
 
-##### Reference
-
+###### Reference
 
 Emmet Document: [https://docs.emmet.io/abbreviations/syntax/](https://docs.emmet.io/abbreviations/syntax/)
