@@ -14,6 +14,23 @@
 /*--
 	Common Css
 --*/
+::-webkit-scrollbar {
+  width: 10px; height: 10px;
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: url() rgba(0,0,0,.05);
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,.05);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.1);
+}
+
 body {
   font-family: 'Open Sans', sans-serif, 'Jeju Gothic', serif;	
   -webkit-font-smoothing: antialiased;
