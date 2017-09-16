@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Class
+title: '[Python 문법] 클래스'
 category: Python
 author: Che1
 ---
