@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Python 문법] 모듈, 패키지'
+title: '[Python 문법] 모듈과 패키지 (Module and Package)'
 category: Python
 author: Che1
 ---

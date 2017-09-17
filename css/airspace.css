@@ -177,10 +177,19 @@ font header .navbar-default .navbar-nav li a:hover {
   line-height: 27px;
   margin: 0;
 }
-#intro .block p {
-  color: #7B7B7B;
+#intro .block .italic {
+  color: #868686;
   /* padding-top: 20px; */
 }
+#intro .block p {
+  color: #303030;
+  /* padding-top: 20px; */
+}
+#intro .block blockquote p {
+  color: #5E5E5E;
+  /* padding-top: 20px; */
+}
+
 /* #intro .block img {
   padding-left: 40px;
   width: 100%;
