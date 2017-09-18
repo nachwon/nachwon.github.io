@@ -20,9 +20,9 @@ author: Che1
 
 - - -
 
-#### 문자 클래스 `[]`
+#### `[]` 문자 클래스 
 
-정규표현식에서 대괄호 `[]` 는 **대괄호 안에 포함된 문자들과 매치**를 뜻한다.
+정규표현식에서 대괄호 `[]` 는 **대괄호 안에 포함된 문자들 중 하나와 매치**를 뜻한다.
 
 ```re
 [abc] # abc 중 하나와 매치
@@ -41,6 +41,19 @@ author: Che1
 [0-9] # 숫자
 ```
 
+> **※** 자주 사용하는 문자 클래스  
+>
+> `\d` : 숫자 [0-9]와 같다.
+> `\D` : 비숫자 [^0-9]와 같다.
+> `\w` : 숫자 + 문자 [a-zA-Z0-9]와 같다.
+> `\W` : 숫자 + 문자가 아닌 것 [^a-zA-Z0-9]와 같다.
+> `\s` : 공백 [ \t\n\r\f\v]와 같다.
+> `\S` : 비공백 [^ \t\n\r\f\v]와 같다.
+> `\b` : 단어 경계 (`\w`와 `\W`의 경계)
+> `\B` : 비단어 경계  
+
+
+
 `^`는 **반대**를 뜻한다.
 
 ```re
@@ -50,7 +63,7 @@ author: Che1
 
 - - -
 
-#### 모든 문자 `.`
+#### `.` 모든 문자 
 
 `.`은 줄바꿈 문자인 `\n` 을 제외한 **모든 문자**와 매치된다.
 ```re
@@ -63,6 +76,7 @@ abc # a와 b 사이에 문자가 없기 때문에 매치되지 않음
 ```
 
 **※** `[]` 사이에서 `.`을 사용할 경우 문자 원래의 의미인 마침표가 된다.
+
 ```re
 a[.]b
 ```
@@ -73,7 +87,7 @@ a0b # a와 b 사이에 마침표가 없으므로 매치 안됨
 
 - - -
 
-#### 반복 `*`
+#### `*` 반복 
 `*` 앞에 오는 문자가 **0개를 포함하여 몇 개가 오든** 모두 매치된다.
 ```re
 lo*l
@@ -88,7 +102,7 @@ loooooooooooobooooooool # 매치 안됨
 ```
 - - -
 
-#### 최소 한 번 이상 반복 `+`
+#### `+` 최소 한 번 이상 반복 
 
 `+` 앞에 있는 문자가 **최소 한 번 이상 반복**되어야 매치된다.
 
@@ -103,7 +117,7 @@ looooool # 매치
 
 - - -
 
-#### 없거나 하나 있거나 `?`
+#### `?` 없거나 하나 있거나 
 
 `?` 앞에 있는 문자가 **없거나 하나** 있을 때 매치된다.
 ```re
@@ -117,7 +131,7 @@ lool # 매치 안됨
 
 - - -
 
-#### 반복 제어 `{m, n}`
+#### `{m, n}` 반복 횟수 지정
 
  `{m, n}` 앞에 있는 문자가 **`m` 번에서 `n` 번까지 반복**될 때 매치된다.
 
@@ -139,7 +153,118 @@ lool # 매치 안됨
 - - -
 
 
-## `re`: Python 정규표현식 모듈
+#### `|` 여러 개의 표현식 중 하나
+
+여러 개의 정규표현식들을 `|` 로 구분하면 `or` 의 의미가 적용되어 정규표현식들 중 **어느 하나**와 매치된다.
+```re
+a|b|c # hello or hi or bye
+```
+```re
+a # 매치
+b # 매치
+c # 매치
+a b # 매치
+a b c # 매치
+d # 매치 안됨
+```
+
+- - -
+
+#### `^` 문자열의 제일 처음과 매치 
+
+문자열이 `^`의 뒤에 있는 문자로 **시작되면** 매치된다. 여러 줄의 문자열일 경우 **첫 줄**만 적용된다.
+(단, re.MULTILINE 옵션이 적용되면 각 줄의 첫 문자를 검사하여 매치된다.)
+
+```re
+^a
+```
+```re
+a # 매치
+aaa # 매치
+baaa # 매치 안됨
+1aaa # 매치 안됨
+```
+
+- - -
+
+#### `$` 문자열의 제일 마지막과 매치 
+
+문자열이 `$`의 앞에 있는 문자로 **끝나면** 매치된다. 여러 줄의 문자열일 경우 **마지막 줄**만 적용된다.
+(단, `re.MULTILINE` 옵션이 적용되면 각 줄의 마지막 문자를 검사하여 매치된다.)
+
+```re
+a$
+```
+```re
+a # 매치
+aa # 매치
+baa # 매치
+aabb # 매치안됨
+```
+
+- - -
+
+#### `\A` , `\Z`
+
+`\A` 는 `^` 와 동일하지만 `re.MULTILINE` 옵션을 무시하고 항상 문자열 첫 줄의 시작 문자를 검사한다.
+`\Z` 는 `$` 와 동일하지만 `re.MULTILINE` 옵션을 무시하고 항상 문자열 마지막 줄의 끝 문자를 검사한다.
+
+- - -
+
+#### 조건이 있는 표현식
+
+다음의 표현들은 조건을 가진 정규표현식이다.
+
+**`표현식1(?=표현식2)`**: 표현식1 뒤의 문자열이 표현식2와 **매치되면** 표현식1 매치.
+
+```re
+'hello(?=world)' # hello 뒤에 world가 있으면 hello를 매치
+```
+```re
+helloworld # hello 뒤에 world가 있기 때문에 hello가 매치됨
+byeworld # hello가 없기 때문에 매치 안됨
+helloJames # hello 뒤에 world가 없기 때문에 매치 안됨
+```
+
+**`표현식1(?!표현식2)`**: 표현식1 뒤의 문자열이 표현식2와 **매치되지 않으면** 표현식1 매치.
+
+```re
+'hello(?!world)' # hello 뒤에 world가 없으면 hello를 매치
+```
+```re
+helloworld # hello 뒤에 world가 있기 때문에 매치 안됨
+byeworld # hello가 없기 때문에 매치 안됨
+helloJames # hello 뒤에 world가 없기 때문에 hello가 매치됨
+```
+
+**`(?<=표현식1)표현식2`**: 표현식2 앞의 문자열이 표현식1과 **매치되면** 표현식2 매치.
+```re
+'(?<=hello)world' # world 앞에 hello가 있으면 world를 매치
+```
+```re
+helloworld # world 앞에 hello가 있기 때문에 world가 매치됨
+byeworld # world 앞에 hello가 없기 때문에 매치 안됨
+helloJames # world가 없기 때문에 매치 안됨
+```
+
+**`(?<!표현식1)표현식2`**: 표현식2 앞의 문자열이 표현식1과 **매치되지 않으면** 표현식2 매치.
+
+```re
+'(?<!hello)world' # world 앞에 hello가 없으면 world를 매치
+```
+```re
+helloworld # world 앞에 hello가 있기 때문에 매치 안됨
+byeworld # world 앞에 hello가 없기 때문에 world가 매치됨
+helloJames # world가 없기 때문에 매치 안됨
+```
+
+
+- - -
+
+
+
+
+## `re` Python 정규표현식 모듈
 
 Python 에서는 `re` 모듈을 통해 정규표현식을 사용한다.
 
@@ -147,14 +272,20 @@ Python 에서는 `re` 모듈을 통해 정규표현식을 사용한다.
 import re
 ```
 
-`re.compile()` 명령을 통해 정규표현식을 컴파일하여 변수에 저장한 후 사용한다.
+- - -
+
+#### `compile` 정규표현식 컴파일
+
+`re.compile()` 명령을 통해 정규표현식을 컴파일하여 변수에 저장한 후 사용할 수 있다.
+
 ```python
-p = re.compile('[a-z]')
+변수이름 = re.compile('정규표현식')
 ```
 
-변수 `p`의 타입을 확인해보면 `_sre.SRE_Pattern` 이라는 이름의 **클래스 객체**인 것을 볼 수 있다.
+정규표현식을 컴파일하여 변수에 할당한 후 타입을 확인해보면 `_sre.SRE_Pattern` 이라는 이름의 **클래스 객체**인 것을 볼 수 있다.
 
 ```python
+p = re.compile('[abc]')
 print(type(p))
 ```
 ```result
@@ -162,10 +293,13 @@ print(type(p))
 ```
 
 - - -
+
+
 ## 패턴 객체의 메서드
 
 패턴 객체는 매치를 검색할 수 있는 네 가지 메서드를 제공한다.  
 다음의 정규표현식으로 각각의 메서드를 비교해본다.
+
 ```python
 p = re.compile('[a-z]+')
 ```
@@ -189,10 +323,7 @@ p.match('aaa1aaa')
 <_sre.SRE_Match object; span=(0, 3), match='aaa'>
 ```
 
-검색의 결과로 `_sre.SRE_Match` 객체를 리턴하며 동시에 매치된 문자열의 인덱스값과 내용을 출력해준다.
-```python
-<_sre.SRE_Match object; span=(매치 시작지점 인덱스, 매치 끝지점 인덱스), match='매치된 문자열'>
-```
+검색의 결과로 `_sre.SRE_Match` 객체를 리턴한다.
 
 - - -
 #### `search`: 전체 문자열에서 첫 번째 매치 찾기
@@ -259,6 +390,262 @@ for i in f_iter:
 반복가능 객체는 각 매치의 결과인 매치 객체를 포함하고 있다.
 
 - - -
+
+## 매치 객체의 메서드
+
+패턴 객체의 메서드를 통해 리턴된 매치 객체는 아래와 같은 정보를 담고 있다.
+
+```python
+<_sre.SRE_Match object; span=(매치 시작지점 인덱스, 매치 끝지점 인덱스), match='매치된 문자열'>
+```
+
+매치 객체는 내부 정보에 접근할 수 있는 네 가지 메서드를 제공한다.
+
+|  메서드     |  |기능                  |
+|:----------|---|:--------------------|
+|**group()**|   | 매치된 문자열 출력      |
+|**start()**|   | 매치 시작지점 인덱스 출력 |
+|**end()**  |   | 매치 끝지점 인덱스 출력  |
+|**span()** |   | (start(), end())를 튜플로 출력|
+{: rules="groups"}
+
+- - -
+
+```py
+p = re.compile('[a-z]+')
+result = p.search('1aaa11aaa1')
+print(result)
+```
+
+위의 코드를 실행하면 아래의 매치 오브젝트를 얻는다.
+
+```py
+<_sre.SRE_Match object; span=(1, 4), match='aaa'>
+```
+
+매치 객체의 메서드를 실행한 결과는 아래와 같다.
+
+```py
+result.group()
+aaa
+
+result.start()
+1
+
+result.end()
+4
+
+result.span()
+(1, 4)
+```
+- - -
+
+## `()` 그룹화
+
+정규표현식을 `()` 안에 넣으면 그 부분만 그룹화된다. `groups` 메서드를 통해 그룹들을 튜플 형태로 리턴 할 수 있다.
+
+```py
+p = re.search('(hello)(world)', 'helloworld') # 정규표현식 hello와 world의 매치 결과를 각각 그룹화하였다
+grouping = p.groups()
+print(grouping)
+```
+```result
+('hello', 'world') # 각 그룹의 매치 결과가 튜플로 묶여서 리턴됨
+```
+
+`group` 메서드를 통해 각 그룹을 호출할 수 있다.
+
+```py
+p.group() # 인자를 넣지 않으면 전체 매치 결과 리턴
+helloworld
+
+p.group(0) # group()와 같다
+helloworld
+
+p.group(1) # 1번 그룹 매치 결과 리턴
+hello
+
+p.group(2) # 2번 그룹 매치 결과 리턴
+world
+```
+
+- - -
+
+## 컴파일 옵션
+
+정규표현식을 컴파일 할 때 옵션을 지정해줄 수 있다.
+
+```python
+변수이름 = re.compile('정규표현식', re.옵션)
+```
+
+- - -
+
+#### `DOTALL`, `S`
+
+`.`은 줄바꿈 문자 `\n` 를 제외한 모든 것과 매치된다. 컴파일 할 때 `re.DOTALL` 또는 `re.S` 옵션을 넣어주면 **`\n` 까지 매치**되도록 할 수 있다.
+
+```python
+p = re.compile('.') # 옵션 없음
+result = p.findall('1a\nbc')
+print(result)
+``` 
+```result
+['1', 'a', 'b', 'c'] # \n이 매치되지 않음
+```
+```python
+p = re.compile('.', re.DOTALL) # re.DOTALL 옵션 추가
+result = p.findall('1a\nbc')
+print(result)
+```
+```result
+['1', 'a', '\n', 'b', 'c'] # \n까지 매치
+```
+
+- - -
+
+#### `IGNORECASE`, `I`
+
+`re.IGNORECASE` 또는 `re.I` 옵션을 넣어주면 **대소문자**를 구별하지 않고 매치된다.
+
+```python
+p = re.compile('[a-z]') # 소문자만 매치
+result = p.findall('aAbB')
+print(result)
+```
+```result
+['a', 'b']
+```
+```python
+p = re.compile('[a-z]', re.IGNORECASE) # re.IGNORECASE 옵션 추가
+result = p.findall('aAbB')
+print(result)
+```
+```result
+['a', 'A', 'b', 'B'] # 소문자와 대문자 모두 매치
+```
+
+- - -
+
+#### `MULTILINE`, `M`
+`re.MULTILINE` 또는 `re.M` 옵션을 넣어주면 **여러 줄의 문자열**에 `^` 와 `$` 를 적용할 수 있다.
+
+```python
+text = '''student-1-name: James
+student-2-name: John
+student-3-name: Jordan
+teacher-1-name: Mike
+student-5-name: John'''
+```
+
+```python
+p = re.compile('^student.*') # 뒤따라 오는 문자 종류와 개수에 상관없이 student로 시작하는 문자열 매치 
+result = p.findall(text)
+print(result)
+```
+
+```result
+['student-1-name: James'] # 첫 줄만 매치되었다.
+```
+
+```python
+p = re.compile('^student.*', re.MULTILINE) # re.MULTILINE 옵션 추가
+result = p.findall(text)
+print(result)
+```
+```result
+['student-1-name: James', 'student-2-name: John', 'student-3-name: Jordan', 'student-5-name: John']
+# student로 시작하는 모든 줄이 매치되었다.
+```
+
+```python
+p = re.compile('.*John$') # John으로 끝나는 문자열 매치
+result = p.findall(text)
+print(result)
+```
+```result
+['student-5-name: John'] # 가장 마지막 줄만 매치되었다
+```
+```python
+p = re.compile('.*John$', re.MULTILINE) # re.MULTILINE 옵션 추가
+result = p.findall(text)
+print(result)
+```
+
+```result
+['student-2-name: John', 'student-5-name: John'] # John으로 끝나는 모든 줄이 매치됨
+```
+
+- - -
+
+#### `VERBOSE`, `X`
+
+`re.VERBOSE` 또는 `re.X` 옵션을 주면 좀 더 **가독성 좋게** 정규표현식을 작성할 수 있게 된다. 아래의 두 표현식은 동일하게 작동한다.
+
+```python
+p = re.compile(r'&[#](0[0-7]+|[0-9]+|x[0-9a-fA-F]+);')
+```
+```py
+p = re.compile(r"""
+ &[#]                # Start of a numeric entity reference
+ (
+     0[0-7]+         # Octal form
+   | [0-9]+          # Decimal form
+   | x[0-9a-fA-F]+   # Hexadecimal form
+ )
+ ;                   # Trailing semicolon
+""", re.VERBOSE) # re.VERBOSE 옵션 추가
+```
+`re.VERBOSE` 옵션을 추가하면 정규표현식에 컴파일시 자동으로 제거되는 **공백**과 **코멘트**를 추가할 수 있게된다.  
+(단, `[]` 안에 입력된 공백문자 제외)
+
+- - -
+
+
+
+
+## Python 정규표현식의 `\` 문제
+
+Python에서 정규표현식에 `\` 을 사용할 때 아래와 같은 문제가 발생할 수 있다.
+
+```python
+text = '\section'
+result = re.match('\\section', text)
+print(result)
+```
+```re
+None
+```
+
+`\s`는 공백문자를 뜻하는 메타문자로 인식되기 때문에 `\section` 이라는 문자열을 찾으려면 위해 이스케이프 코드 `\\`를 사용한 `\\section` 를 정규표현식에 입력해야한다.  
+그러나 Python 정규식 엔진에서 리터럴 규칙에 의해  `\\` 가 `\`로 해석되어 전달된다.  
+따라서 `\\` 를 문자 그대로 넘겨주어야하는데 이를 위해서는 `\\\\` 로 입력해야한다.  
+
+```python
+text = '\section'
+result = re.match('\\\\section', text)
+print(result)
+```
+```re
+<_sre.SRE_Match object; span=(0, 8), match='\\section'>
+```
+
+가독성이 심각하게 저하되는데 이를 방지하기 위해 다음과 같이 작성한다.
+
+```python
+text = '\section'
+result = re.match(r'\\section', text) # raw string을 뜻하는 r을 앞에 붙여준다.
+print(result)
+```
+```re
+<_sre.SRE_Match object; span=(0, 8), match='\\section'>
+```
+
+정규표현식 앞에 `r`은 항상 붙여주는 것이 권장된다.
+
+- - -
+
+
 
 ###### Reference
 
