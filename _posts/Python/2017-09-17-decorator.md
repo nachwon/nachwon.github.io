@@ -1,9 +1,9 @@
----
+<!-- ---
 layout: post
 title: [Python 문법] 데코레이터 (Decorator)
 category: Python
 author: Che1
----
+--- -->
 
 ## 데코레이터란?
 

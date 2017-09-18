@@ -1,9 +1,9 @@
----
+<!-- ---
 layout: post
 title: [Python] 일급 객체 (First-class citizen)
 category: Python
 author: Che1
----
+--- -->
 
 
 > 일급 객체란
