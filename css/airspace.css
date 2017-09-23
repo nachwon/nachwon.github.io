@@ -400,8 +400,8 @@ font header .navbar-default .navbar-nav li a:hover {
 --*/
 #global-header {
   background: url("../img/change-of-seasons.jpg") no-repeat;
-  background-position: 0px;
-  background-size: 1300px;
+  background-position: center;
+  background-size: 2000px;
   padding-top: 150px;
   padding-bottom: 107px;
   position: relative;
