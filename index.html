@@ -17,7 +17,9 @@ permalink: /
   </div>
 </section>
 <div class="recent-posts">:: Recent Posts ::</div>
-{% for post in site.posts %}
+
+<!-- This loops through the paginated posts -->
+{% for post in paginator.posts %}
 <div class="post-area">
   <a href="{{ post.url | prepend: site.baseurl }}" class="bold">{{ post.title }}</a>
   <p class="post-date">{{ post.date | date_to_long_string }} :: {{ post.category }}</p>
@@ -26,3 +28,23 @@ permalink: /
   </p>
 </div>
 {% endfor %}
+
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+  {% else %}
+    <span class="previous">Previous</span>
+  {% endif %}
+  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+  {% else %}
+    <span class="next ">Next</span>
+  {% endif %}
+</div>
+
+
+
+

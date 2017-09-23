@@ -475,17 +475,38 @@ world
 그룹에 이름을 지정하려면 다음과 같이 한다.
 
 ```py
-(?P<그룹이름>)
+(?P<그룹이름>표현식)
 ```
+
+표현식 `a`의 매치 결과는 그룹 `first`에 저장되고 표현식 `b`의 매치 결과는 그룹 `second`에 저장된다. 
+
+```py
+re.match('(?P<first>a)(?P<second>b)', 'ab')
+<_sre.SRE_Match object; span=(0, 2), match='ab'>
+```
+위의 표현식은 그룹화가 된다는 점을 제외하면 아래의 표현식과 동일한 결과를 돌려준다.
+
+```py
+re.match('ab', 'ab')
+<_sre.SRE_Match object; span=(0, 2), match='ab'>
+```
+
 - - -
 
-#### 그룹 호출하기
+#### 그룹 재참조
 
 그룹을 지정하면 같은 `\그룹번호` 와 같은 형식으로 표현식 내에서 다시 호출하여 사용할 수 있다.  
-이 때, 반드시 표현식 앞에 `r` 을 붙여야 제대로 작동한다. 이에 대해서는 아래에 자세히 설명한다.
+이 때, **반드시 표현식 앞에 `r` 을 붙여야 제대로 작동한다.** 이에 대해서는 아래에 자세히 설명한다.
 
 ```py
 re.match(r'(a)(b)\1\2', 'abab') # 표현식 'abab'와 동일하다
+<_sre.SRE_Match object; span=(0, 4), match='abab'> # abab가 모두 매치되었다
+```
+
+그룹의 이름을 지정하였을 경우 `(?P=그룹이름)` 의 형식으로 호출할 수 있다.
+
+```py
+re.match('(?P<first>a)(?P<second>b)(?P=first)(?P=second)', 'abab') # 표현식 'abab'와 동일하다
 <_sre.SRE_Match object; span=(0, 4), match='abab'> # abab가 모두 매치되었다
 ```
 
@@ -620,8 +641,6 @@ p = re.compile(r"""
 (단, `[]` 안에 입력된 공백문자 제외)
 
 - - -
-
-
 
 
 ## Python 정규표현식의 `\` 문제

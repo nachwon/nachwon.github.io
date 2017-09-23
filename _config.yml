@@ -35,3 +35,8 @@ descriptions:
 
   - cat: dummy
     desc: "Just some placeholder posts, lorem ipsum and the rest."
+
+
+plugins: [jekyll-paginate]
+paginate: 20
+paginate_path: "/blog/page:num/"
