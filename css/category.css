@@ -8,6 +8,31 @@ div.topic-box{
     float: left;
 }
 
+.django-topic-box {
+    height: 300px;
+    width: 1298px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    float: left;
+}
+
+div.django-text-box{
+    width: 1298px;
+    line-height: 300px;
+    font-weight: 100;
+    font-size: 120px;
+    letter-spacing: 6px;
+    text-align: center;
+    color: white;
+    position: absolute;
+}
+div.django-topic-box:hover > .hover-action{
+    transform: scale(1.15);
+    transition-duration: 0.5s;
+}
+
 div.topic-box:hover > .hover-action{
     transform: scale(1.15);
     transition-duration: 0.1s;
@@ -45,6 +70,12 @@ div.cat-4{
     background-image: url(../img/bg1.jpg);
     background-repeat: no-repeat;
     background-size: 700px;
+}
+div.cat-5{
+    background-image: url(../img/django.jpg);
+    background-repeat: no-repeat;
+    background-size: 1300px;
+    background-position: 0 -400px;
 }
 
 li.li-wrapper{

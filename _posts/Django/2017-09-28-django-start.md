@@ -1,7 +1,7 @@
 ---
 layout: post
-title: '[Django] 시작하기'
-category: Python
+title: '[Django Tutorial] Blog 만들기 - 1'
+category: Django
 author: Che1
 ---
 프로젝트 시작하기

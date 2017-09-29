@@ -886,7 +886,7 @@ ul.category-list{
 					category bar close
 -----------------------------------------------*/
 /*---------------------------------------------
-					category page start
+					category main page start
 -----------------------------------------------*/
 #subpage-header {
   padding-top: 150px;
@@ -897,6 +897,11 @@ ul.category-list{
 .cat-container ul{
   margin: 0 auto;
   width: 1298px;
+}
+.django{
+  background: url("../img/django.jpg") no-repeat;
+  background-position: 0 -400px;
+  background-size: cover;
 }
 .htmlcss{
   background: url("../img/html.jpg") no-repeat;

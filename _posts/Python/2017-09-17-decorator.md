@@ -313,14 +313,14 @@ My name is Chaewon!
 ```python
 def decorator2(func):  # 받은 func의 이름을 출력하면서 데코레이터가 적용되었다는 메세지를 출력 
     def wrapper2(*args, **kwargs):
-        print(f'{func.__name__} is decorated again by decorator2')
+        print(f'{func.__name__} has been decorated again by decorator2')
         return func(*args, **kwargs)
     return wrapper2
 
 
 def decorator1(func):  # 받은 func의 이름을 출력하면서 데코레이터가 '또' 적용되었다는 메세지를 출력 
     def wrapper1(*args, **kwargs):
-        print(f'{func.__name__} is decorated by decorator1')
+        print(f'{func.__name__} has been decorated by decorator1')
         return func(*args, **kwargs)
     return wrapper1
 
@@ -337,8 +337,8 @@ def function():  # 데코레이터를 적용할 함수
 function()
 ```
 ```re
-wrapper1 is decorated again by decorator2
-function is decorated by decorator1
+wrapper1 has been decorated again by decorator2
+function has been decorated by decorator1
 This is original function
 ```
 
@@ -352,7 +352,7 @@ from functools import wraps  # functools 모듈로부터 wraps 데코레이터�
 def decorator2(func):
     @wraps(func)  # wrapper2에 붙여준다.
     def wrapper2(*args, **kwargs):
-        print(f'{func.__name__} is decorated again by decorator2')
+        print(f'{func.__name__} has been decorated again by decorator2')
         return func(*args, **kwargs)
     return wrapper2
 
@@ -360,7 +360,7 @@ def decorator2(func):
 def decorator1(func):
     @wraps(func)  # wrapper1에 붙여준다.
     def wrapper1(*args, **kwargs):
-        print(f'{func.__name__} is decorated by decorator1')
+        print(f'{func.__name__} has been decorated by decorator1')
         return func(*args, **kwargs)
     return wrapper1
 
@@ -376,8 +376,8 @@ def function():
 function()
 ```
 ```re
-function is decorated again by decorator2
-function is decorated by decorator1
+function has been decorated again by decorator2
+function has been decorated by decorator1
 This is original function
 ```
 
@@ -508,11 +508,11 @@ print('')
 function.__closure__[0].cell_contents.__closure__[0].cell_contents()
 ```
 ```re
-function is decorated again by decorator2
-function is decorated by decorator1
+function has been decorated again by decorator2
+function has been decorated by decorator1
 This is original function
 
-function is decorated by decorator1
+function has been decorated by decorator1
 This is original function
 
 This is original function

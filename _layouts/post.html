@@ -6,7 +6,8 @@ layout: page
   <!-- category start --> 
   <div class="category">
     <ul class="category-list">
-      <a href="/HTMLCSS"><li>HTML/CSS</li></a>
+      <a href="/Django"><li>Django</li></a>
+      <a href="/HTML&CSS"><li>HTML/CSS</li></a>
       <a href="/Python"><li>Python</li></a>
       <a href="/Algorithm"><li>Algorithm</li></a>
       <a href="/ETC"><li>ETC</li></a>
@@ -37,5 +38,7 @@ layout: page
   </section>
 </div>
 <p class="center-text" style="padding: 30px;">
+  <a href="{{ site.baseurl }}/{{ page.category }}.html">Back to {{ page.category }}</a>
+  |
   <a href="{{ site.baseurl }}/index.html">Back to Home</a>
 </p>
