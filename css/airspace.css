@@ -56,9 +56,9 @@ p {
   line-height: 28px;
 }
 ul {
-  padding: 0;
+  padding-left: 40px;
   margin: 0;
-  list-style: none;
+  list-style: dotted;
 }
 li{
   margin: 10px 0;
@@ -820,6 +820,8 @@ footer {
   text-align: center;
   padding-top: 48px;
   padding-bottom: 55px;
+  display: inline-block;
+  width: 100%;
 }
 footer p {
   font-size: 13px;
@@ -863,6 +865,7 @@ div.category{
 ul.category-list{
   padding-left: 20px;
   color: black;
+  list-style: none;
 }
 
 .category-list li{
@@ -897,6 +900,7 @@ ul.category-list{
 .cat-container ul{
   margin: 0 auto;
   width: 1298px;
+  padding: 0;
 }
 .django{
   background: url("../img/django.jpg") no-repeat;
