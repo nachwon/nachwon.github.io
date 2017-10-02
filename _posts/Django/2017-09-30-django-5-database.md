@@ -56,7 +56,7 @@ Run 'python manage.py migrate' to apply them.
 
 #### Migrations
 
-`Migrations` 는 `Django`의 `모델` 에서 설정한 데이터베이스의 테이블 구조를 데이터베이스에 적용시기 위한 기록으로 볼 수 있다. 
+`Migrations` 는 `Django`의 `모델` 에서 설정한 데이터베이스의 테이블 구조를 데이터베이스에 적용시키기 위한 기록으로 볼 수 있다. 
 
 > #### Migrations
 > Migrations are Django’s way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema. They’re designed to be mostly automatic, but you’ll need to know when to make migrations, when to run them, and the common problems you might run into.  
@@ -178,7 +178,7 @@ myproject
 #### Migration 만들기
 
 데이터베이스에 변화가 생길 때에는 항상 어떤 변화가 생기는지에 대한 기록을 남겨야한다.  
-아래 명령을 입력하면 앱 폴더 안에 `migrations` 라는 폴더가 생기고, 그 안에 데이터베이스 변경사항에 대한 정보가 기록된다.
+아래 명령을 입력하면 앱 폴더 안의 `migrations` 폴더에 데이터베이스 변경사항에 대한 정보가 기록된다.
 
 ```
 ./manage.py makemigrations 앱이름
