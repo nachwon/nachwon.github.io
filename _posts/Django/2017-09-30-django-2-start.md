@@ -9,8 +9,9 @@ author: Che1
     <ol>
         <li><a href="/django/2017/09/28/django-1-setting.html">환경설정</a></li>
         <li><a href="/django/2017/09/30/django-2-start.html">프로젝트 시작</a></li>
-        <li><a href="/django/2017/09/30/django-3-database.html">데이터베이스</a></li>
-        <li></li>
+        <li><a href="/django/2017/09/30/django-3-app.html">앱</a></li>
+        <li><a href="/django/2017/09/30/django-4-model.html">모델</a></li>
+        <li><a href="/django/2017/09/30/django-5-database.html">데이터베이스</a></li>
     </ol>
 </div>
 
