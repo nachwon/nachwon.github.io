@@ -263,7 +263,7 @@ Quit the server with CONTROL-C.
 그럼 이제 `migrate` 를 실행하여 데이터베이스에 `Post` 모델이 사용할 테이블을 만들어주자.
 
 ```
-./manage.py migrate
+./manage.py migrate blog
 ```
 ```
 Operations to perform:
