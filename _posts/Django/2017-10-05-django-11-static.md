@@ -16,21 +16,21 @@ author: Che1
         <li><a href="/django/2017/10/04/django-7-view.html">뷰</a></li>
         <li><a href="/django/2017/10/04/django-8-template.html">템플릿</a></li>
         <li><a href="/django/2017/10/04/django-9-ORM.html">ORM</a></li>
-        <li><a href="/django/2017/10/04/django-10-temp-language.html">템플릿 언어</a></li>
-        <li><a href="/django/2017/10/04/django-11-static.html">스테틱 파일</a></li>
+        <li><a href="/django/2017/10/05/django-10-temp-language.html">템플릿 언어</a></li>
+        <li><a href="/django/2017/10/05/django-11-static.html">스테틱 파일</a></li>
     </ol>
 </div>
 
 - - -
 
-지난 포스트에서 블로그 메인 화면 템플릿을 만들었었다. 이제 이 템플릿을 `bootstrap` 으로 예쁘게 꾸며보도록 하자.  
+지난 포스트에서 블로그 메인 화면 템플릿을 만들었었다. 이제 이 템플릿을 `CSS` 로 예쁘게 꾸며보도록 하자.  
 
 - - -
 
 #### static 폴더 생성
 
-우선 [Bootstrap](http://bootstrapk.com/getting-started/#download)에서 부트스트랩 파일들을 다운로드 한다. 부트스트랩 폴더 안에는 미리 만들어져있는 `CSS`, `Javascript` 그리고 `fonts` 파일들이 들어있다. 
-`CSS` 와 같은 파일들을 `정적 (Static)` 파일이라고 한다. 템플릿을 `template` 폴더에 모두 모아놓고 관리했듯이, 정적 파일들을 `static` 이라는 폴더에 모아놓고 관리하도록 하자.  
+블로그를 꾸미기 위해서는 `CSS` 파일이 필요하다. `CSS` 와 같은 파일들을 `정적 (Static)` 파일이라고 한다. 템플릿을 `template` 폴더에 모두 모아놓고 관리했듯이, 정적 파일들을 `static` 이라는 폴더에 모아놓고 관리하도록 하자.  
+블로그 꾸미기에 부트스트랩을 사용할 것이다. 우선 [Bootstrap](http://bootstrapk.com/getting-started/#download)에서 부트스트랩 파일들을 다운로드 하자. 부트스트랩 폴더 안에는 미리 만들어져있는 `CSS`, `Javascript` 그리고 `fonts` 파일들이 들어있다.
 `myproject` 폴더 바로 아래에 `static` 이라는 폴더를 생성하고 그 안에 다운받은 부트스트랩 폴더를 넣어준다.
 
 ```

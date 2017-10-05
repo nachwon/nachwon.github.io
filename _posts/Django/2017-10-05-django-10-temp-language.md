@@ -60,7 +60,7 @@ author: Che1
 ```html
 <body>
     <ul>
-        <li>Post_data</li> <-- 이 부분을 자동화
+        <li>Post_data</li>  # 이 부분을 자동화
     </ul>
 </body>
 ```
@@ -70,8 +70,8 @@ author: Che1
 
 #### 템플릿에 데이터 전달하기
 
-템플릿에 데이터를 전달하는 방법을 먼저 알아보자.  
-이제 우리는 블로그 메인 화면에 나타날 `Post` 들의 목록을 만들어 줄 것이므로 `views.py` 를 열어 `helloworld` 함수를 아래와 같이 바꿔주자.
+템플릿에 데이터를 적용시켜 표시하려면 먼저 데이터를 전달하는 방법을 알아야한다. 이 작업은 뷰에서 이루어진다.   
+일단 블로그 메인 화면에 나타날 `Post` 들의 목록을 만들어 줄 것이므로 `views.py` 를 열어 `helloworld` 함수를 `post_list` 라는 함수로 바꿔주자.
 
 ```py
 def post_list(request):
@@ -128,7 +128,7 @@ return render(request, 'blog/post_list.html', context)
 #### 템플릿 언어
 
 이제 템플릿에 데이터를 전달까지 했으니 그 데이터를 호출해서 `html` 파일에 적용시키기만 하면 된다. 그런데 데이터를 가져오려면 딕셔너리 데이터의 키를 호출해야하는데 `html` 에서 무슨 수로 키를 호출할 수 있을까?  
-Python을 알아들을 수 없는 `html` 을 위해 템플릿 언어라는 것을 사용한다. `Django` 에는 내장된 템플릿 언어가 기본적으로 적용되어 있으며, 템플릿 언어의 지정은 `settings.py` 의 `TEMPLATES` 딕셔너리에서 `BACKEND` 키의 값을 수정하여 해줄 수 있다.
+Python 문법을 알아들을 수 없는 `html` 을 위해 템플릿 언어라는 것을 사용한다. `Django` 에는 내장된 템플릿 언어가 기본적으로 적용되어 있으며, 템플릿 언어의 지정은 `settings.py` 의 `TEMPLATES` 딕셔너리에서 `BACKEND` 키의 값을 수정하여 해줄 수 있다.
 
 ```python
 TEMPLATES = [
@@ -252,6 +252,10 @@ for post in posts:
 
 <img width="950px" src="/img/django_tutorial/post_content.png">
 
+- - -
+
+##### 필터 적용하기
+
 글 내용까지 보이게 만들긴 했는데 글 전체가 다 보이니 너무 정신이 없다. 몇 개의 단어까지만 보여주도록 설정해보자.
 ```html
 <body>
@@ -270,6 +274,10 @@ for post in posts:
 변수 옆에 `|` 를 붙여서 필터를 적용할 수 있다. 여기서는 글 내용에 `truncatewords` 라는 단어 수 필터를 적용하여 30 단어까지만 보여주도록 만들어 주었다. 필터의 종류는 [Django 공식문서](https://docs.djangoproject.com/en/1.11/ref/templates/builtins/#ref-templates-builtins-filters1) 에서 확인할 수 있다.
 
 <img width="950px" src="/img/django_tutorial/truncate.png">
+
+- - -
+
+##### if 조건문 
 
 이제 어느 정도 깔끔해진 것 같다. 이제 글 게시 날짜도 표시해보자.
 
@@ -331,7 +339,7 @@ for post in posts:
 
 ```py
 def post_list(request):
-    posts = Post.objects.filter(published_date__isnull=False)  # 수정된 부분
+    posts = Post.objects.filter(published_date__isnull=False).order_by('-created_date')  # 수정된 부분
     context = {
         'posts': posts,
     }
@@ -339,11 +347,14 @@ def post_list(request):
 ```
 
 기존에는 `Post.objects.all()` 을 통해 모든 `Post` 객체들의 쿼리셋을 `posts` 로 템플릿에 전달했지만, 이번에는 `.filter(published_date__isnull=False)` 로 필터를 걸어서 `published_date` 가 빈 값이 아닌 `Post` 객체들의 쿼리셋을 가져오도록 바꿔준 것이다.  
+아 그리고 바꿔주는 김에 `order_by('-created_date')` 를 추가해서 최신 글이 가장 위로 오도록 정렬해주었다.  
 이 두 방법의 결과는 아래와 같이 동일하다.
 
 <img width="950px" src="/img/django_tutorial/published_date_none.png">
 
 위 두 가지 방법 중 더 좋은 방법은 아무래도 뷰를 통해 쿼리셋 자체를 바꿔주는 방법일 것이다. 더 적은 쿼리셋을 가져오게 되므로 처리속도가 더 빠르지 않을까? 흠... 이 부분에 대해서는 데이터베이스 쿼리에 대한 좀 더 자세한 이해가 필요할 것 같다. 처리속도를 고려하지 않고서도 데이터의 가공은 뷰의 역할이므로 가능한 모든 데이터의 가공은 뷰에서 처리해주는 것이 구조상으로도 더 나아보인다.  
+
+- - -
 
 아무튼 이제 블로그의 메인화면이 구성되었다. 이제 좀 더 알록달록하고 예쁘게 꾸며보도록 하자.
 - - -
