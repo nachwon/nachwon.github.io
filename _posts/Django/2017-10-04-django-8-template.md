@@ -4,19 +4,8 @@ title: '[Django Tutorial] Blog 만들기 - 8. 템플릿'
 category: Django
 author: Che1
 ---
-<div class="navigation-menu">
-    <h5>[Django Tutorial] Blog 만들기</h5>
-    <ol>
-        <li><a href="/django/2017/09/28/django-1-setting.html">환경설정</a></li>
-        <li><a href="/django/2017/09/30/django-2-start.html">프로젝트 시작</a></li>
-        <li><a href="/django/2017/09/30/django-3-app.html">앱</a></li>
-        <li><a href="/django/2017/09/30/django-4-model.html">모델</a></li>
-        <li><a href="/django/2017/09/30/django-5-database.html">데이터베이스</a></li>
-        <li><a href="/django/2017/10/03/django-6-admin.html">관리자 페이지</a></li>
-        <li><a href="/django/2017/10/04/django-7-view.html">뷰</a></li>
-        <li><a href="/django/2017/10/04/django-8-template.html">템플릿</a></li>
-    </ol>
-</div>
+
+{% include tutorial-toc-base.html %}
 
 - - -
 
@@ -176,8 +165,8 @@ def helloworld(request):
 
 - - -
 
-이제 뷰를 통해 템플릿을 출력하는 것까지 해보았다. 하지만 아직까지 우리가 데이터베이스에 저장해둔 글들을 직접 사용한 결과물을 출력하는 것은 구현하지 않았다.  
-위와 같이 하나의 정적인 템플릿을 만들어 출력하는 방법을 사용해서 데이터를 출력하려면, 글의 수 만큼의 템플릿을 하나 하나 만들어주어야 할 것이다. 다음 포스트에서는 그런 수고를 하지않기 위해 동적으로 필요한 데이터만 바꿔서 여러 템플릿을 생성하기 위해 필요한 것들에 대해 알아볼 것이다.
+이제 뷰를 통해 템플릿을 출력하는 것까지 해보았다. 하지만 아직까지 우리가 데이터베이스에 저장해둔 데이터들을 직접 사용한 결과물을 출력하는 것은 구현하지 않았다.  
+다음 포스트에서는 템플릿에 데이터를 불러와서 동적으로 `html` 파일을 생성하기 위해 필요한 것들에 대해 알아볼 것이다.
 
 - - -
 

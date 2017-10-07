@@ -4,21 +4,8 @@ title: '[Django Tutorial] Blog 만들기 - 10. 템플릿 언어'
 category: Django
 author: Che1
 ---
-<div class="navigation-menu">
-    <h5>[Django Tutorial] Blog 만들기</h5>
-    <ol>
-        <li><a href="/django/2017/09/28/django-1-setting.html">환경설정</a></li>
-        <li><a href="/django/2017/09/30/django-2-start.html">프로젝트 시작</a></li>
-        <li><a href="/django/2017/09/30/django-3-app.html">앱</a></li>
-        <li><a href="/django/2017/09/30/django-4-model.html">모델</a></li>
-        <li><a href="/django/2017/09/30/django-5-database.html">데이터베이스</a></li>
-        <li><a href="/django/2017/10/03/django-6-admin.html">관리자 페이지</a></li>
-        <li><a href="/django/2017/10/04/django-7-view.html">뷰</a></li>
-        <li><a href="/django/2017/10/04/django-8-template.html">템플릿</a></li>
-        <li><a href="/django/2017/10/04/django-9-ORM.html">ORM</a></li>
-        <li><a href="/django/2017/10/04/django-10-temp-language.html">템플릿 언어</a></li>
-    </ol>
-</div>
+
+{% include tutorial-toc-base.html %}
 
 - - -
 
@@ -56,7 +43,7 @@ author: Che1
 </body>
 ```
 
-매우 번거로울 것이다. 그래서 중복되는 작업을 자동화해두면 좋을 것 같다.
+이렇게 하면 매우 번거로울 것이다. 그래서 중복되는 작업을 자동화해두면 좋을 것 같다.
 ```html
 <body>
     <ul>
@@ -64,7 +51,7 @@ author: Che1
     </ul>
 </body>
 ```
-`Post` 데이터가 표시될 부분은 항상 일정하므로 데이터베이스에서 데이터만 가져와서 `Post` 데이터가 표시될 부분에 데이터만 바꿔서 여러 개의 태그를 자동적으로 생성해주면 일일히 새 글을 추가해줄 필요가 없을 것 같다. 이것을 가능하게 해주는 것이 `템플릿 언어` 이다.
+`Post` 데이터가 표시될 부분은 항상 일정하므로 데이터베이스에서 데이터만 가져와서 `Post` 데이터가 표시될 부분에 데이터만 바꿔서 여러 개의 태그를 자동적으로 생성해주면 일일히 새 태그를 추가해줄 필요가 없을 것 같다. 이것을 가능하게 해주는 것이 `템플릿 언어` 이다.
 
 - - -
 

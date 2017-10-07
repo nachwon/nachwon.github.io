@@ -4,22 +4,8 @@ title: '[Django Tutorial] Blog 만들기 - 11. 스테틱 파일'
 category: Django
 author: Che1
 ---
-<div class="navigation-menu">
-    <h5>[Django Tutorial] Blog 만들기</h5>
-    <ol>
-        <li><a href="/django/2017/09/28/django-1-setting.html">환경설정</a></li>
-        <li><a href="/django/2017/09/30/django-2-start.html">프로젝트 시작</a></li>
-        <li><a href="/django/2017/09/30/django-3-app.html">앱</a></li>
-        <li><a href="/django/2017/09/30/django-4-model.html">모델</a></li>
-        <li><a href="/django/2017/09/30/django-5-database.html">데이터베이스</a></li>
-        <li><a href="/django/2017/10/03/django-6-admin.html">관리자 페이지</a></li>
-        <li><a href="/django/2017/10/04/django-7-view.html">뷰</a></li>
-        <li><a href="/django/2017/10/04/django-8-template.html">템플릿</a></li>
-        <li><a href="/django/2017/10/04/django-9-ORM.html">ORM</a></li>
-        <li><a href="/django/2017/10/05/django-10-temp-language.html">템플릿 언어</a></li>
-        <li><a href="/django/2017/10/05/django-11-static.html">스테틱 파일</a></li>
-    </ol>
-</div>
+
+{% include tutorial-toc-base.html %}
 
 - - -
 
@@ -254,8 +240,15 @@ a:hover {
 ```
 
 - - -
+#### CSS 파일이 적용이 안될 때
 
-이어지는 포스트에서는 블로그에 글 하나 보기 페이지와 글 추가, 삭제 등 여러가지 기능들을 추가해볼 것이다.
+CSS 파일을 수정하던 중 수정한 파일이 `runserver` 에 업데이트 되지 않는 현상이 발생했다.  
+심지어 `blog.css` 파일을 없애도 아무 에러없이 멀쩡히 작동하는 것을 볼 수 있었다.  
+CSS 파일을 캐시에 저장해두고 쓰는 바람에 생기는 문제인 것 같다. 이런 경우 크롬에서 `ctrl` + `shift` + `del` 을 눌러 캐시를 삭제해주면 다시 정상적으로 CSS 파일이 작동한다.
+
+- - -
+
+이어지는 포스트에서는 블로그에 글 자세히 보기 페이지와 글 추가, 삭제 등 여러가지 기능들을 추가해볼 것이다.
 
 - - -
 
