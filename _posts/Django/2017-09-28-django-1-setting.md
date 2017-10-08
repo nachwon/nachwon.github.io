@@ -45,11 +45,16 @@ pyenv local django_assignment
 
 #### 패키지 설치
 `Django` 를 포함하여 프로젝트에 필요한 패키지들을 설치한다. 사실 지금 당장은 `Django` 만 설치하면 된다.
+
+- - -
 ##### django 설치
 아래와 같이 입력하여 `Django` 를 설치한다.
 ```
 pip install django
 ```
+
+- - -
+
 ##### 패키지 세팅 사항 저장하기
 필요한 패키지를 설치한 후 아래와 같이 설치된 패키지 목록을 확인할 수 있다.
 ```
@@ -82,6 +87,7 @@ python-version: 3.6.2
 #### git 설정
 프로젝트 진행사항을 관리하기 위해서 `git` 을 활용한다.
 
+- - -
 ##### 로컬저장소 초기화
 프로젝트 폴더에서 아래와 같이 입력하여 `git` 로컬 저장소를 초기화 한다.
 ```
@@ -91,12 +97,14 @@ git init
 ```re
 (django_assignment) ~/Projects/Django/djangogirls_assignment (master) >
 ```
+- - -
 ##### 리모트저장소 설정
 
 `github` 에서 저장소를 하나 만든 뒤, `git remote add 리모트저장소이름 저장소주소.git` 을 입력하여 리모트저장소와 연결해준다.
 ```
 git remote add origin https://github.com/nachwon/Djangogirls_assignment.git
 ```
+- - -
 ##### .gitignore 파일 만들기
 `staging area` 에 파일을 추가할 때 추가되지 말아야 할 파일들을 미리 지정해주는 `.gitignore` 파일을 만들어 준다.
 ```
@@ -121,6 +129,8 @@ vim .gitignore
 README.md
 requirements.txt
 ```
+
+- - -
 ##### github 저장소에 push하기
 이 상태로 `commit` 을 해준다.
 ```

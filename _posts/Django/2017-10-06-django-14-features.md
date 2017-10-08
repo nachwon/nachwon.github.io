@@ -577,6 +577,8 @@ url(r'^post/add/$', post_add, name='post_add'),
 
 새 글을 추가하는 기능을 넣었으니 이제 삭제하는 기능도 넣어보자.
 
+- - -
+
 #### 글 삭제 버튼 추가
 
 `post_detail.html` 을 열고 아래와 같이 추가해주자.
@@ -627,6 +629,7 @@ url(r'^post/add/$', post_add, name='post_add'),
 </div>
 {{ "{% endblock " }}%}
 ```
+
 
 이 안의 내용은 자유롭게 작성해주면 된다.
 
@@ -689,9 +692,12 @@ def post_delete(request, pk):
 
 이제 `runserver` 를 실행하고 아무 글이나 들어가서 `Post Delete` 버튼을 눌러보자.
 
-<img width="950px" src="/img/django_tutorial/delete_button.png">
+<img width="950px" src="/img/django_tutorial/post_delete.png">
 
 글이 잘 삭제되는 것을 볼 수 있다.
+
+
+<a href="#menu">위로</a>
 
 - - -
 ###### Reference
@@ -702,4 +708,3 @@ Django 공식문서: [https://docs.djangoproject.com/en/1.11/topics/http/shortcu
 paulaner80 블로그: [http://paulaner80.tistory.com/entry/%ED%81%AC%EB%A1%AC%EC%97%90%EC%84%9C-request-response-header-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0](http://paulaner80.tistory.com/entry/%ED%81%AC%EB%A1%AC%EC%97%90%EC%84%9C-request-response-header-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0)  
 egocube : [http://www.egocube.pe.kr/Translation/Content/asp-net-web-api/201402030001](http://www.egocube.pe.kr/Translation/Content/asp-net-web-api/201402030001)
 
-<a href="#menu">위로</a>
