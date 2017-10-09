@@ -150,7 +150,7 @@ published_date = models.DateTimeField(blank=True, null=True)
 ```
 `models.DateTimeField`는 날짜와 시간 필드를 뜻한다. Python의 `datetime.date` 의 인스턴스로 생성되며 몇 가지 옵션을 인자로 전달할 수 있다.  
 `auto_now_add` 옵션은 객체가 처음 생성될 때의 시간을 자동으로 저장하는 옵션이다. 이 옵션은 `settings.py` 에 설정되어 있는 타임존의 시간을 따른다.  
-`null` 은 비어있는 값을 데이터베이스에 `NULL` 값으로 저장할지에 대한 옵션이다.
+`null` 은 비어있는 값을 데이터베이스에 `NULL` 으로 저장할지에 대한 옵션이다.
 
 - - -
 
@@ -161,5 +161,7 @@ published_date = models.DateTimeField(blank=True, null=True)
 ###### Reference
 이한영 강사님 강의자료  
 Djangogirls: [https://tutorial.djangogirls.org/ko/](https://tutorial.djangogirls.org/ko/)  
+Django 공식문서: [https://docs.djangoproject.com/en/1.11/topics/db/models/](https://docs.djangoproject.com/en/1.11/topics/db/models/)  
+
 예제로 배우는 Python 프로그래밍: [http://pythonstudy.xyz/python/article/308-Django-%EB%AA%A8%EB%8D%B8-Model](http://pythonstudy.xyz/python/article/308-Django-%EB%AA%A8%EB%8D%B8-Model)  
 

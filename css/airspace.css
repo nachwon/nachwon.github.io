@@ -962,3 +962,21 @@ ul.category-list{
   letter-spacing: 1px;
   word-spacing: 3px;
 }
+
+/*---------------------------------------------
+					category bar close
+-----------------------------------------------*/
+/*---------------------------------------------
+					post page bottom navi-button
+-----------------------------------------------*/
+.navigation-button {
+  margin: 0 10%;
+}
+
+.previous {
+  float: left;
+}
+
+.next {
+  float: right;
+}

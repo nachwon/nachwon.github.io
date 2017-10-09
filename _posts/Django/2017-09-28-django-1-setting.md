@@ -152,4 +152,4 @@ git push origin master
 ###### Reference
 
 이한영 강사님 강의자료  
-[Djangogirls_Tutorial](https://tutorial.djangogirls.org/ko/)
+Djangogirls: [https://tutorial.djangogirls.org/ko/](https://tutorial.djangogirls.org/ko/)

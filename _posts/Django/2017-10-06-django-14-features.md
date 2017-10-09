@@ -274,7 +274,7 @@ http://localhost:8000/post/add/
 ```
 
 이 부분은 글 등록 페이지의 `URL` 주소이다.  
-그 다음 따라오는 `?` 는 이 뒷부분이 `질의문자 (Query string)` 라는 것을 뜻한다. 질의문자에 대한 설명은 [여기](https://en.wikipedia.org/wiki/Query_string#Structure)를 참조하도록 하고 넘어가겠다. 질의문자는 `URL` 에 쓰여있지만 다른 역할을 하기 때문에 원래 `URL` 주소에 영향을 주지는 않는다.
+그 다음 따라오는 `?` 는 이 뒷부분이 `질의문자 (Query string)` 라는 것을 뜻한다. 질의문자에 대한 설명은 [여기](https://en.wikipedia.org/wiki/Query_string#Structure)를 참조하도록 하고 넘어가겠다. `Django` 의 `url` 객체가 가지는 정규표현식은 질의문자 부분과 매칭되지 않는다.
 
 ```re
 csrfmiddlewaretoken=YsdYAglbqtgrRwAg0wsSm8hB2ALlpgz87XwwUaxzG6HtZIJkhcO1iobqagq48GnL
