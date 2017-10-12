@@ -3,6 +3,10 @@ layout: post
 title: '[Model] 관계'
 category: Django
 author: Che1
+---layout: post
+title: '[Model] 관계'
+category: Django
+author: Che1
 ---
 
 <span id="list"></span>
@@ -19,10 +23,10 @@ author: Che1
 <span id='mto'></span>
 ### 다대일 관계 (Many-to-one relationships)
 
-한 테이블에 있는 하나 이상의 레코드가 다른 테이블에 있는 하나의 레코드를 참조할 때 이러한 관계를 **다대일 관계**라고 한다. 
+한 테이블에 있는 하나 이상의 레코드가 다른 테이블에 있는 하나의 레코드를 참조할 때, 두 모델간의 관계를 **다대일 관계**라고 한다. 
 
 - - -
-
+<span id='order-customer'></span>
 ##### Customers 테이블
 
 <table class="table table-striped table-bordered">
@@ -182,7 +186,7 @@ class Manufacturer(models.Model):
 <span id='mtm'></span>
 ### 다대다 관계 (Many-to-many relationship)
 
-한 테이블의 하나 이상의 레코드가 다른 테이블의 하나 이상의 레코드를 참조할 때, 이러한 관계를 `다대다 관계` 라고 한다.  
+한 테이블의 하나 이상의 레코드가 다른 테이블의 하나 이상의 레코드를 참조할 때, 두 모델간의 관계를 `다대다 관계` 라고 한다.  
 다대다 관계를 표현할 때는, 두 테이블 사이의 관계를 표현하기 위해 참조 정보를 담은 새로운 테이블을 생성하게된다.  
 아래는 다대다 관계를 표현한 예제이다.
 
@@ -265,7 +269,7 @@ class Manufacturer(models.Model):
     </tr>
 </table>
 
-피자는 여러개의 토핑을 가질 수 있고, 토핑도 여러개의 피자에 올라갈 수 있다.  
+피자는 여러개의 토핑을 가질 수 있고, 토핑도 여러개의 피자에 올라갈 수 있기 때문에 서로 다대다 관계를 가지고 있다.  
 `Pizza_Topping` 테이블은 두 테이블 간의 다대다 관계를 나타내주는 **중개 모델 (intermediary model)** 이다.  
 `Pizza_Topping` 테이블은 자동 생성되며, `Pizza` 테이블과 `Topping` 테이블의 `ID` 필드를 각각 참조하는 `Pizza_ID` 와 `Topping_ID` 를 외래키 필드로 가지고 있다.
 
@@ -600,13 +604,16 @@ model.Membership.inviter: (fields.E304) Reverse accessor for 'Membership.inviter
 
 `Membership` 모델의 `artist` 필드의 `Reverse accessor` 가 `Membership` 모델의 `inviter` 필드의 `Reverse accessor` 와 충돌이 난다는 내용이다. `Reverse accessor` 가 무엇일까?
 
-외래키 필드를 가진 소스모델에 연결된 타겟모델의 인스턴스들은 자신과 연결된 소스모델의 인스턴스들을 가져올 수 있는 `Manager` 를 가지게 된다. 기본적으로 이 `Manager` 는 `FOO_set` 의 형태로 이름지어지며, 여기서 `FOO` 는 소문자로 변환된 소스모델 이름이다. `Reverse accessor` 는 관계를 역참조할 수 있는 이 `Manager` 를 가리킨다.  
+외래키 필드를 가진 소스모델에 연결된 타겟모델의 인스턴스들은 자신과 연결된 소스모델의 인스턴스들을 가져올 수 있는 `Manager` 를 가지게 된다.  
+기본적으로 이 `Manager` 는 `FOO_set` 의 형태로 이름지어지며, 여기서 `FOO` 는 소문자로 변환된 소스모델 이름(예를 들어, 소스모델 이름이 `Order` 라면, `order_set`)이다.  
+`Reverse accessor` 는 관계를 역참조할 수 있는 이 `Manager` 를 가리킨다.  
 
 - - -
 
-##### 일대다 관계의 역참조
+##### 다대일 관계의 역참조
 
-위의 `Orders, Customers 테이블` 을 예로 들면, `Customer` 모델은 `Order` 모델의 타겟모델이다. 소스모델의 인스턴스에서 타겟모델의 인스턴스를 가져오려면 아래와 같이 필드이름을 붙여준다.
+위의 `Orders, Customers 테이블`[[테이블 보기]](#order-customer) 을 예로 들면, `Customer` 모델은 `Order` 모델의 타겟모델이다.  
+소스모델의 인스턴스에서 타겟모델의 인스턴스를 가져오려면 아래와 같이 관계가 정의된 속성의 이름을 붙여준다.
 
 ```py
 o = Order.objects.get(id=1)
@@ -709,6 +716,170 @@ a.membership_inviter_set.all()  # 해당 아티스트의 기본키값을 inviter
 
 <span id='oto'></span>
 ### 일대일 관계 (One-to-one relationship)
+
+한 테이블의 하나의 레코드가 다른 테이블의 단 하나의 레코드만을 참조할 때, 이 두 모델간의 관계를 `일대일 관계` 라고 한다. 일대일 관계는 어떤 테이블을 구조적으로 **확장**시킬 때 가장 유용하게 쓰인다.  
+다음의 예를 보자.
+
+- - -
+
+##### Place 테이블
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+    </tr>
+    <tr>
+        <td>손중헌 논메기매운탕</td>
+        <td>대구시 달성군 다사읍</td>
+    </tr>
+    <tr>
+        <td>논골집 논현점</td>
+        <td>서울특별시 강남구 논현동</td>
+    </tr>
+    <tr>
+        <td>우리집</td>
+        <td>경기도 안산시 상록구</td>
+    </tr>
+</table>
+
+##### Restaurant 테이블
+
+<table class="table table-striped table-bordered">
+    <tr>
+        <th>Place_ID</th>
+        <th>Menu</th>
+        <th>Rating</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>메기매운탕</td>
+        <td>9.5</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>갈비탕</td>
+        <td>8</td>
+    </tr>
+</table>
+
+`Restaurant` 테이블의 각 레코드는 `Place` 테이블의 한 레코드만을 참조한다.  
+`Restaurant` 테이블은 `Place` 테이블의 레코드들 중 식당인 레코드에 `Menu` 와 `Rating` 이라는 추가적인 정보를 제공하여 테이블을 확장시키고 있다고 볼 수 있다.  
+다시 말해, 식당의 정보를 담은 테이블을 만들려고 할 때, 완전히 별개의 테이블에 장소 이름과, 주소를 또다시 반복하여 입력할 필요없이, 기존에 존재하는 장소들 중 식당인 장소에 추가 정보를 덧붙여 식당 정보 테이블을 만드는 것이다.  
+아래는 위 관계를 하나의 테이블에 표시한 것이다.
+
+##### Place-Restaurant 테이블
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Menu</th>
+        <th>Rating</th>
+    </tr>
+    <tr>
+        <td>손중헌 논메기매운탕</td>
+        <td>대구시 달성군 다사읍</td>
+        <td>메기매운탕</td>
+        <td>9.5</td>
+    </tr>
+    <tr>
+        <td>논골집 논현점</td>
+        <td>서울특별시 강남구 논현동</td>
+        <td>갈비탕</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>우리집</td>
+        <td>경기도 안산시 상록구</td>
+        <td><i>null</i></td>
+        <td><i>null</i></td>
+    </tr>
+</table>
+
+- - -
+
+#### OneToOneField
+
+`Django` 에서 모델에 일대일 관계 필드를 추가하려면 `OneToOneField` 를 사용한다.  
+`OneToOneField` 는 `ForignKey` 필드에 `unique=True` 옵션을 준 것과 동일하게 동작한다. 즉, 외래키 필드의 값은 반드시 고유한 값이어야 한다.  
+재귀적 관계와 아직 정의되지 않은 관계 또한 `ForignKey` 필드와 동일한 방식으로 설정한다.
+
+```py
+class 모델이름(models.Model):
+    필드이름 = models.OneToOneField(관계대상모델)
+```
+
+```py
+class Place(models.Model):
+    name = models.CharField(max_length=30)
+    address = models.CharField(max_length=100)
+
+
+class Restaurant(models.Model):
+    place = models.OneToOneField(Place)
+    menu = models.CharField(max_length=50, blank=True, null=True)
+    rating = models.FloatField(default=0, blank=True, null=True)
+```
+
+- - -
+
+##### 일대일 관계의 역참조
+
+일대일 관계에서 소스모델 (`Restaurant`) 이 타겟모델 (`Place`) 을 참조할 때는, 다대일 관계의 경우와 같이 관계가 정의된 속성이름을 사용한다.
+
+```py
+r = Restaurant.objects.first()
+r.place
+```
+
+이 경우, 다대일 관계와 동일하게 하나의 모델 객체를 돌려받는다.
+
+반대로 타겟모델에서 소스모델을 역참조할 때는, `모델이름소문자_set` 을 사용했던 다대일 관계의 경우와 달리 `소문자소스모델이름` 를 사용한다.
+
+```py
+p = Place.objects.first()
+p.restaurant
+```
+
+이 경우에도 마찬가지로 하나의 모델 객체를 돌려받는다. 하나의 레코드는 단 하나의 레코드를 참조하기 때문이다.
+
+- - -
+
+##### 참조-역참조 요약
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th></th>
+        <th>OneToOneField</th>
+        <th>ManyToOneField</th>
+        <th>ManyToManyField</th>
+    </tr>
+    <tr>
+        <td rowspan="2" style="vertical-align: middle; text-align:center;"><b>참조<br>(소스 > 타겟)</b></td>
+        <td>source.attname</td>
+        <td>source.attname</td>
+        <td>source.attname</td>
+    </tr>
+    <tr>
+        <td>단일 객체 리턴</td>
+        <td>단일 객체 리턴</td>
+        <td>다수의 객체 리턴</td>
+    </tr>
+    <tr>
+        <td rowspan="2" style="vertical-align: middle; text-align:center;"><b>역참조<br>(타겟 > 소스)</b></td>
+        <td>target.lowersource</td>
+        <td>target.lowersource_set</td>
+        <td>target.lowersource_set</td>
+    </tr>
+    <tr>
+        <td>단일 객체 리턴</td>
+        <td>다수의 객체 리턴</td>
+        <td>다수의 객체 리턴</td>
+    </tr>
+</table>
+
+[위로](#list)
 
 - - -
 
