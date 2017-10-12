@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Django Tutorial] Blog 만들기 - 4. 모델'
+title: '[Django Tutorial] Blog 만들기 - 4. 모델 생성'
 category: Django
 author: Che1
 ---
