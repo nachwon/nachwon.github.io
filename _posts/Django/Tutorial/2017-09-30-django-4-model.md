@@ -130,7 +130,7 @@ title = models.CharField(max_length=100)
 ```
 
 `models.CharField` 는 글자 수가 제한된 텍스트 필드를 뜻한다. 글 제목과 같이 짧은 문자열 정보를 저장할 때 사용한다.
-제한할 최대 글자 수인 `max_length` 를 인자로 받는다. `max_length=100`은 100자까지 허용하도록 설정한 것이다.
+필수적으로 제한할 최대 글자 수인 `max_length` 를 인자로 받는다. `max_length=100`은 100자까지 허용하도록 설정한 것이다.
 
 - - -
 - content: 글 내용

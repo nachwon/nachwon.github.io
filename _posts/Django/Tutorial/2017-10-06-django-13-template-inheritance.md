@@ -84,7 +84,7 @@ author: Che1
 ```
 
 자세히 살펴보면 `<div class="recent">Recent Posts</div>` 와 `<div class="container">` 안에 있는 내용을 제외하면 완전히 동일한 구조임을 알 수 있다. 이러한 상태에서 `<title>` 태그 안의 내용을 `Che1's blog` 로 바꾸려면 `post_list` 템플릿에서 한 번, `post_detail` 템플릿에서 한 번, 총 두 번의 수정을 해야한다.  
-템플릿 언어의 `상속` 을 사용하면 이러한 수고를 덜어줄 수 있다.  
+`템플릿 상속` 을 사용하면 이러한 수고를 덜어줄 수 있다.  
 `template` 폴더 바로 아래에 `base.html` 이라는 파일을 하나 만들고 두 템플릿에서 겹치는 부분을 복사해서 붙여넣기 하자. 이 `base.html` 은 **부모 템플릿**이 된다.
 
 ```html

@@ -87,7 +87,9 @@ STATICFILES_DIRS = [
 </head>
 ```
 
-정적 파일을 불러올 때는 `{{ "{% static " }}%}` 템플릿 태그를 사용한다. `{{ "{% static 'bootstrap/css/bootstrap.css' " }}%}` 는 `STATICFILES_DIRS` 에 입력한 경로로부터 시작해서 `bootstrap/css/` 폴더안의 `bootstrap.css` 파일을 가리킨다.  
+`link` 태그의 `href` 속성에 적용하려는 정적 파일들의 경로를 설정해주어야 한다.
+
+정적 파일의 경로를 불러올 때는 `{{ "{% static " }}%}` 템플릿 태그를 사용한다. `{{ "{% static 'bootstrap/css/bootstrap.css' " }}%}` 는 `STATICFILES_DIRS` 에 입력한 경로로부터 시작해서 `bootstrap/css/` 폴더안의 `bootstrap.css` 파일을 가리킨다.  
 
 `{{ "{% static " }}%}` 태그는 기본적으로 포함되어 있는 템플릿 태그가 아니기 때문에 따로 불러와주어야 한다.  
 템플릿 파일 제일 윗 줄에 아래와 같이 입력해주자.
