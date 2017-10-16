@@ -1,6 +1,6 @@
 ---
 layout: post
-title: pyenv, virtualenv 설치하기(Ubuntu 환경)
+title: pyenv 설치하기(Ubuntu 환경)
 author: Che1
 category: Python
 ---
