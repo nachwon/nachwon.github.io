@@ -1,10 +1,7 @@
 ---
 layout: post
 title: '[Model] 관계'
-category: Django
-author: Che1
----layout: post
-title: '[Model] 관계'
+subtitle: Relationships
 category: Django
 author: Che1
 ---

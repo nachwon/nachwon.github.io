@@ -1,6 +1,7 @@
 ---
 layout: post
 title: '[Query] 쿼리셋의 평가'
+subtitle: Evaluation of Queryset
 category: Django
 author: Che1
 ---

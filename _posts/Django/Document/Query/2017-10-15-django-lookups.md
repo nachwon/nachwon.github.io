@@ -1,6 +1,7 @@
 ---
 layout: post
-title: '[Query] 필드 룩업'
+title: '[Query] 필드 룩업 (내용 추가 필요)'
+subtitle: Field Lookups
 category: Django
 author: Che1
 ---
@@ -42,7 +43,7 @@ Entry.objects.filter(blog_id=4)
 ### 자주 사용하는 룩업 타입
 
 
-- `exact`: 완전히 일치하는 값 검색.
+- **`exact`**: 완전히 일치하는 값 검색.
 ```py
 Entry.objects.get(headline__exact="Cat bites dog")
 ```
@@ -54,13 +55,13 @@ Blog.objects.get(id=4)
 ``` 
 위 두 명령의 결과는 동일하다. 상당히 자주 사용하는 룩업타입이기 때문에 편의성을 위해 이렇게 되어있다.  
 
-- `iexact`: 대소문자 구분을 하지 않는 `exact`.
+- **`iexact`**: 대소문자 구분을 하지 않는 `exact`.
 ```py
 Blog.objects.get(name__iexact="beatles blog")
 ```
 `Beatles blog`, `beatles Blog`, `BEAtles BlOg` 등등이 모두 매치됨.
 
-- `contains`: 조건값을 포함한 값과 매치됨. 대소문자 구분함.
+- **`contains`**: 조건값을 포함한 값과 매치됨. 대소문자 구분함.
 ```py
 Entry.objects.get(headline__contains='Lennon')
 ```
@@ -73,10 +74,14 @@ LIKE '%Lennon%';
 ```
 `headline` 값에 `Lennon` 이 포함된 레코드들을 가져온다.
 
-- `icontains`: `contains` 의 대소문자 무시 버전.
+- **`icontains`**: `contains` 의 대소문자 무시 버전.
 
-- `startswith`, `endswith`: 각각 조건값으로 시작, 끝나면 매치된다. 대소문자 구분함.
+- **`startswith`, `endswith`**: 각각 조건값으로 시작, 끝나면 매치된다. 대소문자 구분함.
 
-- `istartswith`, `iendswith`: `startswith`, `endswith` 의 대소문자 무시 버전.
+- **`istartswith`, `iendswith`**: `startswith`, `endswith` 의 대소문자 무시 버전.
 
 - - -
+
+###### Reference
+
+Django 공식문서: [https://docs.djangoproject.com/en/1.11/topics/db/queries/#field-lookups](https://docs.djangoproject.com/en/1.11/topics/db/queries/#field-lookups)

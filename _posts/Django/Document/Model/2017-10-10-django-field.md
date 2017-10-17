@@ -1,6 +1,7 @@
 ---
 layout: post
 title: '[Model] 필드'
+subtitle: Fields
 category: Django
 author: Che1
 ---

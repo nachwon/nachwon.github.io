@@ -1,6 +1,7 @@
 ---
 layout: post
 title: '[Query] 쿼리 보내기'
+subtitle: Making Queries
 category: Django
 author: Che1
 ---
