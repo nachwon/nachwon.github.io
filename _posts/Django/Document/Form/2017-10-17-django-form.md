@@ -169,6 +169,30 @@ def login(request):
 
 - - -
 
+### Bound 폼, Unbound 폼
+
+폼 인스턴스는 항상 어떤 데이터에 대해 `Bound` 또는 `Unbound` 된 상태를 가진다.  
+
+- 데이터에 Bound 된 폼은 해당 데이터를 검증할 수 있으며, HTML 폼을 렌더링할 때, 데이터를 포함한 HTML을 생성할 수 있다.
+
+- Unbound 된 폼은 검증할 데이터가 없기 때문에 데이터를 검증할 수 없으며, HTML 폼을 렌더링할 때는 비어있는 폼을 생성하게 된다.
+
+- - -
+
+#### is_bound
+
+폼 인스턴스의 `is_bound` 속성에 접근하면 폼의 바운드 상태를 확인할 수 있다.
+
+```py
+form = LoginForm()
+form.is_bound
+```
+```re
+False
+```
+
+- - -
+
 ###### Reference
 
 Django 공식문서: [https://docs.djangoproject.com/en/1.11/topics/forms/](https://docs.djangoproject.com/en/1.11/topics/forms/)
