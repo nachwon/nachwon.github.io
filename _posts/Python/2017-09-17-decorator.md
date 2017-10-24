@@ -306,7 +306,7 @@ Hi
 My name is Chaewon!
 ```
 - - -
-##### ※ 데코레이터 중첩 적용 시 주의점
+##### @Wraps
 
 아래의 코드를 보자. `decorator1` 과 `decorator2` 는 자신이 받은 함수의 이름과 함께 메세지를 출력해준다.
 
