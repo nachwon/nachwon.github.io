@@ -151,6 +151,9 @@ chmod 400 pem파일
 
 <img width="950px" src="/img/AWS_deploy/instance_created.png">
 
+인스턴스를 생성하면 가상 컴퓨터 환경내의 유저가 자동생성된다.  
+자동생성된 유저의 이름은 **`ubuntu`** 이다.
+
 - - -
 
 ## 인스턴스에 접속하기
@@ -158,7 +161,7 @@ chmod 400 pem파일
 터미널을 열고 다음과 같이 입력한다.
 
 ```
-ssh -i 키페어경로 ubuntu@EC2퍼블릭DNS주소
+ssh -i 키페어경로 유저명@EC2퍼블릭DNS주소
 ```
 
 키 페어 경로는 `pem` 파일의 경로를 지정해주면 된다.  
@@ -295,7 +298,7 @@ sudo apt-get install zsh
 sudo curl -L http://install.ohmyz.sh | sh
 ```
 
-- 기본 쉘을 zsh로 변경한 뒤 재접속
+- 기본 쉘을 zsh로 변경한 뒤 재접속 (chsh 다음에 유저명을 입력해주어야한다.)
 ```
 sudo chsh ubuntu -s /usr/bin/zsh
 ```
@@ -320,7 +323,7 @@ sudo apt-get install python-dev python-setuptools
 `srv` 폴더의 소유자를 `ubuntu` 로 변경한다.
 
 ```
-sudo chown -R ubuntu:ubunut /srv/
+sudo chown -R ubuntu:ubuntu /srv/
 ```
 
 - - -
@@ -354,7 +357,7 @@ ALLOWED_HOSTS = [
 #### scp를 사용하여 업로드하기
 
 ```
-scp -i 키페어 -r 보낼폴더 서버주소:받을폴더
+scp -i 키페어경로 -r 보낼폴더경로 유저명@퍼블릭DNS:받을폴더경로
 ```
 
 아래의 명령어를 이용해서 `EC2_Deploy_Project` 폴더를 AWS 서버의 `srv` 폴더 아래로 복사한다.
