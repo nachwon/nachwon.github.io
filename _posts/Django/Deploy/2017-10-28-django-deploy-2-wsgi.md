@@ -25,14 +25,15 @@ author: Che1
 > 기존의 파이선 웹 애플리케이션 프레임워크는 웹서버를 선택하는데 있어서 제약이 있었다. 보통 CGI, FastCGI, mod_python 과 같은 커스텀API 중에 하나만 사용할 수 있도록 디자인 되었는데, WSGI는 그에 반하여 low-level로 만들어져서 웹서버와 웹 애플리케이션,프레임워크간의 벽을 허물었다.  
 > 출처: [위키피디아](https://ko.wikipedia.org/wiki/%EC%9B%B9_%EC%84%9C%EB%B2%84_%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4)
 
-WSGI는 장고와 웹서버를 연결해주는 역할을 하는 Python 프레임워크이다.  
-웹서버가 전달받은 사용자의 요청을 WSGI에서 처리하여 Django로 넘겨주고, 다시 Django가 넘겨준 응답을 WSGI가 받아서 웹서버에 전달한다.
+WSGI는 장고와 웹서버를 연결해주는 역할을 하는 Python 프레임워크이다. 프로토콜 개념으로도 이해할 수 있다.  
+웹서버가 직접적으로 Python으로 된 장고와 통신할 수 없기 때문에 그 사이에서 `WSGI Server(middleware)` 가 실행되어 웹서버와 장고를 연결해준다.
+웹서버가 전달받은 사용자의 요청을 WSGI Server에서 처리하여 Django로 넘겨주고, 다시 Django가 넘겨준 응답을 WSGI Server가 받아서 웹서버에 전달한다.
 
 ```
-사용자 <-> 웹서버 <-> WSGI <-> Django
+사용자 <-> 웹서버 <-> WSGI Server <-> Django
 ```
 
-WSGI에는 여러 가지 종류가 있는데, 그 중 기능이 강력하고 확장성이 뛰어난 `uWSGI` 를 사용할 것이다.
+WSGI Server에는 여러 가지 종류가 있는데, 그 중 기능이 강력하고 확장성이 뛰어난 `uWSGI` 를 사용할 것이다.
 
 - - -
 
@@ -118,7 +119,7 @@ runserver를 실행하지 않았는데도 접속이 가능한 것을 볼 수 있
 로컬에서 장고 프로젝트 폴더에 `.config` 라는 폴더를 하나 새로 생성하고 그 안에 다시 `uwsgi` 폴더를 생성한다.  
 `uwsgi` 폴더 안에 `mysite.ini` 파일을 만들어 준다.
 
-```
+```re
 EC2_Deploy_Project
 ├── .config
 │   └── uwsgi
