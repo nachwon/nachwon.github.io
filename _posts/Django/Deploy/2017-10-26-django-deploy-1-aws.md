@@ -1,12 +1,16 @@
 ---
 layout: post
-title: 'AWS 서버에 Django 프로젝트 띄우기'
-subtitle: Project Deployment Using AWS
+title: '[Deploy] AWS 서버에 Django 프로젝트 띄우기 - 1. AWS'
+subtitle: Starting AWS
 category: Django
 author: Che1
 ---
 
 이 포스트는 **Ubuntu 16.04**에서 작성되었음.
+
+- - -
+
+{% include /deploy/deploy-toc-base.html %}
 
 - - -
 
@@ -115,6 +119,8 @@ Amazon EC2는 공개키 암호화 방식을 사용하여 로그인 정보를 암
 chmod 400 pem파일
 ```
 
+`chmod` 명령에 대한 설명은 [여기](/etc/2017/10/28/shell-chmod.html)를 참고한다.
+
 - - -
 
 #### 인스턴스 시작하기
@@ -158,7 +164,7 @@ chmod 400 pem파일
 
 ## 인스턴스에 접속하기
 
-터미널을 열고 다음과 같이 입력한다.
+생성한 가상 컴퓨터 인스턴스에 `ssh` 를 사용하여 접속한다. 
 
 ```
 ssh -i 키페어경로 유저명@EC2퍼블릭DNS주소
@@ -308,7 +314,18 @@ sudo chsh ubuntu -s /usr/bin/zsh
 #### Python 환경 설정
 
 - pyenv 설치 및 환경 설정   
-[pyenv 설치하기(Ubuntu 환경)](/python/2017/09/12/pyenv-virtualenv.html) 포스트 참고
+[pyenv 설치하기(Ubuntu 환경)](/python/2017/09/12/pyenv-virtualenv.html) 포스트를 참고하여 pyenv를 설치하고, `~/.zshrc` 의 pyenv 환경변수 설정은 아래와 같이 입력해준다.
+```
+export PATH="/home/ubuntu/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
+- Python 설치  
+pyenv를 통해서 Python을 설치한다.
+```
+pyenv install 3.6.2
+```
 
 - Pillow를 위한 Python 라이브러리 설치
 ```
@@ -325,6 +342,10 @@ sudo apt-get install python-dev python-setuptools
 ```
 sudo chown -R ubuntu:ubuntu /srv/
 ```
+
+<img width="600px" src="/img/AWS_deploy/srv_chown.png">
+
+위와 같이 `srv` 폴더의 소유자와 그룹이 `ubuntu` 로 설정된 것을 확인한다.
 
 - - -
 
@@ -360,7 +381,8 @@ ALLOWED_HOSTS = [
 scp -i 키페어경로 -r 보낼폴더경로 유저명@퍼블릭DNS:받을폴더경로
 ```
 
-아래의 명령어를 이용해서 `EC2_Deploy_Project` 폴더를 AWS 서버의 `srv` 폴더 아래로 복사한다.
+아래의 명령어를 이용해서 `EC2_Deploy_Project` 폴더를 AWS 서버의 `srv` 폴더 아래로 복사한다.  
+(아래의 경우는 `EC2_Deploy_Project` 폴더의 상위 폴더에서 실행할 경우임.)
 
 ```
 scp -i ~/.ssh/EC2-Che1.pem -r EC2_Deploy_Project ubuntu@ec2-13-124-186-240.ap-northeast-2.compute.amazonaws.com:/srv/ 
@@ -381,6 +403,12 @@ AWS 서버에서 `/srv/EC2_Deploy_Project` 로 이동하면 자동으로 pyenv �
 
 ```
 pip install -r requirements.txt
+```
+
+만약 pip 버전이 최신버전이 아니라는 에러가 날 경우 아래 명령어를 입력해준 다음 다시 설치한다.
+
+```
+pip install --upgrade pip
 ```
 
 - - -
@@ -410,7 +438,9 @@ EC2 관리 화면으로 접속한 뒤, `보안 그룹` 화면으로 이동한다
 
 브라우저에서 포트번호 8080으로 퍼블릭 DNS 주소에 접속해서 `runserver` 가 실행되고 있는 것을 확인하자.
 
-`ec2-13-124-186-240.ap-northeast-2.compute.amazonaws.com:8080`
+```
+ec2-13-124-186-240.ap-northeast-2.compute.amazonaws.com:8080
+```
 
 <img width="950px" src="/img/AWS_deploy/runserver.png">
 
