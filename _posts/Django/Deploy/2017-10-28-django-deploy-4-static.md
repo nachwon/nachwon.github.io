@@ -1,7 +1,7 @@
 ---
 layout: post
-title: '[Deploy] AWS 서버에 Django 프로젝트 띄우기 - 4. Static 파일 업로드'
-subtitle: Applying Static Files
+title: '[Deploy] AWS 서버에 Django 프로젝트 띄우기 - 4. Static 파일'
+subtitle: Deploying Static Files
 category: Django
 author: Che1
 ---
