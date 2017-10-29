@@ -81,10 +81,10 @@ uwsgi \
 
 현재 진행중인 프로젝트의 경우를 대입해보면 다음과 같다.
 
-포트번호: 8080  
-virtualenv 경로: /home/ubuntu/.pyenv/versions/ec2_deploy
-장고프로젝트폴더 경로: /srv/EC2_Deploy_Project/mysite (manage.py가 있는 경로를 지정해주면 된다.)
-wsgi 모듈명: config.wsgi
+- **포트번호**: 8080  
+- **virtualenv 경로**: /home/ubuntu/.pyenv/versions/ec2_deploy  
+- **장고프로젝트폴더 경로**: /srv/EC2_Deploy_Project/mysite (manage.py가 있는 경로를 지정해주면 된다.)  
+- **wsgi 모듈명**: config.wsgi  
 
 ```
 uwsgi \ 

@@ -183,18 +183,18 @@ Nginx를 설치했으니 uWSGI를 Nginx와 통신하도록 설정해준다.
 Nginx는 기본적으로 백그라운드에서 실행되도록 되어있다. 그렇지만 uWSGI는 서버에 접속할 때 마다 직접 실행을 해주어야한다.  
 리눅스에서 관리하는 `service` 파일을 만들어 서버가 실행될 때 자동으로 uWSGI를 백그라운드에 실행시켜주도록 하자.  
 
-로컬에서 `/장고 프로젝트 폴더/.config/uwsgi/` 에 `mysite.service` 파일을 생성한다.  
+로컬에서 `/장고 프로젝트 폴더/.config/uwsgi/` 에 `uwsgi.service` 파일을 생성한다.  
 
 ```re
 .config
 ├── nginx
 │   └── mysite.conf
 └── uwsgi
-    ├── mysite.service
+    ├── uwsgi.service
     └── mysite.ini
 ```
 
-`mysite.service` 파일안에 아래와 같이 작성한다.
+`uwsgi.service` 파일안에 아래와 같이 작성한다.
 
 ```
 [Unit]
@@ -216,7 +216,7 @@ WantedBy=multi-user.target
 
 `scp` 를 통해 AWS 서버에 전송해준다.
 
-AWS 서버에 접속해서 `mysite.service` 파일을 `/etc/systemd/system/` 에 하드링크를 걸어준다.
+AWS 서버에 접속해서 `uwsgi.service` 파일을 `/etc/systemd/system/` 에 하드링크를 걸어준다.
 
 ```
 sudo ln -f /srv/EC2_Deploy_Project/.config/uwsgi/uwsgi.service /etc/systemd/system/uwsgi.service
