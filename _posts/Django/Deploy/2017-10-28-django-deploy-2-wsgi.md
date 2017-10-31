@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Deploy] AWS 서버에 Django 프로젝트 띄우기 - 2. WSGI'
+title: '[Deploy] Django 프로젝트 배포하기 - 2. WSGI'
 subtitle: WSGI Set Up
 category: Django
 author: Che1

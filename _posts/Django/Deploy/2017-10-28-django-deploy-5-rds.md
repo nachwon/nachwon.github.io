@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Deploy] AWS 서버에 Django 프로젝트 띄우기 - 5. RDS'
+title: '[Deploy] Django 프로젝트 배포하기 - 5. RDS'
 subtitle: Setting Up A Database To A Separate Server 
 category: Django
 author: Che1

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Deploy] AWS 서버에 Django 프로젝트 띄우기 - 1. AWS'
+title: '[Deploy] Django 프로젝트 배포하기 - 1. AWS'
 subtitle: Starting AWS
 category: Django
 author: Che1

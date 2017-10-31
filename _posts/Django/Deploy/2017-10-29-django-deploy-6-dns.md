@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Deploy] AWS 서버에 Django 프로젝트 띄우기 - 6. DNS'
+title: '[Deploy] Django 프로젝트 배포하기 - 6. DNS'
 subtitle: Setting Up A Domain Name 
 category: Django
 author: Che1
