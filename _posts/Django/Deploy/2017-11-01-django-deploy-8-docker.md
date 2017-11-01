@@ -363,5 +363,5 @@ Successfully tagged base:latest                  #9
 ###### Reference
 
 subicura 블로그: [https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html](https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html)  
-이한영 강사님 블로그: [https://lhy.kr/eb-docker](https://lhy.kr/eb-docker)
+이한영 강사님 블로그: [https://lhy.kr/eb-docker](https://lhy.kr/eb-docker)  
 Docker 공식 문서: [https://docs.docker.com/](https://docs.docker.com/)
