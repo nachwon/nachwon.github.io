@@ -134,6 +134,13 @@ server {
 }
 ```
 
+중요한 부분만 간단히 설명하면...
+
+- `listen 80`: 80번 포트로 오는 요청을 받겠다는 뜻이다.
+- `server_name`: `.compute.amazonaws.com` 로 끝나는 주소로 들어오는 요청을 받겠다는 뜻이다.
+- `location /`: `.compute.amazonaws.com/` 의 주소로 오는 요청을 `tmp/mysite.sock` 이라는 파일에 담아 `uWSGI` 에 넘긴다는 뜻이다.
+
+
 작성이 끝나면 `scp` 로 장고 프로젝트 폴더를 서버에 업로드한다.  
 
 ```
@@ -168,6 +175,10 @@ sites-enabled
 
 ```
 sudo rm /etc/nginx/sites-enabled/default
+```
+```re
+sites-enabled
+└── mysite.conf -> /etc/nginx/sites-available/mysite.conf
 ```
 
 - - -
@@ -222,7 +233,13 @@ AWS 서버에 접속해서 `uwsgi.service` 파일을 `/etc/systemd/system/` 에 
 sudo ln -f /srv/EC2_Deploy_Project/.config/uwsgi/uwsgi.service /etc/systemd/system/uwsgi.service
 ```
 
-`systemd` 는 리눅스에서 프로세스들을 관리하는 init 시스템이며 `d` 는 `데몬(daemon)` 을 의미한다.  데몬은 리눅스 서버에서 네트워크 서비스를 처리하는 프로그램을 말한다. 언제 어떻게 들어올지 모르는 네트워크 요청을 처리하기 위해 항상 실행되고 있는 프로그램이다.  
+`systemd` 는 리눅스에서 프로세스들을 관리하는 init 시스템이며 systemd 의 `d` 는 `데몬(daemon)` 을 의미한다.
+
+> ##### 데몬
+>
+> **데몬 (Daemon)**은 컴퓨터 시스템의 운영에 관련된 작업을 후선(background) 상태로 동작하면서 실행하는 프로그램이다. 처리해야 할 작업 조건이 발생하면 자동으로 작동하여 필요한 작업을 실행한다. 예를 들면, 인터넷 웹 서비스를 제공하는 주 컴퓨터 시스템에서 웹 서버는 후선 상태로 동작하고 있다가 통신망상의 웹 브라우저로부터 자료 요청이 있으면 작업을 실행한다.  
+> 출처: [네이버 지식백과](http://terms.naver.com/entry.nhn?docId=1611073&cid=50372&categoryId=50372)
+
 `uwsgi.service` 파일을 `/etc/systemd/system/` 에 넣어 데몬으로 등록하면 서버가 시작할 때 자동으로 백그라운드에서 실행되도록 할 수 있다.  
 
 파일을 연결해준 뒤 아래 명령을 실행해서 데몬을 리로드 해준다.
