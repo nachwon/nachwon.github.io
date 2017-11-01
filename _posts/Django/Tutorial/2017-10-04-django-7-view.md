@@ -5,9 +5,7 @@ category: Django
 author: Che1
 ---
 
-{% include tutorial-toc-base.html %}
 
-- - -
 
 지금까지 `Post` 모델을 만들고 관리자 페이지를 통해서 `Post` 데이터들을 생성해보았다.  
 하지만 아직 글의 작성이 관리자 페이지를 통해서만 이루어지도록 되어있다.  
@@ -107,6 +105,10 @@ urlpatterns = [
 
 기본 메세지가 아닌 `hello world!` 라는 문자열이 뜨는 것을 확인할 수 있다.  
 이제 우리가 원하는 내용을 원하는 주소에 띄울 수 있게 되었다. 지금은 간단하게 `hello world!` 라는 문자열을 `response` 로 돌려주는 것을 해보았지만, 이것 대신에 `html` 문서를 돌려주면 하나의 웹 페이지가 되는 것이다. 온전히 사용자가 보게되는 부분만을 담은 이 `html` 문서를 바로 `템플릿 (Template)` 이라고 한다. 
+
+- - -
+
+{% include tutorial-toc-base.html %}
 
 - - -
 

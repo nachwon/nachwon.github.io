@@ -5,9 +5,7 @@ category: Django
 author: Che1
 ---
 
-{% include tutorial-toc-base.html %}
 
-- - -
 
 Python으로 만들어진 웹 프레임워크인 `Django` 를 가지고 간단한 블로그를 하나 만들어보자.  
 이 튜토리얼은 아래의 환경에서 작성되었다.
@@ -147,6 +145,10 @@ git push origin master
 ```
 
 이제 `Django` 를 시작할 준비를 끝마쳤다.
+- - -
+
+{% include tutorial-toc-base.html %}
+
 - - -
 
 ###### Reference

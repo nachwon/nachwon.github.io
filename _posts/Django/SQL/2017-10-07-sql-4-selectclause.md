@@ -5,22 +5,7 @@ category: Django
 author: Che1 
 --- 
 
-{% include /sql/sql-toc-base.html %}
 
-- - -
-
-<h5>[SQL] SELECT를 꾸며주는 옵션 모음</h5>
-<ul>
-    <li><a href="#top-limit-rownum">TOP, LIMIT, ROWNUM</a></li>
-    <li><a href="#min-max">MIN, MAX</a></li>
-    <li><a href="#count-avg-sum">COUNT, AVG, SUM</a></li>
-    <li><a href="#alias">AS</a></li>
-    <li><a href="#group-by">GROUP BY</a></li>
-    <li><a href="#having">HAVING</a></li>
-    <li><a href="#reference">참고 문헌</a></li>
-</ul>
-
-- - -
 ### 예제 테이블
 
 {% include /sql/sql-customers-table.html %}
@@ -623,6 +608,23 @@ HAVING COUNT(CustomerID) >= 2;
 </table>
 
 <a href="#top">위로</a>
+
+- - -
+
+{% include /sql/sql-toc-base.html %}
+
+- - -
+
+<h5>[SQL] SELECT를 꾸며주는 옵션 모음</h5>
+<ul>
+    <li><a href="#top-limit-rownum">TOP, LIMIT, ROWNUM</a></li>
+    <li><a href="#min-max">MIN, MAX</a></li>
+    <li><a href="#count-avg-sum">COUNT, AVG, SUM</a></li>
+    <li><a href="#alias">AS</a></li>
+    <li><a href="#group-by">GROUP BY</a></li>
+    <li><a href="#having">HAVING</a></li>
+    <li><a href="#reference">참고 문헌</a></li>
+</ul>
 
 - - -
 

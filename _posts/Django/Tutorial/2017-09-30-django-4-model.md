@@ -5,9 +5,7 @@ category: Django
 author: Che1
 ---
 
-{% include tutorial-toc-base.html %}
 
-- - -
 
 앱을 시작하였으니 이제 앱이 원하는 기능을 하도록 그 내부를 만들어 주어야한다. `Django` 의 앱은 크게 `모델 (Model)`, `템플릿 (Template)`, `뷰 (View)` 로 구성이 되어 있으며, 앱이 이렇게 구성되도록 하는 개발 패턴을 `MTV` 패턴이라고 한다. 이에 대해 좀 더 알아보자.
 
@@ -155,6 +153,10 @@ published_date = models.DateTimeField(blank=True, null=True)
 - - -
 
 이리하여 블로그에 필요한 핵심 데이터인 `작성글` 에 대한 모델을 만들었다. 다음 과정에서는 이 데이터 구조를 사용할 수 있도록 모델을 데이터베이스에 테이블로 적용시켜 보도록 하자.
+
+- - -
+
+{% include tutorial-toc-base.html %}
 
 - - -
 

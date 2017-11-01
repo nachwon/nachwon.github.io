@@ -1,14 +1,13 @@
 ---
 layout: post
 title: '[Deploy] Django 프로젝트 배포하기 - 6. DNS'
-subtitle: Setting Up A Domain Name 
+subtitle: Setting Up A Domain Name
+comments: true
 category: Django
 author: Che1
 ---
 
-{% include /deploy/deploy-toc-base.html %}
 
-- - -
 
 이번 포스트에서는 배포한 웹서비스에 도메인 네임으로 접속할 수 있도록 하는 방법을 알아볼 것이다.
 
@@ -120,6 +119,10 @@ ALLOWED_HOSTS = [
 `scp` 로 서버에 변경사항을 업로드한 다음, `ssh` 로 서버에 접속하여 Nginx와 uWSGI를 재시작해준다.  
 
 브라우저에서 `test.che1.kr` 로 접속을 해보면 업로드했던 장고 프로젝트가 나타나는 것을 볼 수 있다.
+
+- - -
+
+{% include /deploy/deploy-toc-base.html %}
 
 - - -
 

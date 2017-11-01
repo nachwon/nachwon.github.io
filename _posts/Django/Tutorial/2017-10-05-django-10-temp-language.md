@@ -5,9 +5,7 @@ category: Django
 author: Che1
 ---
 
-{% include tutorial-toc-base.html %}
 
-- - -
 
 이제 `ORM` 을 통해 데이터베이스의 데이터를 다루는 방법까지 알았으니 이렇게 불러온 데이터를 템플릿에 적용시켜주면 동적으로 템플릿을 생성할 수 있다. 그럼 데이터를 템플릿에 적용하는 방법에 대해 알아보자.
 
@@ -344,6 +342,10 @@ def post_list(request):
 - - -
 
 아무튼 이제 블로그의 메인화면이 구성되었다. 이제 좀 더 알록달록하고 예쁘게 꾸며보도록 하자.
+- - -
+
+{% include tutorial-toc-base.html %}
+
 - - -
 
 ###### Reference

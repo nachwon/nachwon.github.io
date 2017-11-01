@@ -2,14 +2,12 @@
 layout: post
 title: '[Deploy] Django 프로젝트 배포하기 - 2. WSGI'
 subtitle: WSGI Set Up
+comments: true
 category: Django
 author: Che1
 ---
 
 
-{% include /deploy/deploy-toc-base.html %}
-
-- - -
 
 지난 포스트에서는 AWS의 가상 컴퓨터 인스턴스를 생성하여 공개 서버를 열고, 그 서버에 장고 프로젝트를 업로드한 다음 `runserver` 를 실행해보았다.  
 `runserver` 는 개발용이므로 실제 서비스를 배포하는데 부적합하므로 실제로 배포할 때는 웹서버를 통해서 배포를 하게 된다.  
@@ -197,6 +195,11 @@ sudo cat /var/log/uwsgi/mysite/로그파일이름.log
 <img width="600px" src="/img/AWS_deploy/uwsgi_log.png">
 
 이전과 같이 GET 요청을 받았다는 로그를 확인할 수 있다.
+
+- - -
+
+
+{% include /deploy/deploy-toc-base.html %}
 
 - - -
 

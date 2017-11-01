@@ -2,13 +2,12 @@
 layout: post
 title: '[Deploy] Django 프로젝트 배포하기 - 3. Nginx'
 subtitle: Attaching Nginx Web Server
+comments: true
 category: Django
 author: Che1
 ---
 
-{% include /deploy/deploy-toc-base.html %}
 
-- - -
 
 지금까지 구축한 구조는 아래와 같다.
 
@@ -358,6 +357,10 @@ cat /var/log/uwsgi/mysite/로그작성날짜.log
 
 - - -
 
+{% include /deploy/deploy-toc-base.html %}
+
+- - -
+
 ###### Reference
 
 이한영 강사님 블로그: [https://lhy.kr/ec2-ubuntu-deploy](https://lhy.kr/ec2-ubuntu-deploy)  
@@ -365,4 +368,3 @@ Webdir 블로그: [http://webdir.tistory.com/197](http://webdir.tistory.com/197)
 uWSGI 공식 문서: [http://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html](http://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html)  
 위키피디아 systemd: [https://ko.wikipedia.org/wiki/Systemd](https://ko.wikipedia.org/wiki/Systemd)  
 양민스쿨 블로그: [http://threestory.tistory.com/30](http://threestory.tistory.com/30)
-

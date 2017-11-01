@@ -5,9 +5,7 @@ category: Django
 author: Che1
 ---
 
-{% include tutorial-toc-base.html %}
 
-- - -
 
 이제 본격적으로 `Django` 를 시작해보자.
 
@@ -166,6 +164,10 @@ Quit the server with CONTROL-C.
 ```
 python manage.py runserver IP번호 포트번호
 ```
+
+- - -
+
+{% include tutorial-toc-base.html %}
 
 - - -
 

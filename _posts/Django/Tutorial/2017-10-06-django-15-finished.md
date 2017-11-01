@@ -5,9 +5,7 @@ category: Django
 author: Che1
 ---
 
-{% include tutorial-toc-base.html %}
 
-- - -
 
 블로그에 추가적으로 잡다한 기능을 구현해주고 `CSS` 도 조금 손봐주었다.  
 추가 사항은 아래와 같다.
@@ -23,6 +21,10 @@ author: Che1
 - - -
 
 지금까지 Python 웹프레임워크인 `Django` 를 활용하여 간단한 블로그를 한 번 만들어보았다. `Django` 를 이해하는데 도움이 되었길 바란다.
+
+- - -
+
+{% include tutorial-toc-base.html %}
 
 - - -
 

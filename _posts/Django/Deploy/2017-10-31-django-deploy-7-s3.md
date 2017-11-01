@@ -2,13 +2,10 @@
 layout: post
 title: '[Deploy] Django 프로젝트 배포하기 - 7. Amazon S3'
 subtitle: Storing Static Files in S3 Storages
+comments: true
 category: Django
 author: Che1
 ---
-
-{% include /deploy/deploy-toc-base.html %}
-
-- - -
 
 `Amazon S3` 는 아마존 웹 서비스(AWS)에서 제공하는 클라우드 스토리지 서비스이다.  
 
@@ -583,6 +580,12 @@ AWS_ACCESS_KEY_ID = config_secret['aws']['access_key_id']
 AWS_SECRET_ACCESS_KEY = config_secret['aws']['secret_access_key']
 AWS_STORAGE_BUCKET_NAME = config_secret['aws']['s3_bucket_name']
 ```
+
+
+
+- - -
+
+{% include /deploy/deploy-toc-base.html %}
 
 - - -
 

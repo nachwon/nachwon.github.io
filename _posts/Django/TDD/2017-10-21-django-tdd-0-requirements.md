@@ -6,9 +6,7 @@ subtitle: Prerequisites and Assumptions
 author: Che1
 ---
 
-{% include /tdd/tdd-tutorial-toc-base.html %}
 
-- - -
 
 TDD Tutorial 포스트에서는 테스트 주도 개발 방법론을 간단한 장고 어플리케이션을 하나 만들어보면서 배워 볼 것이다. 주로 `Test-Driven Development with Python` 의 내용을 요약 번역하면서 내가 이해한 대로 부가설명을 조금씩 덧붙이는 식으로 작성할 것이다. 내용 중 장고에 대한 설명은 대부분 생략하였다. 장고에 대한 튜토리얼은 따로 포스트를 작성해두었으니 장고에 대해 잘 모른다면 장고 튜토리얼을 먼저 읽어보고 이번 튜토리얼을 진행하는 것을 권장한다.
 
@@ -41,6 +39,10 @@ TDD Tutorial 포스트에서는 테스트 주도 개발 방법론을 간단한 �
     ```
     pip install --upgrade selenium
     ```
+
+- - -
+
+{% include /tdd/tdd-tutorial-toc-base.html %}
 
 - - -
 

@@ -5,9 +5,7 @@ category: Django
 author: Che1 
 --- 
 
-{% include /sql/sql-toc-base.html %}
 
-- - -
 
 ### 예제 테이블
 
@@ -385,6 +383,10 @@ FROM Suppliers
 중복되는 값이 나타나는 것을 볼 수 있다.
 
 <a href="#top">위로</a>
+
+- - -
+
+{% include /sql/sql-toc-base.html %}
 
 - - -
 

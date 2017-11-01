@@ -5,9 +5,7 @@ category: Django
 author: Che1
 ---
 
-{% include tutorial-toc-base.html %}
 
-- - -
 
 지난 포스트에서 `post_detail` 이라는 템플릿을 새로 만들어 주었다. 그런데 이 템플릿은 `post_list` 템플릿과 많은 부분에서 겹친다. 지금이야 템플릿이 `post_list` 와 `post_detail` 두 개 밖에 없지만, 만약 많은 수의 템플릿이 있고 모두 공통적으로 가지고 있는 부분이 있다고 할 때, 공통적인 그 부분을 수정할 일이 생기면 모든 템플릿을 하나 하나 수정해주어야하는 대참사가 생길 수 있다. 진정한 프로그래머는 같은 코드를 반복하지 않는다고 하던데 우리도 반복되는 부분을 한 번 줄여보자.
 - - -
@@ -263,6 +261,10 @@ author: Che1
 <img width="400px" src="/img/django_tutorial/post_list_tab.png"> <img width="400px" src="/img/django_tutorial/post_detail_tab.png">
 
 이렇게 공통된 부분을 따로 템플릿으로 만들어 두면 템플릿 관리하는 것이 훨씬 간결해질 것이다.
+
+- - -
+
+{% include tutorial-toc-base.html %}
 
 - - -
 

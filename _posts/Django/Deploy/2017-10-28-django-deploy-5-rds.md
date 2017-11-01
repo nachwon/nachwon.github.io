@@ -2,13 +2,12 @@
 layout: post
 title: '[Deploy] Django 프로젝트 배포하기 - 5. RDS'
 subtitle: Setting Up A Database To A Separate Server 
+comments: true
 category: Django
 author: Che1
 ---
 
-{% include /deploy/deploy-toc-base.html %}
 
-- - -
 
 이번 포스트에서는 프로젝트가 사용할 데이터베이스를 별개의 서버에 두고 운영하는 방법을 알아본다.  
 각자의 기능이 최적으로 운영되도록 하기 위해서는 기능별로 별도의 서버를 두고 관리하는 것이 효율적이다.  
@@ -206,6 +205,10 @@ RDS 보안그룹의 인바운드에는 현재 `내 IP` 주소로 오는 요청�
 <img width="900px" src="/img/AWS_deploy/rds_inbound_sg.png">
 
 이렇게 하면 AWS 가상 컴퓨터에서 데이터베이스에 접근을 할 수 있게 되어서 띄워놓은 웹서비스에서 데이터베이스가 필요한 작업을 수행할 수 있게 된다.
+
+- - -
+
+{% include /deploy/deploy-toc-base.html %}
 
 - - -
 

@@ -5,9 +5,7 @@ category: Django
 author: Che1 
 --- 
 
-{% include /sql/sql-toc-base.html %}
 
-- - -
 ### 예제 테이블
 
 {% include /sql/sql-customers-table.html %}
@@ -297,6 +295,10 @@ WHERE Address IS NOT NULL;
 </table>
 
 <a href="#top">위로</a>
+
+- - -
+
+{% include /sql/sql-toc-base.html %}
 
 - - -
 

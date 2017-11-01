@@ -2,6 +2,7 @@
 layout: post
 title: '[Deploy] Django 프로젝트 배포하기 - 1. AWS'
 subtitle: Starting AWS
+comments: true
 category: Django
 author: Che1
 ---
@@ -10,9 +11,7 @@ author: Che1
 
 - - -
 
-{% include /deploy/deploy-toc-base.html %}
 
-- - -
 
 ## AWS 시작하기
 
@@ -443,6 +442,10 @@ ec2-13-124-186-240.ap-northeast-2.compute.amazonaws.com:8080
 ```
 
 <img width="950px" src="/img/AWS_deploy/runserver.png">
+
+- - -
+
+{% include /deploy/deploy-toc-base.html %}
 
 - - -
 

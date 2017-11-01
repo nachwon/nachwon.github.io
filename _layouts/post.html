@@ -1,19 +1,29 @@
----
-layout: page
+--- 
+layout: page 
 ---
 
 <div class="post">
-  <!-- category start --> 
+  <!-- category start -->
   <div class="category">
     <ul class="category-list">
-      <a href="/Django"><li>Django</li></a>
-      <a href="/HTML&CSS"><li>HTML/CSS</li></a>
-      <a href="/Python"><li>Python</li></a>
-      <a href="/Algorithm"><li>Algorithm</li></a>
-      <a href="/ETC"><li>ETC</li></a>
+      <a href="/Django">
+        <li>Django</li>
+      </a>
+      <a href="/HTML&CSS">
+        <li>HTML/CSS</li>
+      </a>
+      <a href="/Python">
+        <li>Python</li>
+      </a>
+      <a href="/Algorithm">
+        <li>Algorithm</li>
+      </a>
+      <a href="/ETC">
+        <li>ETC</li>
+      </a>
     </ul>
   </div>
-  
+
   <!-- category close -->
 
 
@@ -28,25 +38,54 @@ layout: page
             <h1>{{ page.title }}</h1>
             <h4 style="font-style: italic;font-weight: 300;">{{ page.subtitle }}</h4>
             <div class="post-info-wrapper">
-              <p class="italic">By <span class="bold">{{ page.author }}</span> on <span class="bold">{{ page.date | date: "%B %-d, %Y" }}</span></p>
+              <p class="italic">By
+                <span class="bold">{{ page.author }}</span> on
+                <span class="bold">{{ page.date | date: "%B %-d, %Y" }}</span>
+              </p>
             </div>
             <hr />
             <p>{{ content }}</p>
+            <hr>
           </div>
-        </div><!-- .col-md-7 close -->
+        </div>
+        <!-- .col-md-7 close -->
       </div>
-    </div>
+      <!-- nav buttons -->
+      {% comment %} <div class="navigation-button">
+        <div class="previous">
+          < Previous Post</div>
+            <div class="next">Next Post ></div>
+        </div> {% endcomment %}
+
+        <p class="center-text" style="padding: 30px;">
+          <a href="{{ site.baseurl }}/{{ page.category }}.html">Back to {{ page.category }}</a>
+          |
+          <a href="{{ site.baseurl }}/index.html">Back to Home</a>
+        </p>
+
+      <!-- disqus -->
+      <div id="disqus_thread"></div>
+      <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function () { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://nachwon.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+      </noscript>
+      </div>
   </section>
-</div>
-
-
-<div class="navigation-button">
-  <div class="previous">< Previous Post</div>
-  <div class="next">Next Post ></div>
-</div>
-
-<p class="center-text" style="padding: 30px;">
-  <a href="{{ site.baseurl }}/{{ page.category }}.html">Back to {{ page.category }}</a>
-  |
-  <a href="{{ site.baseurl }}/index.html">Back to Home</a>
-</p>
+  </div>

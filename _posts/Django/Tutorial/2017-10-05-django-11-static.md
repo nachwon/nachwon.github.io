@@ -5,9 +5,7 @@ category: Django
 author: Che1
 ---
 
-{% include tutorial-toc-base.html %}
 
-- - -
 
 지난 포스트에서 블로그 메인 화면 템플릿을 만들었었다. 이제 이 템플릿을 `CSS` 로 예쁘게 꾸며보도록 하자.  
 
@@ -251,6 +249,10 @@ CSS 파일을 캐시에 저장해두고 쓰는 바람에 생기는 문제인 것
 - - -
 
 이어지는 포스트에서는 블로그에 글 자세히 보기 페이지와 글 추가, 삭제 등 여러가지 기능들을 추가해볼 것이다.
+
+- - -
+
+{% include tutorial-toc-base.html %}
 
 - - -
 

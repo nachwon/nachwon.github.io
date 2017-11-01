@@ -5,9 +5,7 @@ category: Django
 author: Che1
 ---
 
-{% include tutorial-toc-base.html %}
 
-- - -
 
 이번에는 블로그에 여러 가지 기능을 추가해보자. 아래에 있는 기능들을 추가해 볼 것이다.  
 <div id='menu'></div>
@@ -705,6 +703,11 @@ def post_delete(request, pk):
 <a href="#menu">위로</a>
 
 - - -
+
+{% include tutorial-toc-base.html %}
+
+- - -
+
 ###### Reference
 이한영 강사님 강의자료  
 Django 공식문서: [https://docs.djangoproject.com/en/1.11/ref/templates/builtins/#ref-templates-builtins-tags](https://docs.djangoproject.com/en/1.11/ref/templates/builtins/#ref-templates-builtins-tags)  

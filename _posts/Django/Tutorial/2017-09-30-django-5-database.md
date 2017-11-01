@@ -5,9 +5,7 @@ category: Django
 author: Che1
 ---
 
-{% include tutorial-toc-base.html %}
 
-- - -
 
 웹사이트의 데이터들은 `데이터베이스` 에 저장된다.  
 데이터베이스에 저장된 데이터를 가져와서 사용자에게 보여주기도 하고, 사용자가 입력한 데이터를 데이터베이스에 저장하기도 한다.  
@@ -305,6 +303,10 @@ COMMIT;
 
 
 이 명령어는 실제 데이터베이스 변경을 실행하지는 않고 실행될 스키마를 열람만 한다.
+
+- - -
+
+{% include tutorial-toc-base.html %}
 
 - - -
 

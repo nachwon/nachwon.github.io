@@ -2,13 +2,12 @@
 layout: post
 title: '[Deploy] Django 프로젝트 배포하기 - 4. Static 파일'
 subtitle: Deploying Static Files
+comments: true
 category: Django
 author: Che1
 ---
 
-{% include /deploy/deploy-toc-base.html %}
 
-- - -
 
 이번 포스트에서는 `static` 파일들을 서버에 업로드하여 적용시키는 방법에 대해 알아본다.
 
@@ -274,6 +273,10 @@ ec2-13-124-186-240.ap-northeast-2.compute.amazonaws.com/media/nuno.jpg
 미디어 파일 요청이 잘 처리되는 것을 볼 수 있다.
 
 `media` 폴더는 `.gitignore` 에 포함되어 있으므로 따로 추가해줄 필요는 없다.
+
+- - -
+
+{% include /deploy/deploy-toc-base.html %}
 
 - - -
 

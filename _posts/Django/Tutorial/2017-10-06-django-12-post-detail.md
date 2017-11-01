@@ -5,9 +5,7 @@ category: Django
 author: Che1
 ---
 
-{% include tutorial-toc-base.html %}
 
-- - -
 
 지금까지 블로그의 메인화면에 글 목록을 나타내도록 했다. 이제 글 하나를 클릭하여 글의 전체 내용을 확인할 수 있는 `자세히 보기` 페이지를 만들어보자.
 
@@ -273,6 +271,10 @@ localhost:8000/post/2/
 - - -
 
 다음 포스트에서는 템플릿 들의 중복된 부분을 하나로 묶어주는 **템플릿 확장**에 대해 알아볼 것이다.
+
+- - -
+
+{% include tutorial-toc-base.html %}
 
 - - -
 
