@@ -581,7 +581,7 @@ AWS_SECRET_ACCESS_KEY = config_secret['aws']['secret_access_key']
 AWS_STORAGE_BUCKET_NAME = config_secret['aws']['s3_bucket_name']
 ```
 
-
+**생성한 `.config_secret` 폴더는 Github에 업로드되면 안되므로 `.gitignore` 파일에 반드시 포함해주어야한다. 안그러면 돈나간다 나처럼 ㅠㅠ**
 
 - - -
 
