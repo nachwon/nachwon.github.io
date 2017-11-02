@@ -50,7 +50,7 @@ Docker 이미지는 `Docker hub` 이라는 플랫폼 서비스에서 사용자�
 curl -s https://get.docker.com/ | sudo sh
 ```
 
-docker는 sudo 권한을 필요로하기 때문에 항상 `sudo docker ...` 로 실행해야한다.  
+**리눅스 운영체제**에서 설치하는 경우 docker는 sudo 권한을 필요로하기 때문에 항상 `sudo docker ...` 로 실행해야한다.  
 번거로우므로 아래 명령을 통해 docker를 항상 sudo 권한으로 실행하도록 한다.
 
 ```
