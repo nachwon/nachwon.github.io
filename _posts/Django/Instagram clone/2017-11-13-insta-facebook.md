@@ -301,7 +301,149 @@ redirect_uri={{ "{{ request.scheme " }}}}://{{ "{{ request.META.HTTP_HOST " }}}}
 
 ## 엑세스 토큰 검사하기
 
-이제 발급 받은 access_token이 유효한지 검사해야한다.
+이제 발급 받은 access_token이 유효한지 검사해야한다.  
+access_token 은 유효기간이 있어서 유효기간이 지난 토큰은 사용할 수 없게 된다.  
+필요하다면 60일 동안 지속되는 `장기 토큰` 을 발급 받아서 사용할 수 있다.
+
+토큰의 검사는 아래의 URI 형식으로 요청을 보내면 된다.  
+
+```
+graph.facebook.com/debug_token?
+     input_token={token-to-inspect}
+     &access_token={app-token-or-admin-token}
+```
+
+`token-to-inspect` 에는 검사할 access_token을 넣어준다.  
+`app-token-or-admin-token` 에는 `앱 엑세스 토큰` 이라는 것을 넣어준다.
+
+`앱 엑세스 토큰` 은 `{app_id}|{app_secret}` 이다.  
+
+위 주소로 GET 요청을 보내도록 views.py를 수정한다.
+
+```py
+# views.py
+
+...
+def login(request):
+    code = request.GET['code']
+    redirect_uri = f"{request.scheme}://{request.META['HTTP_HOST']}{reverse('login')}"
+    url_access_token = "https://graph.facebook.com/v2.11/oauth/access_token"
+
+    params_access_token = {
+        "client_id": app_id,
+        "redirect_uri": redirect_uri,
+        "client_secret": app_secret,
+        "code": code,
+    }
+
+    response = requests.get(url_access_token, params=params_access_token)
+    url_debug_token = 'https://graph.facebook.com/debug_token'
+    params_debug_token = {
+        "input_token": response.json()['access_token'],
+        "access_token": f'{app_id}|{app_secret}'
+    }
+
+    user_info = requests.get(url_debug_token, params=params_debug_token)
+
+    return HttpResponse(user_info.json().items())
+```
+위 요청의 결과로 아래와 같은 데이터가 되돌아온다.  
+엑세스 토큰이 유효하면 `is_valid` 항목이 `True` 인 것을 볼 수 있다.
+
+```
+(
+    'data', 
+    {
+        'app_id': '1552973814793221', 
+        'type': 'USER', 
+        'application': 'Test App', 
+        'expires_at': 1515897901, 
+        'is_valid': True, 
+        'issued_at': 1510713901, 
+        'scopes': ['public_profile'], 
+        'user_id': '10214169173528135'
+    }
+)
+```
+
+- - -
+
+## 유저정보 가져오기
+
+엑세스 토큰이 유효한 것도 확인 했으니 이제 이 토큰을 가지고 유저 정보를 받아오기만 하면 된다.  
+
+유저 정보는 아래의 주소로 요청을 보내서 가져올 수 있다.  
+
+```
+https://graph.facebook.com/me?
+    fields={user-info-fields}&
+    access_token={access-token}
+```
+
+`user_info_fields` 에는 `id`, `first_name` 등 가져올 유저 정보를 나열해준다.  
+`access_token` 에는 엑세스 토큰을 넣어준다.  
+
+어떤 유저정보를 가져올 수 있는지 테스트 해보려면 페이스북의 `그래프 API` 를 사용한다.  
+
+페이스북 개발자 페이지에서 `도구 및 지원` 메뉴로 이동한 다음 `그래프 API 탐색기` 를 클릭한다.
+
+<img width="900px" src="/img/facebook_login/graph_api.png">
+
+- - -
+
+나타나는 화면의 왼쪽 아래에서 필요한 유저 정보 `fields` 를 추가하고 `제출` 버튼을 누르면 그 결과가 출력된다.
+
+<img width="900px" src="/img/facebook_login/graph_api_main.png">
+
+- - -
+
+추가하고 싶은 유저 정보 필드들을 테스트 해본 다음 필요한 필드들의 이름을 그대로 가져와서 `{user-info-fields}` 자리에 넣어주면 된다.  
+
+`views.py` 에 작성해주자.
+
+```py
+# views.py
+
+...
+    url_user_info = 'https://graph.facebook.com/me'
+    user_info_fields = [
+        'id',  # 아이디
+        'first_name',  # 이름
+        'last_name',  # 성
+        'picture',  # 프로필 사진
+        'email',  # 이메일
+    ]
+    params_user_info = {
+        "fields": ','.join(user_info_fields),
+        "access_token": access_token
+    }
+    user_info = requests.get(url_user_info, params=params_user_info)
+
+    return HttpResponse(user_info.json().items())
+```
+
+이제 다시 `페이스북 로그인` 버튼을 클릭해보면 아래와 같은 데이터를 돌려받는다.
+
+```
+('id', '10214169173528135')
+('first_name', 'Chaewon')
+('last_name', 'Na')
+('picture', {
+    'data': {
+        'height': 50, 
+        'is_silhouette': False, 
+        'url': 'https://scontent.xx.fbcdn.net/v/t1.0-1/...', 
+        'width': 50
+        }
+    }
+)
+```
+
+그런데 분명 이메일 정보도 요청을 했는데 돌아오지 않았다.
+
+- - -
+
+
 
 - - -
 
