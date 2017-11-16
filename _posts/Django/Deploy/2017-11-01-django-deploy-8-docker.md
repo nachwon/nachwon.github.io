@@ -307,6 +307,10 @@ Successfully tagged base:latest
 
 빌드가 끝나면 완성된 이미지를 다음의 명령을 통해 이미지 목록에서 확인해볼 수 있다.
 
+```
+docker images
+```
+
 ```re
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 base                latest              975e4869f7c3        3 minutes ago       1.11GB
