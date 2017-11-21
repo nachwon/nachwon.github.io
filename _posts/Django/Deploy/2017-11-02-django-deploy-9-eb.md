@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Deploy] Django 프로젝트 배포하기 - 9. Elastic Beanstalk'
+title: '[Deploy] Django 프로젝트 배포하기 - 9. Elastic Beanstalk(내용 추가 필요)'
 subtitle: Deploying With Elastic Beanstalk
 comments: true
 category: Django

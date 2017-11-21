@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Deploy] Django 프로젝트 배포하기 - 8. Docker'
+title: '[Deploy] Django 프로젝트 배포하기 - 8. Docker(내용 추가 필요)'
 subtitle: Setting Up A Server Using Docker
 comments: true
 category: Django
@@ -232,7 +232,7 @@ RUN         apt-get -y update
 `-y` 옵션은 설치 과정 중 사용자의 확인을 요청하는 부분에 모두 `yes` 로 대답하도록 하는 옵션이다.  
 `Dockerfile` 을 통해 설치를 하는 과정에서는 응답을 직접해줄 수 없으므로 이 옵션을 추가해준 것이다.  
 
-이제 이 `Dockerfile` 은 우분투 운영체제에 `apt-get update` 명령이 실행된 상태인 이미지를 생성한다.  
+이 `Dockerfile` 로 이미지를 생성한다면 우분투 운영체제에 `apt-get update` 명령이 실행된 상태까지의 이미지가 생성된다.  
 마치 필요한 운영체제 환경을 미리 시나리오로 짜두는 것이라고 생각하면 된다.  
 
 위와 같은 방식으로 필요한 환경 설정, 프로그램 설치 등등을 작성해주면 된다.  
@@ -279,9 +279,11 @@ RUN         /root/.pyenv/versions/app/bin/pip install uwsgi
 # Nginx install
 RUN         apt-get -y install nginx
 
-# supervisor install
+# supervisord install
 RUN         apt-get -y install supervisor
 ```
+
+- - -
 
 이제 이 Dockerfile을 가지고 이미지를 생성해보자.  
 Dockerfile.base 파일이 있는 폴더로 이동한 후 아래 명령을 입력하여 이미지를 생성한다.  
@@ -361,6 +363,37 @@ Successfully tagged base:latest                  #9
 각 명령의 실행 결과는 레이어로 저장되기 때문에 이미지를 생성할 때마다 모든 설치과정을 처음부터 다시 실행할 필요가 없다.  
 필요하다면 깃헙처럼 특정 시점의 레이어로 돌아가는 것도 가능하다.  
 레이어 개념을 잘 알고 있다면 좀 더 최적화된 이미지를 만들 수 있을 것이다.
+
+- - -
+
+## 기본적인 Docker 명령어
+
+#### `ps`: 컨테이너 목록 확인
+
+```
+docker ps [OPTIONS]
+```
+
+현재 실행중인 컨테이너 목록을 보여준다.  
+명령을 실행하면 실행중인 컨테이너의 아래와 같은 정보들을 보여준다. 
+
+`CONTAINER ID`: 컨테이너의 ID. 어떤 컨테이너를 특정할 때 ID 값을 사용한다.
+`IMAGE`:  컨테이너 빌드에 사용된 이미지를 나타낸다.
+`COMMAND`: 현재 컨테이너 내에서 실행 중인 명령을 보여준다.
+`CREATED`: 컨테이너가 실행 시작된 시점을 보여준다.
+`STATUS`: 컨테이너 실행 상태를 보여준다.
+`PORTS`: -p 옵션으로 포트를 추가해주었다면 포트 번호를 보여준다.
+`NAMES`: 컨테이너의 이름을 보여준다.  
+
+옵션으로는 아래와 같은 것들이 있다.  
+
+`-a`: 종료된 컨테이너 목록까지 보여준다.
+
+- - -
+
+#### `rm`: 컨테이너 삭제
+
+
 
 - - -
 
