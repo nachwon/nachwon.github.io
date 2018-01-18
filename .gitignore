@@ -100,6 +100,6 @@ build-iPhoneSimulator/
 .rvmrc
 
 # custom
-.yml
+_config.yml
 
 # End of https://www.gitignore.io/api/ruby,linux,macos,jekyll
