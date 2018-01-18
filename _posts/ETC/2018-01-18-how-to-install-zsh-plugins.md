@@ -54,7 +54,7 @@ vim ~/.zshrc
 그 다음 스크롤을 내려서 `plugins` 라고 적혀있는 부분으로 이동한다.
 
 ```
-...vim
+...
 plugins=( git )
 ...
 ```
@@ -62,7 +62,7 @@ plugins=( git )
 이 부분에 설치한 플러그인명을 입력해주면 된다.
 
 ```
-...vim
+...
 plugins=( git zsh-autosuggestions )
 ...
 ```
