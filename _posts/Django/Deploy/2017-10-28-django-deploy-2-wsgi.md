@@ -1,10 +1,13 @@
 ---
 layout: post
 title: '[Deploy] Django 프로젝트 배포하기 - 2. WSGI'
-subtitle: WSGI Set Up
+excerpt: uWSGI 설치하기
 comments: true
 category: Django
-author: Che1
+tags:
+  - Django
+  - uWSGI
+  - Deploy
 ---
 
 

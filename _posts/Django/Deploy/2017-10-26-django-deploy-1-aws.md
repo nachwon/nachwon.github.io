@@ -1,10 +1,13 @@
 ---
 layout: post
 title: '[Deploy] Django 프로젝트 배포하기 - 1. AWS'
-subtitle: Starting AWS
+excerpt: AWS EC2에 장고 프로젝트 올리기
 comments: true
 category: Django
-author: Che1
+tags:
+  - Django
+  - AWS
+  - Deploy
 ---
 
 이 포스트는 **Ubuntu 16.04**에서 작성되었음.

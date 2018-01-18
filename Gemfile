@@ -1,5 +1,7 @@
 source "https://rubygems.org"
-gemspec
-group :jekyll_plugins do
-    gem "jekyll-paginate"
-  end
+
+gem "jekyll", "~> 3.2.1"
+gem "jekyll-sitemap"
+gem "jekyll-gist"
+gem 'jekyll-mentions'
+gem 'jekyll-feed'
