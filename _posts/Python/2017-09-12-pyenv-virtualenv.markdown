@@ -5,6 +5,7 @@ tags:
   - Python
   - Pyenv
   - Linux
+  - How to install
 category: Python
 ---
 

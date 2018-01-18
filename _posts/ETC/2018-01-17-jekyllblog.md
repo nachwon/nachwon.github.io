@@ -7,6 +7,7 @@ tags:
   - Blog
   - Jekyll
   - Ruby
+  - How to install
 ---
 
 ## Jekyll 블로그란?
