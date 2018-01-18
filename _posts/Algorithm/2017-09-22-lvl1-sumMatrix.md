@@ -2,7 +2,10 @@
 layout: post
 title: '[Level 1] 행렬의 덧셈'
 category: Algorithm
-author: Che1
+excerpt: 
+comment: true
+tags:
+    - Algorithm
 ---
 
 

@@ -2,7 +2,10 @@
 layout: post
 title: '[Level 2] 가장 긴 펠린드롬'
 category: Algorithm
-author: Che1
+excerpt: 
+comment: true
+tags:
+    - Algorithm
 ---
 앞뒤를 뒤집어도 똑같은 문자열을 palindrome이라고 합니다.
 longest_palindrom함수는 문자열 s를 매개변수로 입력받습니다.

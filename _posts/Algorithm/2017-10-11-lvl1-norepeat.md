@@ -2,7 +2,10 @@
 layout: post
 title: '[Level 1] 같은 숫자는 싫어'
 category: Algorithm
-author: Che1
+excerpt: 
+comment: true
+tags:
+    - Algorithm
 ---
 no_continuous함수는 스트링 s를 매개변수로 입력받습니다.
 

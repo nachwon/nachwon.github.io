@@ -2,7 +2,10 @@
 layout: post
 title: '[Level 2] 자연수를 뒤집어 리스트로 만들기'
 category: Algorithm
-author: Che1
+excerpt: 
+comments: true
+tags:
+    - Algorithm
 ---
 
 digit_reverse함수는 양의 정수 n을 매개변수로 입력받습니다.

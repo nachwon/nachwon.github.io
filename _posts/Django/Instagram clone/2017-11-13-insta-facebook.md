@@ -3,6 +3,7 @@ layout: post
 title: 'Facebook 로그인 구현하기'
 subtitle: How To Set Up Facebook Login
 category: Django
+comments: true
 author: Che1
 ---
 

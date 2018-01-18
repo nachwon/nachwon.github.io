@@ -41,7 +41,7 @@ layout: compress
                         {% endfor %}
                     {% else %}
                         {% for post in site.posts %} 
-                            {% if post.category == page.title %}
+                            {% if post.category == page.title and post.project == null %}
                             <ul>
                                 <li class="wow fadeInLeft" data-wow-duration="0.5s">
                                     <a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
