@@ -19,13 +19,13 @@ zsh에 여러가지 플러그인을 설치해서 편의 기능을 추가해보�
 
 zsh 플러그인의 설치경로는 기본적으로 아래와 같다.
 
-```
+```zsh
 /home/유저명/.oh-my-zsh/custom/plugins/플러그인명
 ```
 
 또는 `$ZSH_CUSTOM` 을 호출하면 zsh 커스텀 폴더의 경로를 출력한다.
 
-```
+```zsh
 $ZSH_CUSTOM/plugins/플러그인명
 ```
 
@@ -34,7 +34,7 @@ $ZSH_CUSTOM/plugins/플러그인명
 예를 들어, zsh에 자동완성 기능을 추가해주는 `zsh-autosuggestions` 을 설치하려 한다면,   
 먼저 터미널에서 아래와 같이 입력한다.  
 
-```
+```zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 ```
 
@@ -47,14 +47,14 @@ github에서 플러그인 파일들을 다운로드받아서 `$ZSH_CUSTOM/plugin
 플러그인을 설치했다면 zsh에 연결을 해주어야한다.  
 먼저, zsh 설정파일인 `.zshrc` 파일을 연다.  
 
-```
+```zsh
 vim ~/.zshrc
 ```
 
 그 다음 스크롤을 내려서 `plugins` 라고 적혀있는 부분으로 이동한다.
 
 ```
-...
+...vim
 plugins=( git )
 ...
 ```
@@ -62,7 +62,7 @@ plugins=( git )
 이 부분에 설치한 플러그인명을 입력해주면 된다.
 
 ```
-...
+...vim
 plugins=( git zsh-autosuggestions )
 ...
 ```
