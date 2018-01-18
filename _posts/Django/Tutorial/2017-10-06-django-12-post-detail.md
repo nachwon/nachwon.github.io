@@ -2,7 +2,9 @@
 layout: post
 title: '[Django Tutorial] Blog 만들기 - 12. 자세히 보기 페이지'
 category: Django
-author: Che1
+tags:
+  - Django
+  - Tutorial
 ---
 
 

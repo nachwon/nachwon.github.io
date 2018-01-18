@@ -3,7 +3,9 @@ layout: post
 title: 'FastCampus Web Programming School 수강 후기 - 1'
 subtitle: FastCampus WPS Review - 1
 category: ETC
-author: Che1
+tags:
+  - Fastcampus
+  - Web Programming School
 ---
 
 2017년 9월 4일 시작된 패스트 캠퍼스 웹프로그래밍 스쿨 6기도 벌써 팀 프로젝트가 다 끝나가는 시점이 되었다. 지금에서 돌아보면 참 많은 걸 배운 것 같고 아직 배울 것이 한참 더 많이 남았다는 것도 알게 된 것 같다. 예전에는 막연하게 뭘해야하나 싶은 길이 안보이는 상황이었다면 지금은 이것도 해야하고 저것도 해야하고 할게 참 많구나... 싶은, 마치 길은 아주 잘보이는데 그 길의 끝이 안보이는 그런 상황이 된 것 같다.  

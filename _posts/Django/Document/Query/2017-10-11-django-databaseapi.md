@@ -3,7 +3,11 @@ layout: post
 title: '[Query] 쿼리 보내기'
 subtitle: Making Queries
 category: Django
-author: Che1
+tags:
+  - Django
+  - Database
+  - Query
+  - ORM
 ---
 
 데이터 모델을 만들어주고 나면, `Django` 는 데이터베이스에 데이터 객체를 입력, 삭제, 또는 데이터베이스로부터 데이터 객체를 추출하도록 해주는 `API` 를 자동적으로 생성해준다.  

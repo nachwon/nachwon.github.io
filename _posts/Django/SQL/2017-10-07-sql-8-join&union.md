@@ -2,7 +2,8 @@
 layout: post 
 title: '[SQL] JOIN, UNION'
 category: Django 
-author: Che1 
+tags:
+  - SQL 
 --- 
 
 

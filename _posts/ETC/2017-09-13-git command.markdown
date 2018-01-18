@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Git 명령어 정리
-author: Che1
+tags:
+  - Git
 category: ETC
 ---
 

@@ -2,7 +2,10 @@
 layout: post
 title: '[Django Tutorial] Blog 만들기 - 5. 데이터베이스'
 category: Django
-author: Che1
+tags:
+  - Django
+  - Tutorial
+  - Database
 ---
 
 

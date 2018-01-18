@@ -2,7 +2,9 @@
 layout: post
 title: '[Django Tutorial] Blog 만들기 - 1. 환경설정'
 category: Django
-author: Che1
+tags:
+  - Django
+  - Tutorial
 ---
 
 

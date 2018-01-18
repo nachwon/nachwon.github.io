@@ -2,7 +2,8 @@
 layout: post 
 title: '[SQL] SELECT를 꾸며주는 옵션 모음'
 category: Django 
-author: Che1 
+tags:
+  - SQL
 --- 
 
 

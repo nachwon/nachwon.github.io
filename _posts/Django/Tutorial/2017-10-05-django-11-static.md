@@ -2,7 +2,10 @@
 layout: post
 title: '[Django Tutorial] Blog 만들기 - 11. 스테틱 파일'
 category: Django
-author: Che1
+tags:
+  - Django
+  - Tutorial
+  - Static
 ---
 
 

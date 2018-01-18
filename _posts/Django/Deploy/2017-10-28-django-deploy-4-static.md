@@ -4,7 +4,10 @@ title: '[Deploy] Django 프로젝트 배포하기 - 4. Static 파일'
 subtitle: Deploying Static Files
 comments: true
 category: Django
-author: Che1
+tags:
+  - Django
+  - Statics
+  - Deploy
 ---
 
 

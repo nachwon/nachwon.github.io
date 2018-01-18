@@ -4,7 +4,10 @@ title: '[Deploy] Django 프로젝트 배포하기 - 8. Docker(내용 추가 필�
 subtitle: Setting Up A Server Using Docker
 comments: true
 category: Django
-author: Che1
+tags:
+  - Django
+  - Docker
+  - Deploy
 ---
 
 이번 포스트는 Docker에 대해 알아보고 Docker를 이용하여 서버를 구축하는 방법을 알아본다.

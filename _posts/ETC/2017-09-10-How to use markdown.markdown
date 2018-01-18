@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 마크다운 문법 정리
-author: Che1
+tags:
+  - Markdown
 category: ETC
 ---
 

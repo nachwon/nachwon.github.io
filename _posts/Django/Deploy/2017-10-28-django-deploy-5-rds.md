@@ -4,7 +4,13 @@ title: '[Deploy] Django 프로젝트 배포하기 - 5. RDS'
 subtitle: Setting Up A Database To A Separate Server 
 comments: true
 category: Django
-author: Che1
+tags:
+  - Django
+  - AWS
+  - RDS
+  - Postgresql
+  - Database
+  - Deploy
 ---
 
 

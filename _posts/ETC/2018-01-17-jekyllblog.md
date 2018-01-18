@@ -3,7 +3,10 @@ layout: post
 title: 'Jekyll 블로그 시작하기'
 subtitle: How To Start A Jekyll Blog On Ubuntu
 category: ETC
-author: Che1
+tags:
+  - Blog
+  - Jekyll
+  - Ruby
 ---
 
 ## Jekyll 블로그란?

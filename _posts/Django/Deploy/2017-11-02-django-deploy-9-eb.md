@@ -4,7 +4,11 @@ title: '[Deploy] Django 프로젝트 배포하기 - 9. Elastic Beanstalk(내용 
 subtitle: Deploying With Elastic Beanstalk
 comments: true
 category: Django
-author: Che1
+tags:
+  - Django
+  - AWS
+  - Elasticbeanstalk
+  - Deploy
 ---
 
 지금까지 배운 것들을 보면 다음과 같다.

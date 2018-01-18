@@ -4,7 +4,11 @@ title: '[Deploy] Django 프로젝트 배포하기 - 7. Amazon S3'
 subtitle: Storing Static Files in S3 Storages
 comments: true
 category: Django
-author: Che1
+tags:
+  - Django
+  - AWS
+  - S3
+  - Deploy
 ---
 
 `Amazon S3` 는 아마존 웹 서비스(AWS)에서 제공하는 클라우드 스토리지 서비스이다.  

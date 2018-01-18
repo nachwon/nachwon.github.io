@@ -3,7 +3,11 @@ layout: post
 title: '[Query] 필드 룩업 (내용 추가 필요)'
 subtitle: Field Lookups
 category: Django
-author: Che1
+tags:
+  - Django
+  - Database
+  - Query
+  - ORM
 ---
 
 `필드 룩업 (Field lookups)` 은 SQL의 `WHERE` 절에 해당하는 부분이다.  

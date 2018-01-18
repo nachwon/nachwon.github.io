@@ -2,7 +2,10 @@
 layout: post
 title: '[Python 문법] 모듈과 패키지 (Module and Package)'
 category: Python
-author: Che1
+tags:
+  - Python
+  - Module
+  - Package
 ---
 
 ## 모듈

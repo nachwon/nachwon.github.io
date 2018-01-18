@@ -2,7 +2,10 @@
 layout: post
 title: '[Django Tutorial] Blog 만들기 - 8. 템플릿'
 category: Django
-author: Che1
+tags:
+  - Django
+  - Tutorial
+  - Template
 ---
 
 

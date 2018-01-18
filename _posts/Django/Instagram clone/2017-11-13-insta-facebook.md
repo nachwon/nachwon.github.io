@@ -4,7 +4,10 @@ title: 'Facebook 로그인 구현하기'
 subtitle: How To Set Up Facebook Login
 category: Django
 comments: true
-author: Che1
+tags:
+  - Django
+  - OAuth
+  - Facebook
 ---
 
 페이스북을 통한 로그인 기능을 붙여주는 방법에 대해 알아본다.  

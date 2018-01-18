@@ -2,7 +2,9 @@
 layout: post
 title: '[Python 문법] 제어문 - if, for, while'
 category: Python
-author: Che1
+tags:
+  - Python
+  - Statement
 ---
 
 ## `if` 문

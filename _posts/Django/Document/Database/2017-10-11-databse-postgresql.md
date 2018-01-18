@@ -3,6 +3,9 @@ layout: post
 title: '[DB] PostgreSQL'
 category: Django
 author: Che1
+tags:
+  - Database
+  - Postgresql
 ---
 
 #### 설치

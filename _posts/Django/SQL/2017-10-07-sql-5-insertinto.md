@@ -2,7 +2,8 @@
 layout: post 
 title: '[SQL] INSERT INTO'
 category: Django 
-author: Che1 
+tags:
+  - SQL
 --- 
 
 

@@ -3,7 +3,9 @@ layout: post
 title: '[Form] 폼 데이터의 검증'
 subtitle: Using Forms to Validate Data
 category: Django
-author: Che1
+tags:
+  - Django
+  - Form
 ---
 
 폼 객체를 사용하기 전에 가장 먼저 해야할 일은 폼으로 전달된 데이터가 유효한 데이터인지 **검증**하는 작업이다.  

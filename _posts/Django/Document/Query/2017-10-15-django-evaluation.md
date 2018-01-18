@@ -3,7 +3,11 @@ layout: post
 title: '[Query] 쿼리셋의 평가'
 subtitle: Evaluation of Queryset
 category: Django
-author: Che1
+tags:
+  - Django
+  - Database
+  - Query
+  - ORM
 ---
 
 쿼리셋은 실제로 데이터베이스에 접촉하지 않고도 생성, 필터, 분리, 대입될 수 있다.  

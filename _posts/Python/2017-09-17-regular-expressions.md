@@ -2,7 +2,9 @@
 layout: post
 title: '[Python 문법] 정규표현식 (Regular Expressions)'
 category: Python
-author: Che1
+tags:
+  - Python
+  - Regular Expression
 ---
 
 ## 정규표현식이란?

@@ -3,7 +3,9 @@ layout: post
 title: 'FastCampus Web Programming School 수강 후기 - 2'
 subtitle: FastCampus WPS Review - 2
 category: ETC
-author: Che1
+tags:
+  - Fastcampus
+  - Web Programming School
 ---
 
 ## Django Web Programming School 6기

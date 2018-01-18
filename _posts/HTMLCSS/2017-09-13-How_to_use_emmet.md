@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Emmet 사용법
-author: Che1
+tags:
+  - CSS
 category: HTML&CSS
 ---
 

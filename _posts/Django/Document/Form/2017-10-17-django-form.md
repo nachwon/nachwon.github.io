@@ -3,7 +3,9 @@ layout: post
 title: '[Form] 폼'
 subtitle: Forms in Django
 category: Django
-author: Che1
+tags:
+  - Django
+  - Form
 ---
 
 폼은 웹 상에서 사용자들이 서버로 데이터를 전송할 수 있도록 짜여진 양식이다. 사용자가 양식에 맞게 데이터를 작성하면 그것을 폼을 통해 서버에 전송하고 서버에서 데이터를 처리하여 필요한 결과물을 돌려주게 된다.  

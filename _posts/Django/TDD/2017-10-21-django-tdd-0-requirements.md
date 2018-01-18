@@ -3,7 +3,9 @@ layout: post
 title: '[TDD Tutorial] 사전 준비'
 category: Django
 subtitle: Prerequisites and Assumptions
-author: Che1
+tags:
+  - TDD
+  - Tutorial
 ---
 
 

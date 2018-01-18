@@ -1,7 +1,10 @@
 ---
 layout: post
 title: pyenv 설치하기(Ubuntu 환경)
-author: Che1
+tags:
+  - Python
+  - Pyenv
+  - Linux
 category: Python
 ---
 

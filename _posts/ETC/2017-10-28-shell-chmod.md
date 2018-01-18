@@ -3,7 +3,10 @@ layout: post
 title: '[Shell] chmod - 파일 및 폴더의 권한 설정'
 subtitle: Shell Script - Change Mode
 category: ETC
-author: Che1
+tags:
+  - Linux
+  - Shell
+  - Shell script
 ---
 
 `chmod` 셸 명령어는 파일 또는 폴더의 권한을 변경할 때 사용한다.

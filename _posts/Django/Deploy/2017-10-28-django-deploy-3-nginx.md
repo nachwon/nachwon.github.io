@@ -4,7 +4,11 @@ title: '[Deploy] Django 프로젝트 배포하기 - 3. Nginx'
 subtitle: Attaching Nginx Web Server
 comments: true
 category: Django
-author: Che1
+category: Django
+tags:
+  - Django
+  - Nginx
+  - Deploy
 ---
 
 

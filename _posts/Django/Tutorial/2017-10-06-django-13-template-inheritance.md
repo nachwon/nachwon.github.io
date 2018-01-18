@@ -2,7 +2,10 @@
 layout: post
 title: '[Django Tutorial] Blog 만들기 - 13. 템플릿 상속'
 category: Django
-author: Che1
+tags:
+  - Django
+  - Tutorial
+  - Template
 ---
 
 

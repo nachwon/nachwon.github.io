@@ -4,7 +4,10 @@ title: '[Deploy] Django 프로젝트 배포하기 - 6. DNS'
 subtitle: Setting Up A Domain Name
 comments: true
 category: Django
-author: Che1
+tags:
+  - Django
+  - DNS
+  - Deploy
 ---
 
 
