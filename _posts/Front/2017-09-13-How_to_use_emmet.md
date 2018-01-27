@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Emmet 사용법
+title: '[HTML]Emmet 사용법'
 tags:
-  - CSS
-category: HTML&CSS
+  - HTML
+category: Front-end
 ---
 
 ## Emmet이란?
@@ -40,7 +40,7 @@ html:5[tab]
 helloworld[tab]
 ```
 결과:
-```
+```html
 <helloworld></helloworld>
 ```
 
@@ -60,7 +60,7 @@ div>ul>li
 ```
 결과 :
 
-```
+```html
 <div>
     <ul>
         <li></li>
@@ -77,7 +77,7 @@ div+p+bq
 ```
 결과 :
 
-```
+```html
 <div></div>
 <p></p>
 <blockquote></blockquote>
@@ -110,9 +110,11 @@ div+div>p>span+em^bq
 
 Use as many **^** as needed to **move up more levels**.
 
-div+div>p>span+em^bq
-
 ```
+div+div>p>span+em^bq
+```
+
+```html
 <div></div>
 <div>
   <span>
@@ -122,9 +124,11 @@ div+div>p>span+em^bq
 </div>
 ```
 
-div+div>p>span+em^^bq
-
 ```
+div+div>p>span+em^^bq
+```
+
+```html
 <div></div>
 <div>
   <span>
@@ -134,9 +138,11 @@ div+div>p>span+em^^bq
 </div>
 ```
 
-div+div>p>span+em^^^bq
-
 ```
+div+div>p>span+em^^^bq
+```
+
+```html
 <div></div>
 <div>
   <span>
@@ -150,11 +156,13 @@ div+div>p>span+em^^^bq
 
 Use ** * ** operator to define **how many times** element should be outputted.
 
-```ul>li*5```
+```
+ul>li*5
+```
 
 ...outputs to
 
-```
+```html
 <ul>
   <li></li>
   <li></li>
@@ -164,11 +172,13 @@ Use ** * ** operator to define **how many times** element should be outputted.
 </ul>
 ```
 
-```ul>li*3```
+```
+ul>li*3
+```
 
 ...outputs to
 
-```
+```html
 <ul>
   <li></li>
   <li></li>
@@ -180,11 +190,13 @@ Use ** * ** operator to define **how many times** element should be outputted.
 
 Use **()** to group subtrees in complex abbreviations.
 
-```div>(header>ul>li*2>a)+footer>p```
+```
+div>(header>ul>li*2>a)+footer>p
+```
 
 ...expands to
 
-```
+```html
 <div>
     <header>
         <ul>
@@ -203,9 +215,11 @@ Each group contains abbreviation subtree and all the following elements are inse
 
 It is possible to nest groups inside each other and combine them with ** * ** operator.
 
-```(div>dl>(dt+dd)*3)+footer>p```
-
 ```
+(div>dl>(dt+dd)*3)+footer>p
+```
+
+```html
 <div>
   <dl>
     <dt></dt>
@@ -227,11 +241,13 @@ It is possible to nest groups inside each other and combine them with ** * ** op
 
 Use *elem*#id and *elem*.class notation to **reach the elements with specified id or class attributes.**
 
+```
 div#header+div.page+div#footer.class1.class2.class3
+```
 
 ...will output
 
-```
+```html
 <div id="header"></div>
 <div class="page"></div>
 <div id="footer" class="class1 class2 class3"></div>
@@ -241,34 +257,47 @@ div#header+div.page+div#footer.class1.class2.class3
 
 Use **[attr]** notation to **add custom attributes** to element.
 
+```
 td[title="Hello world!" colspan=3]
+```
 
 ...outputs
 
-```
+```html
 <td title="Hello world!" colspan="3"></td>
 ```
 
 - Place as many attributes as necessary.
 - It is not required to specify attribute values:
 
-    td[colspan title] -> ```<td colspan="" title=""></td>```
+```
+td[colspan title]
+```
+
+```html
+<td colspan="" title=""></td>
+```
     
   In this case, **tabstops are available** for each empty attribute.
 - Single or double quotes can be used for quoting attribute values.
 - If attribute values have **no space**, it is not needed to quote values.
 
-    td[title=hello colspan=3] -> ```<td title="hello" colspan="3"></td>```
+```
+td[title=hello colspan=3]
+```
+```html
+<td title="hello" colspan="3"></td>
+```
 
 ### Item numbering: $
 
 Use **$** operator with ** * ** operator to ** repeat elements with numbers**. Place ```$``` operator inside element's name, attribute's name or attribute's value to output current number of repeated element.
-
+```
 ul>li.item$*5
-
+```
 ...outputs to
 
-```
+```html
 <ul>
   <li class="item1"></li>
   <li class="item2"></li>
@@ -280,9 +309,11 @@ ul>li.item$*5
 
 Use multiple $ in a row to **pad** number with zeroes.
 
-```ul>li.item$$$*4```
-
 ```
+ul>li.item$$$*4
+```
+
+```html
 <ul>
   <li class="item001"></li>
   <li class="item002"></li>
@@ -295,11 +326,13 @@ Use multiple $ in a row to **pad** number with zeroes.
 
 Use **@** modifier to **change numbering direction** (ascending or decending) and base (start value).
 
-```ul>li.item$@-*5```
+```
+ul>li.item$@-*5
+```
 
 ...outputs to
 
-```
+```html
 <ul>
   <li class="item5"></li>
   <li class="item4"></li>
@@ -310,12 +343,12 @@ Use **@** modifier to **change numbering direction** (ascending or decending) an
 ```
 
 To change counter base value, add **@N** to $.
-
+```
 ul>li.item$@2*4
-
+```
 ...transforms to
 
-```
+```html
 <ul>
   <li class="item2"></li>
   <li class="item3"></li>
@@ -324,11 +357,12 @@ ul>li.item$@2*4
 </ul>
 ```
 
+```
 ul>li.item$@-3*4
-
+```
 ...is transformed to
 
-```
+```html
 <ul>
   <li class="item6"></li>
   <li class="item5"></li>
@@ -341,39 +375,45 @@ ul>li.item$@-3*4
 
 Use **{}** to **add text** to element.
 
+```
 a{Click me}
-
+```
 ... will produce
 
-```
+```html
 <a href="">Click me</a>
 ```
 
 When {text} is written right after elemnet, **it doesn't change parent context.**
 
+```
 p>{Click}+a{here}+{to continue}
+```
 
 ...produces
 
 
-```
+```html
 <p>Click<a href="">here</a>to continue</p>
 ```
 
+```
 p{Click}+a{here}+{to continue}
+```
 
 ...produces
 
-```
+```html
 <p>Click</p>
 <a href="">here</a>to continue
 ```
 
 ### Notes on abbreviation formatting
 
-- Do not use spaces between elements and operators to make abbreviations more readable.** Space is a stop symbol where Emmet stops abbreviation parsing.**
+- Do not use spaces between elements and operators to make abbreviations more readable. **Space is a stop symbol where Emmet stops abbreviation parsing.**
 - Expanding abbreviation is possible **anywhere in the text.**
-```
+
+
 - - -
 
 ###### Reference
