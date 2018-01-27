@@ -2,7 +2,7 @@
 layout: post
 title: '[AJAX] AJAX 요청에 CSRF 토큰 담아서 보내기'
 excerpt: Django 템플릿에서 AJAX로 POST 요청을 보낼 때 어떻게 CSRF 토큰을 담아서 보내는지 알아보자.
-category: Django
+category: Front-end
 tags:
   - Django
   - AJAX
