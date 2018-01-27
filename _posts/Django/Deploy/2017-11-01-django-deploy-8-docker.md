@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Deploy] Django 프로젝트 배포하기 - 8. Docker(내용 추가 필요)'
+title: '[Deploy] Django 프로젝트 배포하기 - 8. Docker'
 subtitle: Setting Up A Server Using Docker
 comments: true
 category: Django
