@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '[Python 문법] 데코레이터 (Decorator)'
-exceprt: Pyton으로 데코레이터를 만들고 사용하는 방법에 대해 알아본다.
+excerpt: Pyton으로 데코레이터를 만들고 사용하는 방법에 대해 알아본다.
 category: Python
 tags:
   - Python

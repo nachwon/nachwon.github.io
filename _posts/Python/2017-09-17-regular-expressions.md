@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Python 문법] 정규표현식 (Regular Expressions)'\
+title: '[Python 문법] 정규표현식 (Regular Expressions)'
 excerpt: 정규표현식에 대해 알아보고 Python으로 정규표현식을 사용하는 방법에 대해 알아본다.
 category: Python
 tags:
