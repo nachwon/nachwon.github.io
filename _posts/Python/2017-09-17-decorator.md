@@ -279,7 +279,8 @@ Hello
 wrapper1(introduce)('Chaewon')
 ```
 
-- **#13** : `wrapper1` 이 호출되면서 내부 명령인 `print('Hi')` 실행
+- **#13** : `wrapper1` 이 호출되면서 내부 명령인 `print('Hi')` 
+
 ```re
 Hello
 Hi
