@@ -1,0 +1,11 @@
+---
+layout: post
+title: OP.GG 챔피언 목록 페이지 복제하기
+tags:
+  - HTML
+  - CSS
+category: Front-end
+---
+
+HTML, CSS를 연습하기 위해 OP.gg의 챔피언 목록 페이지를 복제해보았다.  
+[op.gg_챔피언분석_clone](/others/HTMLCSS/clone.html)

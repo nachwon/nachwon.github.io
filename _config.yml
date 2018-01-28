@@ -10,7 +10,7 @@ tiled_bg:           false   # Set this true if you want to tile your background 
 locale:             en_US
 baseurl:            ""
 # url:                http://127.0.0.1:4000
-url:                https://nachwon.github.io
+# url:                https://nachwon.github.io
 # Jekyll
 permalink:          /:title/
 markdown:           kramdown
