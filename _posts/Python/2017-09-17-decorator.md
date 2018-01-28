@@ -17,7 +17,7 @@ tags:
 
 - - -
 
-#### 데코레이터의 구조
+## 데코레이터의 구조
 
 데코레이터의 기본 구조는 아래와 같다.
 
@@ -59,7 +59,7 @@ def decorator(func):
 
 - - -
 
-#### 데코레이터의 적용
+## 데코레이터의 적용
 
 만든 데코레이터를 적용시켜서 `introduce` 함수를 꾸며보자.
 
@@ -163,7 +163,7 @@ My name is Chaewon!
 ```
 
 - - -
-#### 데코레이터의 활용
+## 데코레이터의 활용
 
 - - -
 
@@ -171,7 +171,7 @@ My name is Chaewon!
 
 - - -
 
-#### 여러 개의 데코레이터 중첩 적용
+## 여러 개의 데코레이터 중첩 적용
 
 한 함수에 여러 개의 기능을 추가하고 싶을 경우 여러 개의 데코레이터를 적용할 수 있다.
 
@@ -235,27 +235,38 @@ def introduce(name):                    # 3
 introduce('Chaewon')                    # 10
 ```
 - **#1** : `say_hello` 함수 정의
+
 - **#2** : `say_hi` 함수 정의
+
 - **#3** : `introduce` 함수 정의
-- **#4** : `say_hi` 함수에 `introduce` 함수를 인자로 전달하면서 호출  
+
+- **#4** : `say_hi` 함수에 `introduce` 함수를 인자로 전달하면서 호출 
+
 ```python
 introduce = say_hi(introduce)
 ```
 - **#5** : `say_hi` 함수 내에서 `wrapper1` 함수 정의
+
 - **#6** : `wrapper1` 함수를 호출하지 않고 리턴
+
 ```python
 introduce = wrapper1(introduce)
 ```
 - **#7** : `say_hello` 함수에 `say_hi` 함수의 출력값 `wrapper1` 을 인자로 전달하면서 호출
+
 ```python
 introduce = say_hello(wrapper1(introduce))
 ```
+
 - **#8** : `say_hello` 함수 내에서 `wrapper2` 함수 정의
+
 - **#9** : `wrapper2` 함수를 호출하지 않고 리턴
+
 ```python
 introduce = wrapper2(wrapper1(introduce))
 ```
 - **#10** : `introduce`에 `'Chaewon'` 을 인자로 전달하면서 호출
+
 ```python
 introduce('Chaewon')  # 이 introduce는 가장 처음 정의되었던 introduce와 다르다
 ```
@@ -266,6 +277,7 @@ introduce('Chaewon')  # 이 introduce는 가장 처음 정의되었던 introduce
 wrapper2(wrapper1(introduce))('Chaewon')  # introduce 자리에 wrapper2(wrapper1(introduce))를 그대로 대입
 # 여기의 introduce는 가장 처음 정의되었던 introduce이다.
 ```
+
 - **#11** : `wrapper2` 가 먼저 호출되면서 내부 명령인 `print('Hello')` 실행
 
 ```re
@@ -287,6 +299,7 @@ Hi
 ```
 
 - **#14** : `wrapper1` 함수는 자신이 받은 func 즉, `introduce`에 `'Chaewon'` 을 인자로 전달하여 호출한 뒤 종료된다.
+
 ```python
 |--func--|---args--|
 introduce('Chaewon')
@@ -305,13 +318,16 @@ My name is Chaewon!
 ```python
 say_hello(say_hi(introduce))('Chaewon')
 ```
+
 ```re
 Hello
 Hi
 My name is Chaewon!
 ```
+
 - - -
-##### @Wraps
+
+## @Wraps
 
 아래의 코드를 보자. `decorator1` 과 `decorator2` 는 자신이 받은 함수의 이름과 함께 메세지를 출력해준다.
 
@@ -433,7 +449,7 @@ print(dir(function.__wrapped__.__wrapped__))
 
 - - -
 
-#### 데코레이터는 클로저일까?
+## 데코레이터는 클로저일까?
 
 데코레이터와 클로저는 서로 매우 비슷한 구조를 가지고 있다. 이 둘의 차이점은 데코레이터는 **함수를 인자**로 전달받는다는 점이다.  
 그렇다면 클로저 포스트에서 살펴봤던 것처럼 데코레이터도 `cell object` 를 가지고 있을까? 
