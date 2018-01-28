@@ -1,6 +1,7 @@
 ---
 layout: post
 title: '[Python 문법] 제어문 - if, for, while'
+excerpt: 제어문을 사용하여 좀 더 다이나믹한 Python 프로그램을 만들어보자.
 category: Python
 tags:
   - Python

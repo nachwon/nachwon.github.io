@@ -1,6 +1,7 @@
 ---
 layout: post
 title: pyenv 설치하기(Ubuntu 환경)
+excerpt: Python 버전 관리 툴인 pyenv 설치하기.
 tags:
   - Python
   - Pyenv
