@@ -25,7 +25,7 @@ tags:
 저 문자열 대신에 `html` 파일인 `템플릿 (Template)`을 만들어 출력하도록 한 번 바꿔보자.
 
 - - -
-#### 템플릿 생성하기
+## 템플릿 생성하기
 
 우선 `myproject` 폴더 아래에 `templates` 라는 폴더를 만들어주자. 그리고 `templates` 폴더 아래에 `blog` 라는 이름으로 폴더를 만들어주자.  
 ```
@@ -84,7 +84,7 @@ templates
 
 - - -
 
-#### 템플릿 경로 설정하기
+## 템플릿 경로 설정하기
 
 뷰에서 템플릿을 출력하기에 앞서 먼저 `Django` 에게 템플릿 폴더의 위치를 알려주어야한다.
 `settings.py` 를 열어 아래의 코드를 확인하자.
@@ -138,7 +138,7 @@ TEMPLATES = [
 
 - - -
 
-#### 템플릿 출력하기
+## 템플릿 출력하기
 
 이제 뷰에서 `templates` 폴더 안에 있는 템플릿 파일을 불러와 출력시켜보자.  
 
@@ -175,7 +175,7 @@ def helloworld(request):
 
 - - -
 
-###### Reference
+#### Reference
 
 이한영 강사님 강의자료  
 Djangogirls: [https://tutorial.djangogirls.org/ko/](https://tutorial.djangogirls.org/ko/)   

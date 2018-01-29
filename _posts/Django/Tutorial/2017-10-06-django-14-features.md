@@ -18,7 +18,7 @@ tags:
 
 - - -
 
-#### <span id="post-publish">`Post` 게시하기</span>
+## <span id="post-publish">`Post` 게시하기</span>
 
 앞선 포스트에서 `published_date` 가 없는 `Post` 는 블로그 메인 화면에 나타나지 않도록 해주었었다. 이제 보이지 않는 `Post` 에 `published_date` 를 부여해서 메인 화면에 나타나도록 해보자.  
 `models.py` 의 `Post` 모델에 아래와 같이 `publish` 메서드를 추가해보자.
@@ -58,7 +58,7 @@ for post in posts:
 <a href="#menu">위로</a>
 - - -
 
-### <span id="post-hide">`Post` 숨기기</span>
+## <span id="post-hide">`Post` 숨기기</span>
 
 이번에는 `Post` 객체의 `published_date` 필드 값을 `null` 로 바꿔서 메인 화면에서 `Post` 를 숨겨주는 기능을 만들어보자.  
 이번에도 역시 `models.py` 에 `hide` 라는 메서드로 추가해준다.
@@ -83,13 +83,13 @@ post.hide()
 <a href="#menu">위로</a>
 - - -
 
-### <span id="post-add">Post 추가하기</span>
+## <span id="post-add">Post 추가하기</span>
 
 좀 더 복잡한 기능을 추가해보자. 현재 블로그에 새 글을 추가하기 위해서는 관리자 페이지를 사용하거나 `ORM` 을 활용하는 방법이 있다. 하지만 이 방법들은 사용자가 활용하기에 적절한 방법이 아니다. 새로운 글을 추가하는 페이지를 따로 만들어 글을 등록하는 `User-friendly` 한 기능을 추가해보자.  
 
 - - -
 
-#### 템플릿 생성
+### 템플릿 생성
 
 먼저 새로운 템플릿 만들어보자. `template` 폴더에 `post_add.html` 파일을 만들고 아래와 같이 입력한다.
 
@@ -120,7 +120,7 @@ post.hide()
 
 - - -
 
-#### 뷰와 URL 생성
+### 뷰와 URL 생성
 
 다음으로 `views.py` 에 `post_add` 함수를 추가해주고, `url.py` 에서 `post/add/` 라는 `URL` 주소를 할당해주었다.  
 
@@ -156,7 +156,7 @@ urlpatterns = [
 
 - - -
 
-#### CSRF 토큰
+### CSRF 토큰
 
 > #### 사이트 간 요청 위조 (Cross-Site Request Forgery, CSRF)
 >
@@ -246,11 +246,11 @@ urlpatterns = [
 
 - - -
 
-#### 폼 데이터 전송하기
+### 폼 데이터 전송하기
 
 이제 글 등록 페이지의 겉모습은 얼추 구현이 다 되었다. 하지만 아직까지 `글 등록` 버튼을 누르면 아무 일도 일어나지 않는다. 글 등록 버튼을 눌러 새 글이 등록되게 해주려면 글 등록 페이지에서 `제목` 과 `내용` 에 입력한 데이터를 서버에 전송해서 데이터베이스에 저장하도록 구현해주어야 한다. 이 때 활용할 부분이 `form` 태그의 `method` 속성이다.  
 - - -
-##### form 태그 method 속성
+#### form 태그 method 속성
 
 `form` 태그의 `method` 속성은 `GET` 과 `POST` 를 값으로 가질 수 있다. `form` 태그의 `method` 안에 값을 입력하면 각각 폼으로 받은 데이터를 `GET` 방식과 `POST` 방식으로 서버에 전달하게 된다. 기본값은 `GET` 방식이다.
 
@@ -258,7 +258,7 @@ urlpatterns = [
 
 - - -
 
-##### GET
+#### GET
 
 `GET` 은 폼에서 받은 데이터를 `URL` 주소에 질의문자 형태로 이어붙여서 데이터를 전달한다.
 예를 들어 폼의 `method` 가 `GET` 인 경우, 글 등록 페이지에서 제목에 'Helloworld', 내용에 'Byeworld' 라고 입력한 다음 `글 등록` 버튼을 눌러보면 아래와 같은 `URL` 로 접속이 된다. 
@@ -290,7 +290,7 @@ title=Helloworld&content=Byeworld
 이 부분이 우리가 폼에 입력했던 제목과 내용이다. `input` 태그의 `name` 속성이  `key` 로, `input` 속성에 입력한 데이터가 `value` 로 `URL` 에 표시되어 있다. 이렇게 `GET` 방식은 데이터를 `URL` 주소에 질의 문자 형태로 포함하여 전달한다. 그렇기 때문에 공개하면 안되는 데이터를 전송할 때는 `GET` 을 사용하지 않는다.
 
 - - -
-##### POST
+#### POST
 
 `POST` 방식은 폼에서 받은 데이터를 내부적으로 서버에 전달한다. 폼 태그의 `method` 속성을 `POST` 로 바꾸고 똑같은 제목과 내용으로 `글 등록` 버튼을 눌러보자.  
 
@@ -358,7 +358,7 @@ def post_add(request):
 
 - - -
 
-#### 폼 데이터를 데이터베이스에 저장
+### 폼 데이터를 데이터베이스에 저장
 
 `POST` 로 전송되는 데이터는 `POST` 라는 객체로 전달된다. 이 객체는 `QueryDict` 라는 딕셔너리 타입의 데이터이다.  
 이 데이터에 접근하려면 아래와 같이 입력한다.
@@ -466,7 +466,7 @@ def post_add(request):
 
 - - -
 
-#### redirect()
+### redirect()
 
 보통 블로그에서 새 글을 등록하면 바로 등록한 글의 자세히 보기 페이지로 넘어간다. 지금 우리의 블로그는 `Post method` 라는 문자열을 돌려주도록 짜여있는데 이것을 고쳐보자.  
 `views.py` 를 아래와 같이 수정해준다.
@@ -512,7 +512,7 @@ redirect('뷰이름', 매개변수명=인자)
 글을 등록하자마자 아래와 같이 자세히 보기 페이지가 뜨는 것을 확인할 수 있다.
 
 - - -
-#### Post 추가 버튼 만들기
+### Post 추가 버튼 만들기
 
 이제 새 `Post` 를 추가하는 모든 기능이 구현되어 있으니, 그 기능으로 쉽게 접근할 수 있도록 메인 화면에 링크만 하나 만들어주면 될 것 같다. 하는 김에 블로그 타이틀을 누르면 메인 화면으로 가는 기능도 추가하자.
 `base.html` 을 열고 아래와 같이 수정한다.
@@ -578,13 +578,13 @@ url(r'^post/add/$', post_add, name='post_add'),
 <a href="#menu">위로</a>
 - - -
 
-### <span id="post-delete">Post 삭제하기</span>
+## <span id="post-delete">Post 삭제하기</span>
 
 새 글을 추가하는 기능을 넣었으니 이제 삭제하는 기능도 넣어보자.
 
 - - -
 
-#### 글 삭제 버튼 추가
+### 글 삭제 버튼 추가
 
 `post_detail.html` 을 열고 아래와 같이 추가해주자.
 
@@ -616,7 +616,7 @@ url(r'^post/add/$', post_add, name='post_add'),
 
 - - -
 
-#### delete 템플릿 생성
+### delete 템플릿 생성
 
 글을 삭제했을 때, 글이 삭제되었다는 메세지를 띄워주는 템플릿을 하나 만들자.
 
@@ -640,7 +640,7 @@ url(r'^post/add/$', post_add, name='post_add'),
 
 - - -
 
-#### delete URL 주소 설정
+### delete URL 주소 설정
 
 `post_delete.html` 이 표시될 `URL` 주소를 설정해주자.  
 `urls.py` 를 열어서 `urlpatterns` 에 아래와 같이 추가해주자.
@@ -653,7 +653,7 @@ url(r'^post/(?P<pk>\d+)/delete/$', post_delete, name='post_delete'),
 
 - - -
 
-#### delete 뷰 생성
+### delete 뷰 생성
 
 이제 글 삭제 기능을 구현하면서 `post_delete.html` 템플릿을 띄워줄 뷰를 생성한다.  
 `views.py` 를 열고 아래와 같이 추가해준다.
@@ -673,7 +673,7 @@ def post_delete(request, pk):
 
 - - -
 
-#### form action 설정
+### form action 설정
 
 글 삭제 버튼은 어떤 글의 자세히 보기 페이지에 있으며, 그 버튼을 누르면 현재 보고있는 페이지를 삭제해야한다. 그렇게 해주려면 설정해준 `URL` 인 `r'^post/(?P<pk>\d+)/delete/$'` 의 `pk` 그룹 값으로 현재 보고있는 페이지의 `pk` 값을 전달해야한다.  
 일단 코드를 먼저 보자.
@@ -710,7 +710,7 @@ def post_delete(request, pk):
 
 - - -
 
-###### Reference
+#### Reference
 이한영 강사님 강의자료  
 Django 공식문서: [https://docs.djangoproject.com/en/1.11/ref/templates/builtins/#ref-templates-builtins-tags](https://docs.djangoproject.com/en/1.11/ref/templates/builtins/#ref-templates-builtins-tags)  
 Django 공식문서: [https://docs.djangoproject.com/en/1.11/topics/http/shortcuts/](https://docs.djangoproject.com/en/1.11/topics/http/shortcuts/)  
