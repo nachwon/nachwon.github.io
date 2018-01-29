@@ -167,6 +167,5 @@ published_date = models.DateTimeField(blank=True, null=True)
 이한영 강사님 강의자료  
 Djangogirls: [https://tutorial.djangogirls.org/ko/](https://tutorial.djangogirls.org/ko/)  
 Django 공식문서: [https://docs.djangoproject.com/en/1.11/topics/db/models/](https://docs.djangoproject.com/en/1.11/topics/db/models/)  
-
 예제로 배우는 Python 프로그래밍: [http://pythonstudy.xyz/python/article/308-Django-%EB%AA%A8%EB%8D%B8-Model](http://pythonstudy.xyz/python/article/308-Django-%EB%AA%A8%EB%8D%B8-Model)  
 
