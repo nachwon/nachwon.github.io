@@ -246,17 +246,19 @@ for post in posts:
 
 글 내용까지 보이게 만들긴 했는데 글 전체가 다 보이니 너무 정신이 없다. 몇 개의 단어까지만 보여주도록 설정해보자.
 ```html
+{% raw %}
 <body>
     <h1>Welcome to Che1's Blog!</h1>
     <ul>
-        {{ "{% for post in posts " }}%}
+        {% for post in posts %}
         <li>
             <div class="title"><a href="">{{ "{{ post.title " }}}}</a></div>
             <div class="content">{{ "{{ post.content|truncatewords:30 " }}}}</div>
         </li>
-        {{ "{% endfor " }}%}
+        {% endfor %}
     </ul>
 </body>
+{% endraw %}
 ```
 
 변수 옆에 `|` 를 붙여서 필터를 적용할 수 있다. 여기서는 글 내용에 `truncatewords` 라는 단어 수 필터를 적용하여 30 단어까지만 보여주도록 만들어 주었다. 필터의 종류는 [Django 공식문서](https://docs.djangoproject.com/en/1.11/ref/templates/builtins/#ref-templates-builtins-filters1) 에서 확인할 수 있다.
