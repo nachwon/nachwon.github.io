@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Javascript] 오디오 파형 속도 개선하기'
+title: 'Python으로 오디오 파형 이미지 그리기'
 excerpt: Javascript 라이브러리를 사용하지 않고 Python을 이용하여 파형을 그려주어 페이지 로딩 속도를 개선해보았다.
 project: true
 tags:
@@ -11,7 +11,7 @@ tags:
   - Javascript
   - Audio
   - Wavesurfer
-category: Front-end
+category: Python
 ---
 
 오디오 파형을 보여주기 위해서 사용했던 `Wavesurfer.js` 는 다 좋은데 너무 느렸다. 하나의 오디오 파일을 그려주는 것 까지는 나쁘지 않은데 두 개만 동시에 보여주려고 해도 급격히 느려지는 현상이 발생했다. 안그래도 느린 내 노트북으로는 감당하기가 너무 힘들기도 하고 파일이 많아지면 페이지 로딩 자체가 점점 더 많이 느려질 것 같아서 이걸 개선해보기로 했다.
@@ -258,9 +258,134 @@ def _get_bar_image(self, size, fill):
 참고자료: [Stackoverflow](https://stackoverflow.com/questions/36468530/changing-pixel-color-value-in-pil)  
 
 ```py
+def change_color(base_png):
+    # 이미지 파일을 불러온다
+    im = Image.open(base_png)
+    newimdata = []
 
+    black1 = (51, 53, 51, 255)
+    yellow1 = (226, 176, 38, 255)
+    blank = (255, 255, 255, 0)
+
+    for color in im.getdata():
+        # 이미지를 순회하면서 색상이 (51, 53, 51, 255) 이면
+        if color == black1:
+            # (226, 176, 38, 255) 로 바꾼 값을 새 리스트에 저장
+            newimdata.append(yellow1)
+        else:
+            # 나머지는 (255, 255, 255, 0) 로 바꾸어 새 리스트에 저장
+            newimdata.append(blank)
+
+    # 원래 이미지의 mode 값과 size 값을 그대로 가져와 새 이미지를 생성
+    newim = Image.new(im.mode, im.size)
+    # 새 리스트의 데이터를 새 이미지에 입력
+    newim.putdata(newimdata)
+
+    # 이미지 저장 경로
+    # 파일 이름은 '원본파일이름_cover.png' 로 저장되도록 해주었다.
+    out_dir = base_png.replace('.' + base_png.split('.')[-1], '_cover.png')
+
+    # 주어진 경로에 이미지 저장
+    newim.save(out_dir)
+    return out_dir
 ```
 
 - - -
 
+위 함수에 이전에 만들었던 검은 파형 이미지 파일을 전달하면 아래와 같이 색상이 바뀐 이미지가 출력된다.
+
+<img src="/img/front/wavesurfer_cover.png">
+
+- - -
+
 ## manage.py 에 커맨드 추가하기
+
+이제 이미지를 생성하는 모든 과정이 서버에서 이루어지므로 이미 업로드 되어있는 음원들에 대해서도 이미지를 생성해줄 수 있게 되었다.  
+이것을 `manage.py` 의 명령어에 추가해주기로 했다.  
+
+먼저 `Post` 모델이 웨이브폼 이미지를 저장할 수 있도록 필드를 추가해주었다.  
+
+```py
+class Post(models.Model):
+    ...
+    author_track_waveform_base = models.ImageField(
+        upload_to=author_track_waveform_base_directory_path, blank=True, null=True
+    )
+    author_track_waveform_cover = models.ImageField(
+        upload_to=author_track_waveform_cover_directory_path, blank=True, null=True
+    )
+    ...
+```
+
+그리고 `Post` 앱 아래에 `management` 패키지를 추가하고 그 아래에 `commands` 패키지를 추가한 다음 그 아래에 `createwaveform.py` 모듈을 추가해주었다.
+
+```
+posts
+├── management
+│   ├── __init__.py
+│   └── commands
+│       ├── __init__.py
+│       └── createwaveform.py
+.
+.
+.
+```
+
+`createwaveform.py` 모듈은 아래와 같다.
+
+```py
+from django.conf import settings
+from django.core.files.base import ContentFile
+from django.core.management.base import BaseCommand
+
+from posts.models import Post
+# 위의 파형 생성 및 색상 변경 메서드들이 들어있는 모듈
+from utils.pywave import Waveform
+
+
+class Command(BaseCommand):
+    help = 'Creates waveform image from an audio file source'
+
+    def handle(self, *args, **options):
+        # 모든 포스트 목록을 순회하면서 author_track 에 대한 파형 이미지를 생성함
+        # 생성한 이미지들을 각각 author_track_waveform_base, author_track_waveform_cover 필드에 업로드해준다.
+        posts = Post.objects.all()
+        for post in posts:
+            # 이미지를 생성할 로컬 경로
+            audio_dir = settings.ROOT_DIR + post.author_track.url
+            # 이미지 생성
+            waveform = Waveform(audio_dir)
+            # 기본 이미지 저장
+            waveform_base = waveform.save()
+            # 색상 변경한 이미지 저장
+            waveform_cover = waveform.change_color(waveform_base)
+
+            # 기본 이미지 열어서 장고 ContentFile로 변환
+            with open(waveform_base, 'rb') as f1:
+                base = ContentFile(f1.read())
+
+            # 색상 변경한 이미지 열어서 장고 ContentFile로 변환
+            with open(waveform_cover, 'rb') as f2:
+                cover = ContentFile(f2.read())
+
+            # 각 이미지를 post 객체의 필드에 업로드함
+            post.author_track_waveform_base.save('author_track.png', base)
+            post.author_track_waveform_cover.save('author_track_cover.png', cover)
+
+            # post 객체 변경사항 저장
+            post.save()
+
+```
+
+이렇게 해준 다음 `./manage.py createwaveform` 명령을 실행하면 모든 Post 객체의 `author_track` 음원 파일에 대한 파형 이미지가 생성된 다음 필드값으로 업로드된다.  
+
+- - -
+
+이어지는 포스트에서는 이 두 이미지를 가지고 인터렉티브 한 오디오 컨트롤러를 구현하는 방법에 대해 다루겠다.
+
+- - -
+
+#### Reference
+
+파형 이미지 생성: [waveformpy_mixxorz_python](http://codegist.net/snippet/python/waveformpy_mixxorz_python)  
+파형 색상 변경: [Stackoverflow](https://stackoverflow.com/questions/36468530/changing-pixel-color-value-in-pil)  
