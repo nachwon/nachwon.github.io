@@ -70,10 +70,11 @@ Date: Mon, 05 Feb 2018 10:42:38 GMT
 
 Range 요청을 지원하는 서버로 Range 요청을 보내려면 Request 헤더에 `Range` 라는 항목에 다음과 같은 형식으로 입력해서 요청을 보내면 된다.  
 
+- unit: 데이터 단위
+- range-start: 범위 시작 지점
+- range-end: 범위 끝지점
+
 ```
-# unit: 데이터 단위
-# range-start: 범위 시작 지점
-# range-end: 범위 끝지점
 Range: <unit>=<range-start>-
 Range: <unit>=<range-start>-<range-end>
 Range: <unit>=<range-start>-<range-end>, <range-start>-<range-end>
@@ -103,17 +104,20 @@ Content-Range: bytes 0-1023/13903992
 
 실제로 크롬 개발자 도구의 네트워크 탭에서 네트워크 활동 로그를 확인해보면 오디오 파일을 탐색할 때 마다 아래와 같은 `206` 상태 코드를 가지는 여러 개의 응답들이 돌아오는 것을 확인 할 수 있었다.  
 
-<image src="/img/http/range.png">
+<image src="/img/http/range.png"></image>  
+
 
 Range 요청이 성공적으로 처리되었으면 서버는 `206 Partial Content` 라는 메세지를 되돌려준다.  
 만약 전체 파일 길이를 넘어서는 범위를 요청하거나 하는 등으로 Range 요청이 실패하면 서버는 `416 Requested Range Not Satisfiable` 이라는 메세지를 되돌려준다.  
 서버가 Range 요청을 지원하지 않는 경우에는 `200 OK` 로 응답한다.  
+
 
 - - -
 
 그럼 왜 runserver 에서는 오디오 탐색이 되지 않았던 것일까? 알아본 바로는 일단 장고는 Range 요청을 지원하지 않는다고 한다. 크롬 브라우저는 `Accept-Ranges` 라는 항목이 응답 헤더에 들어있어야 Range 요청을 처리해주는 것 같은데 장고에서 요청을 받아서 응답을 돌려줄 때 `Accept-Ranges` 항목을 따로 담아주지 않는다. 이걸 해줄려면 커스텀 미들웨어를 작성해서 추가해주어야 할 것 같다. 그리고 굳이 장고에서 이걸 해주지 않아도 상관이 없는 이유는 보통 웹 서버에서 Range 요청을 처리해주기 때문이라고 한다고 누군가가 StackOverflow 에 답변을 달아 놓은 것을 보았다.  
 그래서 로컬에서는 작동하지 않는 채로 배포를 해보았더니 정말로 오디오 탐색이 정상적으로 작동했다. `NginX` 에서 Range 요청을 처리해주는 것 같다.  
 그리고 알 수 없는 이유로 파이어폭스에서는 로컬에서도 오디오 탐색이 정상적으로 작동했다. 뭔가 `Accept-Ranges` 라는 항목이 없어도 알아서 Range 요청을 처리해주는 것 같은데 자세하게 어떤 원리로 오디오 탐색이 정상작동하는 것인지는 좀 더 알아봐야 할 것 같다.  
+
 
 - - -
 
