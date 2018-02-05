@@ -1,12 +1,15 @@
 ---
 layout: post
-title: '[AJAX] AJAX 요청에 CSRF 토큰 담아서 보내기'
+title: '[SoundHub] AJAX 요청에 CSRF 토큰 담아서 보내기'
 excerpt: Django 템플릿에서 AJAX로 POST 요청을 보낼 때 어떻게 CSRF 토큰을 담아서 보내는지 알아보자.
 category: Front-end
+project: true
 tags:
   - Django
   - AJAX
   - CSRF
+  - SoundHub
+  - Project
 ---
 
 Django에서는 `사이트간 요청 위조(CSRF)` 를 방지하기 위해 POST 요청에 `CSRF Token` 을 담아서 보내도록 하고있다. Form을 통한 POST 요청에서는 간단히 `{{ "{% csrf_token " }}%}` 를 폼안에 포함시키면 되었다.  

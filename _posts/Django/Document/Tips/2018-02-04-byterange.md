@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'HTTP Range Requests'
+title: '[SoundHub] HTTP Range Requests'
 excerpt: HTTP Range Requests 는 서버에서 전송하는 HTTP 메세지의 일부만을 클라이언트에 전달하는 것을 가능하게 한다. 이런 분할된 요청은 대용량의 미디어 전송이나 파일 다운로드를 처리하는데 유용하며, 미디어의 탐색을 가능하게 한다.
 project: true
 tags:
@@ -8,6 +8,8 @@ tags:
   - HTTP Range Requests
   - NginX
   - Audio
+  - SoundHub
+  - Project
 category: Django
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '오디오 파형 로딩 속도 개선하기'
+title: '[SoundHub] 오디오 파형 로딩 속도 개선하기'
 excerpt: Python을 이용하여 생성한 파형 이미지들을 가지고 오디오 파일을 컨트롤할 수 있도록 만들어보자. Wavesurfer.js 를 사용할 때 보다 훨씬 빠르게 페이지를 로드할 수 있다.
 project: true
 tags:
@@ -9,6 +9,8 @@ tags:
   - Javascript
   - Audio
   - Wavesurfer
+  - SoundHub
+  - Project
 category: Front-end
 ---
 
