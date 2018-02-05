@@ -17,7 +17,52 @@ category: Front-end
 
 - - -
 
-## 자바 스크립트 코드
+## HTML
+
+```html
+<audio id="file" src="/home/che1/Projects/Django/django_audiomix/temp/user_6/Post_None/author_track/author_track.mp3"></audio>
+
+<button onclick="audio.play()">Play</button>
+<button onclick="audio.pause()">Pause</button>
+
+<div id="container" class="wrap">
+    <img id="back-image" draggable="false" src="/home/che1/Projects/Django/django_audiomix/temp/user_6/Post_None/author_track/author_track.png" alt="">
+    <div id="cutter" class="cutter">
+        <img id="cover-image" draggable="false" src="/home/che1/Projects/Django/django_audiomix/temp/user_6/Post_None/author_track/author_track_cover.png" alt="">
+    </div>
+</div>
+```
+
+- - -
+
+## CSS
+
+```css
+.wrap {
+    position: relative;
+    display: inline-block;
+    width: 1000px;
+    height: 150px;
+    margin: 0 auto;
+}
+.cutter {
+    pointer-events: none;
+    position: absolute;
+    width: 0px;
+    height: 100%;
+    overflow: hidden;
+}
+img {
+    position: absolute;
+}
+#cover-image {
+    pointer-events: none;
+}
+```
+
+- - -
+
+## Javascript
 
 ```js
 // 웨이브폼 이미지
