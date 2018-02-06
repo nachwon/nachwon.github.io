@@ -47,7 +47,7 @@ Run 'python manage.py migrate' to apply them.
 
 - - -
 
-#### Migrations
+## Migrations
 
 `Migrations` 는 `Django`의 `모델` 에서 설정한 데이터베이스의 테이블 구조를 데이터베이스에 적용시키기 위한 기록으로 볼 수 있다. 
 
@@ -63,7 +63,7 @@ Run 'python manage.py migrate' to apply them.
 
 - - -
 
-#### SQLite
+## SQLite
 
 데이터베이스에는 다양한 종류가 있다. `Django` 는 데이터베이스의 하나인 `SQLite` 를 포함하고 있다.  
 
@@ -91,7 +91,7 @@ DATABASES = {
 - - -
 
 
-#### Migrate 하기
+## Migrate 하기
 
 이제 데이터베이스에 대해서도 알아봤으니, 앱들을 위한 데이터베이스 테이블을 만들어주도록 하자.
 
@@ -149,7 +149,7 @@ myproject
 
 - - -
 
-#### SQLite Browser
+## SQLite Browser
 
 `SQLite`  데이터베이스를 좀 더 직관적으로 관리할 수 있도록 해주는 GUI 프로그램이 있다.  
 `SQLite Browser` 이라는 프로그램이며, 아래 링크에서 다운받아 설치할 수 있다.  
@@ -168,7 +168,7 @@ myproject
 
 - - -
 
-#### Migration 만들기
+## Migration 만들기
 
 데이터베이스에 변화가 생길 때에는 항상 어떤 변화가 생기는지에 대한 기록을 남겨야한다.  
 아래 명령을 입력하면 앱 폴더 안의 `migrations` 폴더에 데이터베이스 변경사항에 대한 정보가 기록된다.
@@ -273,7 +273,7 @@ Running migrations:
 오오... 우리가 작성했던 `Post` 모델 클래스의 속성들이 필드로 들어가있는 것을 확인할 수 있다.
 
 - - -
-#### ※ 데이터베이스 스키마 확인하기
+## ※ 데이터베이스 스키마 확인하기
 
 데이터베이스는 `SQL` 을 통해 관리된다. `migrate` 명령어는 Python으로 작성된 데이터베이스 변경사항을 `SQL` 로 번역해주는 역할을 한다고 할 수 있다.  
 아래의 명령어를 입력하면 `migration` 이 `migrate` 될 때 실제로 실행되는 `SQL` 명령어를 확인할 수 있다.
@@ -313,7 +313,7 @@ COMMIT;
 
 - - -
 
-###### Reference
+#### Reference
 이한영 강사님 강의자료  
 School of Web: [http://schoolofweb.net/blog/posts/%EB%82%98%EC%9D%98-%EC%B2%AB-django-%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0-part-2-1/](http://schoolofweb.net/blog/posts/%EB%82%98%EC%9D%98-%EC%B2%AB-django-%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0-part-2-1/)  
 Djangogirls: [https://tutorial.djangogirls.org/ko/](https://tutorial.djangogirls.org/ko/)  

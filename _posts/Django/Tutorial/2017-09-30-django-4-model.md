@@ -14,7 +14,7 @@ tags:
 
 - - -
 
-#### MVC 패턴
+### MVC 패턴
 
 어떤 어플리케이션이 `모델(Model)`, `뷰(View)`, `컨트롤러(Controller)` 로 구성되도록 개발하는 방법을 `MVC` 패턴이라고 한다.
 
@@ -43,7 +43,7 @@ tags:
 웹 어플리케이션이 이와 같은 동작 과정을 가지도록 개발하는 방법론을 `MVC` 패턴이라고 한다. 이러한 방식으로 개발을 하면 유지보수가 용이하며, 개발 참여자들 간 효율적인 커뮤니케이션이 가능해진다는 이점이 있다.
 
 - - -
-### MTV 패턴
+## MTV 패턴
 `Django` 에서는 일반적인 웹 프레임워크들의 `MVC` 패턴과는 조금 다른 `MTV` 패턴을 따른다.  
 `MTV` 패턴은 `모델(Model)`, `템플릿(Template)`, `뷰(View)` 로 구성되어 있으며, **템플릿이 `MVC` 의 뷰 역할**을 하고, **뷰가 `MVC` 의 컨트롤러 역할**을 담당한다.
 
@@ -53,7 +53,7 @@ tags:
 
 - - -
 
-#### 모델 만들기
+### 모델 만들기
 
 먼저 블로그 앱의 모델을 만들어보자.
 
@@ -163,10 +163,9 @@ published_date = models.DateTimeField(blank=True, null=True)
 
 - - -
 
-###### Reference
+#### Reference
 이한영 강사님 강의자료  
 Djangogirls: [https://tutorial.djangogirls.org/ko/](https://tutorial.djangogirls.org/ko/)  
 Django 공식문서: [https://docs.djangoproject.com/en/1.11/topics/db/models/](https://docs.djangoproject.com/en/1.11/topics/db/models/)  
-
 예제로 배우는 Python 프로그래밍: [http://pythonstudy.xyz/python/article/308-Django-%EB%AA%A8%EB%8D%B8-Model](http://pythonstudy.xyz/python/article/308-Django-%EB%AA%A8%EB%8D%B8-Model)  
 

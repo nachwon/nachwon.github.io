@@ -1,10 +1,11 @@
 ---
 layout: post
-title: 팀 프로젝트 프로토타입
+title: '[SoundHub] 팀 프로젝트 프로토타입'
 category: Django
 subtitle: Team Project Prototype
 project: true
 tags:
+  - SoundHub
   - Project
 ---
 

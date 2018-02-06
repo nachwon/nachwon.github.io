@@ -15,7 +15,7 @@ tags:
 
 - - -
 
-#### View 만들기
+## View 만들기
 
 어떤 사용자가 블로그에 접속했을 때, 무엇을 보게될까?  
 지금 우리의 블로그에 접속하면 아래와 같은 화면이 뜬다.
@@ -43,7 +43,7 @@ def helloworld(request):
 
 - - -
 
-#### URL 설정
+## URL 설정
 
 웹 어플리케이션의 다양한 기능은 각각의 고유 `URL` 주소를 가지고 있으며, 해당 기능의 주소에 접속하므로써 그 기능을 활성화한다.  
 사용자가 어떤 `URL` 주소에 접속하면 그 주소에 `request` 를 보내게 되고, 뷰는 이 `request` 를 받아 `response` 를 돌려주는 것이다. 따라서 우리가 만든 뷰가 작동하려면 다시 말해, `request` 를 받으려면, 어떤 `URL` 주소에 할당되어 있어야한다. 그래야 사용자가 그 주소로 접속하여 `request` 를 보낼 수 있기 때문이다. 우리가 만든 `helloworld` 뷰에 `URL` 주소를 할당해보자.  
@@ -114,7 +114,7 @@ urlpatterns = [
 
 - - -
 
-###### Reference
+#### Reference
 이한영 강사님 강의자료  
 Djangogirls: [https://tutorial.djangogirls.org/ko/](https://tutorial.djangogirls.org/ko/)  
 예제로 배우는 Python 프로그래밍: [http://pythonstudy.xyz/python/article/306-Django-%EB%B7%B0-View](http://pythonstudy.xyz/python/article/306-Django-%EB%B7%B0-View)  

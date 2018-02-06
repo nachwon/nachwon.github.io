@@ -25,7 +25,7 @@ djangogirls_assignment
 [Pycharm Community Edition 다운로드](https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code=PCC)
 
 - - -
-### Django 프로젝트 시작
+## Django 프로젝트 시작
 콘솔에서 프로젝트폴더로 이동한 뒤 `django-admin startproject 프로젝트명` 을 입력하여 새 `Django` 프로젝트를 시작한다.
 ```
 django-admin startproject myproject
@@ -47,7 +47,7 @@ djangogirls_assignment
 
 - - -
 
-#### 폴더 이름 Refactor
+### 폴더 이름 Refactor
 폴더 구조를 보면 `myproject` 폴더 안에 또 `myproject` 라는 폴더가 있는 것을 볼 수 있다. 헷갈리니까 일단 하위 `myproject` 폴더를 `config` 로 바꾸어주자. 이 때, `Pycharm` 의 `refactor` 기능을 활용하여 내부 파일들이 바뀐 폴더이름을 제대로 참조할 수 있도록 하는 것이 중요하다. `djangogirls_assignment` 폴더를 `Pycharm` 으로 열고 아래와 같이 설정하자.
 
 <img width="950px" src="/img/django_tutorial/refactor.png">
@@ -67,7 +67,7 @@ djangogirls_assignment
 
 - - -
 
-#### Sources Root 설정
+### Sources Root 설정
 
 현재 `myproject` 폴더 내의 모듈들이 참조하고 있는 이 프로젝트의 `Root directory` 는 가장 최상위 폴더인 `djangogirls_assignment` 이다.  
 이 경우 나중에 내부 모듈들이 패키지를 참조할 때 문제가 될 수 있다. 이를 예방하기 위해 `Root directory` 를 `Django Applicaion` 폴더 즉, `myproject` 폴더와 일치시켜주어야 한다.
@@ -84,7 +84,7 @@ djangogirls_assignment
 
 - - -
 
-#### Python 인터프리터 설정
+### Python 인터프리터 설정
 
 이 부분은  `Pycharm` 에 대한 설정이다. `Pycharm` 이 우리가 설정한 환경을 제대로 인식할 수 있도록 동일한 가상환경의 Python을 인터프리터로 설정해주도록 하자.
 우선 `File` > `Setting` 을 클릭하여 설정창을 연다.
@@ -117,7 +117,7 @@ myproject
 
 - - -
 
-#### 개발용 서버 시작하기
+## 개발용 서버 시작하기
 
 이제 `Django` 프로젝트를 시작시켰으니 잘 동작하는지 확인해보자.  
 먼저 `manage.py` 가 있는 폴더인 `myproject` 폴더로 이동한다.
@@ -160,7 +160,7 @@ Quit the server with CONTROL-C.
 
 - - -
 
-##### 다른 포트에 runserver 열기
+### 다른 포트에 runserver 열기
 
 나의 경우 `Jekyll` 블로그의 개발용 서버와 `Django`의 개발용 서버를 동시에 열어놓을 때가 있는데, 가끔 포트가 이미 사용중이라면서 충돌이 날 때가 있다. 이럴 때는 `Django` 개발용 서버를 다른 포트에 열어서 해결하면 된다. 필요하다면 IP도 바꿔줄 수 있다.
 ```
@@ -173,7 +173,7 @@ python manage.py runserver IP번호 포트번호
 
 - - -
 
-###### Reference
+#### Reference
 
 이한영 강사님 강의자료  
 Djangogirls: [https://tutorial.djangogirls.org/ko/](https://tutorial.djangogirls.org/ko/)  

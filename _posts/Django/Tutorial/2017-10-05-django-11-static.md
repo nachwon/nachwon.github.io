@@ -14,7 +14,7 @@ tags:
 
 - - -
 
-#### static 폴더 생성
+## static 폴더 생성
 
 블로그를 꾸미기 위해서는 `CSS` 파일이 필요하다. `CSS` 와 같은 파일들을 `정적 (Static)` 파일이라고 한다. 템플릿을 `template` 폴더에 모두 모아놓고 관리했듯이, 정적 파일들을 `static` 이라는 폴더에 모아놓고 관리하도록 하자.  
 블로그 꾸미기에 부트스트랩을 사용할 것이다. 우선 [Bootstrap](http://bootstrapk.com/getting-started/#download)에서 부트스트랩 파일들을 다운로드 하자. 부트스트랩 폴더 안에는 미리 만들어져있는 `CSS`, `Javascript` 그리고 `fonts` 파일들이 들어있다.
@@ -50,7 +50,7 @@ myproject
 
 - - -
 
-#### static 폴더 연결하기
+## static 폴더 연결하기
 
 지난번에 `template` 폴더의 경로를 `settings.py` 에 입력해주었던 것을 기억하는가? 그 과정을 `static` 폴더에도 똑같이 해주어야 한다.
 
@@ -72,7 +72,7 @@ STATICFILES_DIRS = [
 
 - - -
 
-#### CSS 파일 적용하기
+## CSS 파일 적용하기
 
 이제 `static` 폴더 안의 `CSS` 파일들을 템플릿에 적용시켜보자.  
 `post_list.html` 을 열고 `head` 안에 아래와 같이 `link` 태그를 입력해준다.
@@ -243,7 +243,7 @@ a:hover {
 ```
 
 - - -
-#### CSS 파일이 적용이 안될 때
+## CSS 파일이 적용이 안될 때
 
 CSS 파일을 수정하던 중 수정한 파일이 `runserver` 에 업데이트 되지 않는 현상이 발생했다.  
 심지어 `blog.css` 파일을 없애도 아무 에러없이 멀쩡히 작동하는 것을 볼 수 있었다.  
@@ -259,7 +259,7 @@ CSS 파일을 캐시에 저장해두고 쓰는 바람에 생기는 문제인 것
 
 - - -
 
-###### Reference
+#### Reference
 이한영 강사님 강의자료  
 Djangogirls: [https://tutorial.djangogirls.org/ko/](https://tutorial.djangogirls.org/ko/)  
 Bootstrap 공식 페이지: [http://bootstrapk.com/](http://bootstrapk.com/)
