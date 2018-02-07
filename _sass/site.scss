@@ -193,6 +193,8 @@ header .entry-meta {
     text-align: right;
 }
 .feature {
+    background-size: contain;
+    background-repeat: no-repeat;
     @include transition(.5s);
     @media #{$small} {
         background-image: none !important;
