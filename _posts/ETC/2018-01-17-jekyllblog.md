@@ -125,7 +125,7 @@ rbenv로 Ruby를 설치하기 위해서는 `ruby-build` 플러그인이 필요�
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 ```
 
-이제 다시 `rbenv` 를 입력해보면 명령어 목록에 `install` 과 `uninstall` 이 추가되어 있는 것을 볼 수 있다.
+이제 다시 `rbenv` 를 입력해보면 명령어 목록에 `install` 과 `uninstall` 이 추가되어 있는 것을 볼 수 있다. 
 
 ```
 rbenv
