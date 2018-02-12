@@ -47,12 +47,6 @@ sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libre
 Ruby의 버전관리 프로그램인 `rbenv` 를 설치한다.
 
 ```
-sudo apt-get install rbenv
-```
-
-위 명령으로 설치가 되지 않는 경우 `git clone` 을 통해 git 저장소에서 직접 다운받을수도 있다. 
-
-```
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 ```
 
@@ -128,12 +122,6 @@ For full documentation, see: https://github.com/rbenv/rbenv#readme
 rbenv로 Ruby를 설치하기 위해서는 `ruby-build` 플러그인이 필요하다. 아래 명령으로 설치한다.
 
 ```
-sudo apt-get install ruby-build
-```
-
-위 명령으로 정상 작동하지 않을 시 `git clone` 을 사용한다.
-
-```
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 ```
 
@@ -161,12 +149,6 @@ Some useful rbenv commands are:
 
 See `rbenv help <command>' for information on a specific command.
 For full documentation, see: https://github.com/rbenv/rbenv#readme
-```
-
-rbenv와 ruby-build를 한꺼번에 설치할 수도 있다.
-
-```
-sudo apt-get install ruby-full
 ```
 
 - - -
