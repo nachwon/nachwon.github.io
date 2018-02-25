@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Jekyll 블로그 시작하기'
-subtitle: How To Start A Jekyll Blog On Ubuntu
+excerpt: 정적 사이트 생성기 지킬을 사용해서 블로그를 시작하는 방법에 대해 알아본다.
 category: ETC
 tags:
   - Blog
