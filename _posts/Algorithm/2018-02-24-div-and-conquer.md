@@ -105,9 +105,6 @@ def sum(arr):
         return arr[0]
     else:
         first = arr.pop(0)
-        rest_total = 0
-        for i in arr:
-            rest_total += i
         return first + sum(arr)
 ```
 
