@@ -72,7 +72,7 @@ sudo usermod -aG docker 유저명
 docker run hello-world
 ```
 
-```re
+```
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
@@ -158,7 +158,7 @@ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 docker run ubuntu:16.04
 ```
 
-```re
+```
 Unable to find image 'ubuntu:16.04' locally
 16.04: Pulling from library/ubuntu
 ae79f2514705: pull complete
@@ -189,7 +189,7 @@ Status: Downloaded newer image for ubuntu:16.04
 docker run --rm -it ubuntu:16.04 bin/bash
 ```
 
-```re
+```
 root@d9e034cb5947:/# 
 ```
 
@@ -302,7 +302,7 @@ docker build -t base -f Dockerfile.base .
 여러 응용프로그램을 설치해야하므로 오랜 시간이 걸린다.  
 아래의 메세지가 뜨면 빌드가 성공적으로 끝난 것이다.
 
-```re
+```
 .
 .
 .
@@ -316,7 +316,7 @@ Successfully tagged base:latest
 docker images
 ```
 
-```re
+```
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 base                latest              975e4869f7c3        3 minutes ago       1.11GB
 ubuntu              16.04               747cb2d60bbe        3 weeks ago         122MB
@@ -328,7 +328,7 @@ ubuntu              16.04               747cb2d60bbe        3 weeks ago         
 
 Dockerfile을 실행하면 뜨는 로그를 살펴보자
 
-```re
+```
 Sending build context to Docker daemon  18.11MB  #1
 Step 1/19 : FROM ubuntu:16.04                    #2    
  ---> 747cb2d60bbe                               #3
