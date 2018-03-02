@@ -87,7 +87,7 @@ sudo vi /etc/nginx/nginx.conf
 
 파일의 첫 줄 `user www-data;` 를 `user deploy;` 로 수정해준다.
 
-```re
+```
 # nginx.conf
 
 user deploy;
