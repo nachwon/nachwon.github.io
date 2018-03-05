@@ -66,7 +66,7 @@ sudo apt-get install nginx
 ```
 nginx -v
 ```
-```re
+```
 nginx version: nginx/1.12.1
 ```
 
@@ -113,7 +113,7 @@ http {
 이제 로컬 서버로 빠져나가서 장고 프로젝트 폴더로 이동한다.  
 uWSGI 설정을 저장했던 `.config` 폴더에 `nginx` 폴더를 새로 만들고 그 아래에 `mysite.conf` 파일을 생성한다.  
 
-```re
+```
 .config
 ├── nginx
 │   └── mysite.conf
@@ -157,7 +157,7 @@ scp -i ~/.ssh/EC2-Che1.pem -r EC2_Deploy_Project ubuntu@ec2-13-124-186-240.ap-no
 sudo cp -f /srv/EC2_Deploy_Project/.config/nginx/mysite.conf /etc/nginx/sites-available/mysite.conf
 ```
 
-```re
+```
 sites-available
 ├── default
 └── mysite.conf
@@ -168,7 +168,7 @@ sites-available
 sudo ln -sf /etc/nginx/sites-available/mysite.conf /etc/nginx/sites-enabled/mysite.conf
 ```
 
-```re
+```
 sites-enabled
 ├── default -> /etc/nginx/sites-available/default
 └── mysite.conf -> /etc/nginx/sites-available/mysite.conf
@@ -179,7 +179,7 @@ sites-enabled
 ```
 sudo rm /etc/nginx/sites-enabled/default
 ```
-```re
+```
 sites-enabled
 └── mysite.conf -> /etc/nginx/sites-available/mysite.conf
 ```
@@ -199,7 +199,7 @@ Nginx는 기본적으로 백그라운드에서 실행되도록 되어있다. 그
 
 로컬에서 `/장고 프로젝트 폴더/.config/uwsgi/` 에 `uwsgi.service` 파일을 생성한다.  
 
-```re
+```
 .config
 ├── nginx
 │   └── mysite.conf
@@ -263,13 +263,13 @@ sudo systemctl enable uwsgi
 ```
 sudo systemctl | grep nginx
 ```
-```re
+```
 nginx.service loaded active running A high performance web server and a reverse proxy server
 ```
 ```
 sudo systemctl | grep uwsgi
 ```
-```re
+```
 uwsgi.service loaded active running uWSGI service
 ```
 
