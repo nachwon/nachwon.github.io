@@ -1,38 +1,35 @@
 graph = dict()
 graph['S'] = {}
-graph['S']['A'] = 1
-graph['S']['C'] = 2
+graph['S']['A'] = 2
+graph['S']['B'] = 2
 
 graph['A'] = {}
-graph['A']['B'] = 6
+graph['A']['B'] = 2
 
 graph['B'] = {}
-graph['B']['D'] = 1
-graph['B']['E'] = 2
+graph['B']['C'] = 2
+graph['B']['E'] = 25
 
 graph['C'] = {}
-graph['C']['A'] = 4
-graph['C']['D'] = 3
+graph['C']['A'] = -15
+graph['C']['E'] = 2
 
-graph['D'] = {}
-graph['D']['E'] = 1
+# graph['D'] = {}
+# graph['D']['E'] = 1
 
 graph['E'] = {}
 
 inf = float('inf')
 
-costs = {}
+# costs = {}
 
-# S 에서 A 까지 도달하는데 드는 비용
-costs['A'] = 1
+# # S 에서 A 까지 도달하는데 드는 비용
+# costs['A'] = 1
 
-# S 에서 C 까지 도달하는데 드는 비용
-costs['C'] = 2
+# # S 에서 C 까지 도달하는데 드는 비용
+# costs['C'] = 2
 
 # 아직 비용을 알 수 없는 노드는 무한대로 설정
-costs['B'] = inf
-costs['D'] = inf
-costs['E'] = inf
 
 parents = {}
 
@@ -40,11 +37,21 @@ parents = {}
 parents['A'] = 'S'
 
 # C 의 부모 노드도 S
-parents['C'] = 'S'
+parents['B'] = 'S'
 
 parents['E'] = None
 
 processed = []
+
+def set_costs_table(graph, start='S'):
+    costs = {}
+    costs = graph['S']
+    for i, j in graph.items():
+        if i not in graph['S'] and i != 'S':
+            costs[i] = float('inf')
+    return costs
+
+costs = set_costs_table(graph, 'S')
 
 def find_lowest_cost_node(costs):
     lowest_cost = float('inf')
@@ -76,3 +83,6 @@ def find_parents(node='E'):
     return find_parents(parent_node)
 
 find_parents()
+
+print(set_costs_table(graph))
+print(costs)
