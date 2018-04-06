@@ -1,0 +1,21 @@
+---
+layout: post
+title: '[Codility] Lv2 - Odd occurances in array'
+excerpt: Codility Lesson Level 2 - Arrays
+category: Algorithm
+tags:
+  - Algorithm
+  - Codility
+  - Arrays
+---
+
+```py
+def solution(A):
+    sorted_A = sorted(A)
+    
+    for i in range(0, len(sorted_A), 2):
+        if i + 1 == len(sorted_A):
+            return sorted_A[-1]
+        if sorted_A[i] != sorted_A[i+1]:
+            return sorted_A[i]
+```
