@@ -9,8 +9,6 @@ tags:
   - Time Complexity
 ---
 
-58% 밖에 못 받음...
-
 ```py
 def solution(A):
     total = sum(A)
@@ -26,9 +24,6 @@ def solution(A):
             min_diff = diff
         else:
             min_diff = min(min_diff, diff)
-        
-        if diff != min_diff:
-            break
         
     return min_diff
 ```
