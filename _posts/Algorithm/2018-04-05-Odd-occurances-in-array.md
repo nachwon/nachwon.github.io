@@ -19,3 +19,9 @@ def solution(A):
         if sorted_A[i] != sorted_A[i+1]:
             return sorted_A[i]
 ```
+
+- - -
+
+#### Reference
+
+[Codility](https://app.codility.com/programmers/lessons/2-arrays/odd_occurrences_in_array/)

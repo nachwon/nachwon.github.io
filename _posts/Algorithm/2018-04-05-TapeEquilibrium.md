@@ -27,3 +27,9 @@ def solution(A):
         
     return min_diff
 ```
+
+- - -
+
+#### Reference
+
+[Codility](https://app.codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/)
