@@ -143,6 +143,58 @@ gainConnected.connect(AudioCtx.destination)
 - - -
 
 ### 예제
+
+- HTML
+
+```html
+<audio id="audio-source" src="/assets/src/audio.mp3">
+
+<button id="play" onclick="play()">재생</button>
+<button id="up" onclick="volumeDown()">볼륨 다운</button>
+<button id="down" onclick="volumeUp()">볼륨 업</button>
+```
+
+- Javascript
+
+```js
+var audio = document.getElementById("audio-source");
+var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+var source = audioCtx.createMediaElementSource(audio);
+var gainNode = audioCtx.createGain();
+
+var gainConnected = source.connect(gainNode);
+gainConnected.connect(audioCtx.destination);
+
+function play() {
+    if (audio.paused) {
+        audio.play()
+    }
+    else {
+        audio.pause()
+    }
+}
+
+function volumeUp() {
+    
+    if (gainNode.gain.value > 0) {
+        gainNode.gain.value = 2
+    }
+    else {
+        gainNode.gain.value += 0.2
+    }
+}
+
+function volumeDown() {
+    
+    if (gainNode.gain.value < 0) {
+        gainNode.gain.value = 0
+    }
+    else {
+        gainNode.gain.value -= 0.2 
+    }
+}
+```
+
 <button id="play" onclick="play()">재생</button>
 <button id="up" onclick="volumeDown()">볼륨 다운</button>
 <button id="down" onclick="volumeUp()">볼륨 업</button>
@@ -174,11 +226,23 @@ function play() {
 }
 
 function volumeUp() {
-    gainNode.gain.value += 0.2 
+    
+    if (gainNode.gain.value > 0) {
+        gainNode.gain.value = 2
+    }
+    else {
+        gainNode.gain.value += 0.2
+    }
 }
 
 function volumeDown() {
-    gainNode.gain.value -= 0.2 
+    
+    if (gainNode.gain.value < 0) {
+        gainNode.gain.value = 0
+    }
+    else {
+        gainNode.gain.value -= 0.2 
+    }
 }
 
 </script>
