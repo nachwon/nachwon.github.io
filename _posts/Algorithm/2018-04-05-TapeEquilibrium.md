@@ -9,21 +9,23 @@ tags:
   - Time Complexity
 ---
 
-50% 밖에 못 받음...
+58% 밖에 못 받음...
 
 ```py
 def solution(A):
     total = sum(A)
     total_L = 0
-    min_diff = 1000000
+    min_diff = None
 
-    for i in range(len(A)):
+    for i in range(len(A) - 1):
         total_L += A[i]
         total -= A[i]
         diff = abs(total_L - total)
 
-        if diff < min_diff:
+        if min_diff is None:
             min_diff = diff
+        else:
+            min_diff = min(min_diff, diff)
         
         if diff != min_diff:
             break
