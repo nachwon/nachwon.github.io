@@ -20,6 +20,8 @@ def solution(A):
     return a - sum(A)
 ```
 
+아래는 다른 사람의 풀이를 파이썬으로 써본 것
+
 ```py
 def solution(A):
     a = (len(A)+1)*((len(A))+1)+1) / 2
