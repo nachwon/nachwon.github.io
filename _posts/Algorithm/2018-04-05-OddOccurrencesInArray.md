@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Codility] Lv2 - Odd occurances in array'
+title: '[Codility] Lv2 - OddOccurrencesInArray'
 excerpt: Codility Lesson Level 2 - Arrays
 category: Algorithm
 tags:
