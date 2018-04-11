@@ -9,6 +9,8 @@ tags:
   - Arrays
 ---
 
+## 최종 답안
+
 ```py
 def solution(A):
     sorted_A = sorted(A)

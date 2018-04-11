@@ -64,6 +64,10 @@ def solution(N, A):
     return counter
 ```
 
+- - -
+
+## 최종 답안
+
 결과 보니까 max_counter 가 매우 많이 발생할 때 time out 에러가 발생해서 점수가 깎이는 것 같다.
 그래서 max_num 이 업데이트 될 때만 max_counter 를 실행하도록 바꿔주었다.
 

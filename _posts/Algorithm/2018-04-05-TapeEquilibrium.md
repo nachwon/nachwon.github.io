@@ -9,6 +9,8 @@ tags:
   - Time Complexity
 ---
 
+## 최종 답안
+
 ```py
 def solution(A):
     total = sum(A)

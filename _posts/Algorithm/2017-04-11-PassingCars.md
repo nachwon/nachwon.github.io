@@ -9,6 +9,8 @@ tags:
   - Prefix Sums
 ---
 
+## 최종 답안
+
 오예~ Prefix Sums 를 활용해서 한 번에 100%를 받았다!
 
 Detected time complexity:
