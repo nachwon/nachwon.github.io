@@ -65,6 +65,33 @@ def solution(N, A):
 ```
 
 결과 보니까 max_counter 가 매우 많이 발생할 때 time out 에러가 발생해서 점수가 깎이는 것 같다.
+그래서 max_num 이 업데이트 될 때만 max_counter 를 실행하도록 바꿔주었다.
+
+```py
+def solution(N, A):
+    counter = [0] * (N + 1)
+    prev_max = 0
+    max_num = 0
+    
+    for i in A:
+        if i == N + 1 and prev_max != max_num:
+            counter = [max_num] * (N + 1)
+            
+        elif i == N + 1 and prev_max == max_num:
+            continue
+
+        else:
+            counter[i] += 1
+            if counter[i] > max_num:
+                prev_max = max_num
+                max_num = counter[i]
+    
+    del counter[0]
+    
+    return counter
+```
+
+이렇게 해주니까 100%가 나왔다!
 
 - - -
 
