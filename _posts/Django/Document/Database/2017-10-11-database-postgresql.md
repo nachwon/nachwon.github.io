@@ -6,6 +6,7 @@ author: Che1
 tags:
   - Database
   - Postgresql
+  - RDS
 ---
 
 #### 설치
