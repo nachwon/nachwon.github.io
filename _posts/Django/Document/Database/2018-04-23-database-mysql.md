@@ -18,7 +18,7 @@ tags:
 sudo apt-get install mysql-server mysql-client
 ```
 
-설치 시 루트 사용자의 비밀번호를 입력하라는 창이 뜬다.
+설치 시 루트 사용자의 비밀번호를 입력하라는 창이 뜨면 비밀번호를 설정해준다.
 
 - - -
 
@@ -39,16 +39,19 @@ mysql -h호스트주소 -p포트번호 -u아이디 -p비밀번호
 ## MySQL 기본적인 명령어
 
 - 데이터베이스 생성
+
 ```sql
 CREATE DATABASE 데이터베이스명;
 ```
 
 - 데이터베이스 목록 확인
+
 ```sql
 SHOW DATABASES;
 ```
 
 - 데이터베이스 선택
+
 ```sql
 USE 데이터베이스명;
 ```
