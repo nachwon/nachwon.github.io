@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[DB] MySQL'
+title: '[DB] Django 앱에 MySQL 연동하기'
 excerpt: 'Django 어플리케이션에 MySQL 데이터베이스를 연동시키는 방법을 알아보자.'
 category: Django
 author: Che1
