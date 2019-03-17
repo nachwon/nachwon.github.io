@@ -176,7 +176,7 @@ function play() {
 
 function volumeUp() {
     
-    if (gainNode.gain.value > 0) {
+    if (gainNode.gain.value > 2) {
         gainNode.gain.value = 2
     }
     else {
@@ -227,7 +227,7 @@ function play() {
 
 function volumeUp() {
     
-    if (gainNode.gain.value > 0) {
+    if (gainNode.gain.value > 2) {
         gainNode.gain.value = 2
     }
     else {
