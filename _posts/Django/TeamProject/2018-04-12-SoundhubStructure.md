@@ -33,7 +33,7 @@ soundhub.che1.co.kr <-> Route 53 <-> ELB Port:443 <-> Auto Scaling Group[EC2 Por
 
 SoundHub는 어플리케이션의 모든 구성이 하나로 엮여있는 `Monolithic architecture` 구조로 만들어졌습니다.   
 
-처음 만드는 프로젝트인데다가 아직 어플리케이션의 규모가 크지 않기 때문에 MSA 구조로 Monolithic architecture 구조로 만들었지만, 추후 어플리케이션의 규모가 커져 유지 보수에 어려움이 생기기 시작하면 `MSA` 구조로 변경하는 것이 가능한지 한 번 검토해볼 예정입니다.  
+처음 만드는 프로젝트인데다가 아직 어플리케이션의 규모가 크지 않기 때문에 Monolithic architecture 구조로 만들었지만, 추후 어플리케이션의 규모가 커져 유지 보수에 어려움이 생기기 시작하면 `MSA` 구조로 변경하는 것이 가능한지 한 번 검토해볼 예정입니다.  
 
 AWS에서 제공하는 PaaS 인 `Elastic Beanstalk` 을 사용하여 배포하였습니다.
 
