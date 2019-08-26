@@ -60,7 +60,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     multipart-post (2.0.0)
-    nokogiri (1.10.1)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     octokit (4.13.0)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -89,11 +89,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ffi (>= 1.9.24)
   jekyll (>= 3.6.3)
   jekyll-feed
   jekyll-gist
   jekyll-mentions
   jekyll-sitemap
+  nokogiri (>= 1.8.5)
 
 BUNDLED WITH
    1.17.3
