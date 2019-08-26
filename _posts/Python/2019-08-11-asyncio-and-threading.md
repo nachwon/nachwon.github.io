@@ -25,6 +25,8 @@ category: Python
 
 파이썬에서는 `threading` 라이브러리나 `concurrent` 라이브러리를 이용한 멀티쓰레딩이 가능하고, 3.4 부터는 generator 에서 부터 진화해 오던 코루틴을 이용한 비동기 라이브러리인 `asyncio` 가 추가되어서 좀 더 쉬운 동시적인 처리를 지원하게 되었다.
 
+asyncio 는 threading 과는 달리 하나의 쓰레드를 사용하여 작업들을 동시적으로 처리한다.
+
 ---
 
 ## threading을 사용한 예제
