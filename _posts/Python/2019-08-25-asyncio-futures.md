@@ -9,7 +9,6 @@ tags:
   - threading
   - multiprocessing
   - concurrency
-  - Future
 category: Python
 ---
 
