@@ -644,3 +644,4 @@ https://realpython.com/python-concurrency/#what-is-concurrency
 [데이비드 비즐리의 강의 자료](https://speakerdeck.com/dabeaz/an-introduction-to-python-concurrency?slide=163)
 [asyncio에 대한 자세한 stac koverflow 답변](https://stackoverflow.com/questions/49005651/how-does-asyncio-actually-work/51116910#51116910)
 [asyncio 라이브러리 소스코드](https://github.com/python/cpython/tree/bec2372b7e1da5dfdbadaf242aa8e994b164cace/Lib/asyncio)
+[GIL에 관한 글](https://emptysqua.re/blog/grok-the-gil-fast-thread-safe-python/)
