@@ -266,12 +266,12 @@ AWS 서버에 처음 접속한 뒤 다음의 기본 설정들을 세팅한다.
 sudo vi /etc/default/locale
 ```
 
-다음을 추가한 뒤 서버에 재접속한다.
+파일의 내용을 다음과 같이 해준 뒤 재접속한다.
 
 ```
-LC_CTYPE="en_US.UTF-8"
-LC_ALL="en_US.UTF-8"
-LANG="en_US.UTF-8"
+LC_CTYPE=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+LANG=en_US.UTF-8
 ```
 
 - - -
@@ -316,7 +316,7 @@ sudo chsh ubuntu -s /usr/bin/zsh
 #### Python 환경 설정
 
 - pyenv 설치 및 환경 설정   
-[pyenv 설치하기(Ubuntu 환경)](/python/2017/09/12/pyenv-virtualenv.html) 포스트를 참고하여 pyenv를 설치하고, `~/.zshrc` 의 pyenv 환경변수 설정은 아래와 같이 입력해준다.
+[pyenv 설치하기(Ubuntu 환경)](/pyenv-virtualenv/) 포스트를 참고하여 pyenv를 설치하고, `~/.zshrc` 의 pyenv 환경변수 설정은 아래와 같이 입력해준다.
 ```
 export PATH="/home/ubuntu/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
@@ -363,8 +363,8 @@ sudo chown -R ubuntu:ubuntu /srv/
 가상환경 이름은 `ec2_deploy`, python 버전은 3.6.3 버전으로 한다.  
 장고 프로젝트 폴더 이름은 `EC2_Deploy_Project`, 프로젝트 이름은 `mysite` 로 한다.  
 
-[[Django Tutorial] Blog 만들기 - 1. 환경설정](/django/2017/09/28/django-1-setting.html)  
-[[Django Tutorial] Blog 만들기 - 2. 프로젝트 시작](/django/2017/09/30/django-2-start.html)
+[[Django Tutorial] Blog 만들기 - 1. 환경설정](/django-1-setting/)  
+[[Django Tutorial] Blog 만들기 - 2. 프로젝트 시작](/django-2-start/)
 
 `config` 폴더의 `settings.py` 의 `ALLOWED_HOSTS` 에 다음과 같이 추가하여 접속을 허용해준다.
 ```py
