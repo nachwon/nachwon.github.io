@@ -82,18 +82,20 @@ GEM
       addressable (>= 2.3.5, < 2.6)
       faraday (~> 0.8, < 1.0)
     thread_safe (0.3.6)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  ffi (>= 1.9.24)
   jekyll (>= 3.6.3)
   jekyll-feed
   jekyll-gist
   jekyll-mentions
   jekyll-sitemap
+  nokogiri (>= 1.8.5)
 
 BUNDLED WITH
    1.17.3
